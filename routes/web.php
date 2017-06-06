@@ -11,6 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+    Route::get('lang/es', function () {
+        return \Redirect::back();
+    });
+
+    Route::get('lang/en', function () {
+
+        return \Redirect::back();
+    });
+
+
+
+    Route::get('/', function () {
+        return view('welcome');
+    });
+
+
