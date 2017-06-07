@@ -11,15 +11,6 @@
 |
 */
 
-    Route::get('localization/{locale}','LanguageController@index');
-
-
-    Route::get('/', function () {
-        return view('welcome');
-    });
-
-    Route::get('{}', function () {
-        return view('welcome');
-    });
-
-
+Route::get('/', function () {
+    return view('welcome');
+});

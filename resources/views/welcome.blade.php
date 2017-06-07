@@ -79,21 +79,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    {{trans('resolucion.test')}}
+                    Laravel
                 </div>
-
-                <form method="post" action="language">
-                    <select name="locate">
-
-                    </select>
-                </form>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
-                    <li><a href="{{ url('localization/en') }}">En</a></li>
-                    <li><a href="{{ url('localization/es') }}">Es</a></li>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
         </div>

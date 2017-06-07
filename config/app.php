@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'es',
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -140,7 +140,6 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
-        ied3vil\LanguageSwitcher\Providers\LanguageSwitcherProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
