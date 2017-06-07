@@ -82,12 +82,18 @@
                     {{trans('resolucion.test')}}
                 </div>
 
+                <form method="post" action="language">
+                    <select name="locate">
+
+                    </select>
+                </form>
+
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
-                    <li><a href="{{ url('lang', ['en']) }}">En</a></li>
-                    <li><a href="{{ url('lang', ['es']) }}">Es</a></li>
+                    <li><a href="{{ url('localization/en') }}">En</a></li>
+                    <li><a href="{{ url('localization/es') }}">Es</a></li>
                 </div>
             </div>
         </div>

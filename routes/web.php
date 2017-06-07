@@ -11,20 +11,14 @@
 |
 */
 
-
-
-    Route::get('lang/es', function () {
-        return \Redirect::back();
-    });
-
-    Route::get('lang/en', function () {
-
-        return \Redirect::back();
-    });
-
+    Route::get('localization/{locale}','LanguageController@index');
 
 
     Route::get('/', function () {
+        return view('welcome');
+    });
+
+    Route::get('{}', function () {
         return view('welcome');
     });
 

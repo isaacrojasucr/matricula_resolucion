@@ -50,8 +50,8 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                        <li><a href="{{ url('lang/en') }}">En</a></li>
-                        <li><a href="{{ url('lang/es') }}">Es</a></li>
+                        <li><a href="{{ url('localization/en') }}">En</a></li>
+                        <li><a href="{{ url('localization/es') }}">Es</a></li>
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">{{trans('resolucion.login')}}</a></li>
                         @else
