@@ -79,17 +79,33 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    {{trans('resolucion.test')}}
+                    {{trans('app.test')}}
                 </div>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
+
+                    <select id="languageSelector">
+
+                        <option value="es" <?php echo ($cuRRlocal == 'es' ? "selected" : "") ?>>Español</option>
+                        <option value="en" <?php echo ($cuRRlocal == 'en' ? "selected" : "") ?>>Inglés</option>
+                    </select>
+
                     <li><a href="{{ url('lang', ['en']) }}">En</a></li>
                     <li><a href="{{ url('lang', ['es']) }}">Es</a></li>
                 </div>
             </div>
         </div>
+        <input type="hidden" name="_token" id="csrf_toKen" value="{{csrf_token()}}">
+        @yield('content')
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        {{--  <script src="{{elixir('js/app.js')}}"></script> --}}
+
+        <script src="{{URL::asset('js/custom.js')}}" type="text/javascript"></script>
     </body>
 </html>
