@@ -8,5 +8,7 @@
 return [
     'login' => 'Login',
     'logout' => 'Logout',
-    'test' => 'Example Languaje',
+    'test' => 'We´re Working',
+    'home'=> 'Home',
+    'depa'=>'Natural Sciences',
 ];

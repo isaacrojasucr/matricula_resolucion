@@ -1,0 +1,130 @@
+<?php
+
+namespace App\Http\Controllers\Carrers;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+use App\carrer;
+use Illuminate\Http\Request;
+use Session;
+
+class carrerController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function index(Request $request)
+    {
+        $keyword = $request->get('search');
+        $perPage = 25;
+
+        if (!empty($keyword)) {
+            $carrer = carrer::where('initial', 'LIKE', "%$keyword%")
+				->orWhere('name', 'LIKE', "%$keyword%")
+				->orWhere('page', 'LIKE', "%$keyword%")
+				->orWhere('manager', 'LIKE', "%$keyword%")
+				->paginate($perPage);
+        } else {
+            $carrer = carrer::paginate($perPage);
+        }
+
+        return view('carrers.carrer.index', compact('carrer'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function create()
+    {
+        return view('carrers.carrer.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function store(Request $request)
+    {
+        
+        $requestData = $request->all();
+        
+        carrer::create($requestData);
+
+        Session::flash('flash_message', 'carrer added!');
+
+        return redirect('carrer/carrer');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\View\View
+     */
+    public function show($id)
+    {
+        $carrer = carrer::findOrFail($id);
+
+        return view('carrers.carrer.show', compact('carrer'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\View\View
+     */
+    public function edit($id)
+    {
+        $carrer = carrer::findOrFail($id);
+
+        return view('carrers.carrer.edit', compact('carrer'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function update($id, Request $request)
+    {
+        
+        $requestData = $request->all();
+        
+        $carrer = carrer::findOrFail($id);
+        $carrer->update($requestData);
+
+        Session::flash('flash_message', 'carrer updated!');
+
+        return redirect('carrer/carrer');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function destroy($id)
+    {
+        carrer::destroy($id);
+
+        Session::flash('flash_message', 'carrer deleted!');
+
+        return redirect('carrer/carrer');
+    }
+}

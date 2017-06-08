@@ -9,5 +9,8 @@
 return[
     'login' => 'Iniciar Sesión',
     'logout' => 'Cerrar Sesión',
-    'test' => 'Ejemplo Lenguaje',
+    'test' => 'Estamos Trabajando',
+    'home' => 'Inicio',
+    'depa'=>'Ciencias Naturales',
+    
 ];

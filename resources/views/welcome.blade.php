@@ -69,11 +69,14 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">{{trans('resolucion.home')}}</a>
                     @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
+                        <a href="{{ url('/login') }}">{{trans('resolucion.login')}}</a>
                     @endif
+                     <a href="{{ url('/en') }}"><img src="img/usa.png"></a>
+                     <a href="{{ url('/es') }}"><img src="img/spain.png"></a>
+
+                    </ul>
                 </div>
             @endif
 
@@ -82,11 +85,6 @@
                     {{trans('resolucion.test')}}
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                </div>
             </div>
         </div>
     </body>
