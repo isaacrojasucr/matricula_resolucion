@@ -4,11 +4,15 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-md-9">
+            <div class="col-md-9 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Edit carrer #{{ $carrer->id }}</div>
+                    <div class="panel-heading">@lang('form.editing'){{ $carrer-> name }}</div>
                     <div class="panel-body">
-                        <a href="{{ url('/carrer/carrer') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/carrer/carrer') }}" title="Back">
+                            <button class="btn btn-info btn"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> @lang('form.back')
+                            </button>
+                        </a>
                         <br />
                         <br />
 
@@ -27,7 +31,7 @@
                             'files' => true
                         ]) !!}
 
-                        @include ('carrers.carrer.form', ['submitButtonText' => 'Update'])
+                        @include ('carrers.carrer.form', ['submitButtonText' => ''.trans('form.save')])
 
                         {!! Form::close() !!}
 

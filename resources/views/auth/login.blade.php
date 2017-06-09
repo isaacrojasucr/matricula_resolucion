@@ -22,7 +22,7 @@
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
-                            <div class="col-md-6 col-lg-offset-3">
+                            <div class="col-md-6 col-md-offset-3">
                                 <input id="email" type="email" class="form-control center" name="email" value="{{ old('email') }}" placeholder="@lang('login.email')" required autofocus>
 
                                 @if ($errors->has('email'))

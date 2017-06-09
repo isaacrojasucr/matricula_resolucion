@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\carrer;
+use App\User;
 use Illuminate\Http\Request;
 use Session;
 
@@ -31,7 +32,18 @@ class carrerController extends Controller
             $carrer = carrer::paginate($perPage);
         }
 
-        return view('carrers.carrer.index', compact('carrer'));
+        $managers = array();
+
+        $i = 0;
+        foreach ($carrer  as $item){
+
+            $data = \DB::table('users')->where('id',''.$item->manager)->first();
+
+            $managers = array_add($managers,$i,$data->name.' '.$data->lastname);
+            $i ++;
+        }
+
+        return view('carrers.carrer.index', compact('carrer','managers'));
     }
 
     /**
@@ -41,7 +53,17 @@ class carrerController extends Controller
      */
     public function create()
     {
-        return view('carrers.carrer.create');
+        $temp = User::all();
+
+        $managers = array();
+
+        foreach ($temp as $item){
+
+            $managers =  array_add($managers,$item->id, $item->name.' '.$item->lastname);
+
+        }
+
+        return view('carrers.carrer.create', compact('managers'));
     }
 
     /**
@@ -88,7 +110,17 @@ class carrerController extends Controller
     {
         $carrer = carrer::findOrFail($id);
 
-        return view('carrers.carrer.edit', compact('carrer'));
+        $temp = User::all();
+
+        $managers = array();
+
+        foreach ($temp as $item){
+
+            $managers =  array_add($managers,$item->id, $item->name.' '.$item->lastname);
+
+        }
+
+        return view('carrers.carrer.edit', compact('carrer','managers'));
     }
 
     /**

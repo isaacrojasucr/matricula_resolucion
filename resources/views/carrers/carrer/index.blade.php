@@ -6,14 +6,14 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Carrer</div>
+                    <div class="panel-heading">@lang('form.carrer')</div>
                     <div class="panel-body">
-                        <a href="{{ url('/carrer/carrer/create') }}" class="btn btn-success btn-sm" title="Add New carrer">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                        <a href="{{ url('/carrer/carrer/create') }}" class="btn btn-success btn-sm" title="@lang('form.add')">
+                            <i class="fa fa-plus" aria-hidden="true"></i> @lang('form.add')
                         </a>
                         {!! Form::open(['method' => 'GET', 'url' => '/carrer/carrer', 'class' => 'navbar-form navbar-right', 'role' => 'search'])  !!}
                         <div class="input-group">
-                            <input type="text" class="form-control" name="search" placeholder="Search...">
+                            <input type="text" class="form-control" name="search" placeholder="@lang('form.search')">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="submit">
                                     <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -24,36 +24,42 @@
 
                         <br/>
                         <br/>
+
                         <div class="table-responsive">
                             <table class="table table-borderless">
                                 <thead>
-                                    <tr><th>Initial</th><th>Name</th><th>Page</th><th>Actions</th>
+                                    <tr><th>@lang('form.initial')</th>
+                                        <th>@lang('form.name')</th>
+                                        <th>@lang('form.page')</th>
+                                        <th>@lang('form.manager')</th>
+                                        <th>@lang('form.act')</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($carrer as $item)
+                                @for($i = 0; $i < count($carrer); $i++)
                                     <tr>
-                                        <td>{{ $item->initial }}</td>
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->page }}</td>
+                                        <td>{{$carrer[$i]->initial}}</td>
+                                        <td>{{$carrer[$i]->name}}</td>
+                                        <td>{{$carrer[$i]->page}}</td>
+                                        <td>{{array_get($managers,$i)}}</td>
                                         <td>
-                                            <a href="{{ url('/carrer/carrer/' . $item->id) }}" title="View carrer"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/carrer/carrer/' . $item->id . '/edit') }}" title="Edit carrer"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <a href="{{ url('/carrer/carrer/' . $carrer[$i]->id) }}" title="@lang('form.view')"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button></a>
+                                            <a href="{{ url('/carrer/carrer/' . $carrer[$i]->id . '/edit') }}" title="@lang('form.edit')"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></a>
                                             {!! Form::open([
                                                 'method'=>'DELETE',
-                                                'url' => ['/carrer/carrer', $item->id],
+                                                'url' => ['/carrer/carrer', $carrer[$i]->id],
                                                 'style' => 'display:inline'
                                             ]) !!}
-                                                {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array(
+                                                {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>', array(
                                                         'type' => 'submit',
                                                         'class' => 'btn btn-danger btn-xs',
-                                                        'title' => 'Delete carrer',
-                                                        'onclick'=>'return confirm("Confirm delete?")'
+                                                        'title' => ' '.trans('form.delete').' ',
+                                                        'onclick'=>'return confirm("'.trans('form.comfirm').'")'
                                                 )) !!}
                                             {!! Form::close() !!}
                                         </td>
                                     </tr>
-                                @endforeach
+                                @endfor
                                 </tbody>
                             </table>
                             <div class="pagination-wrapper"> {!! $carrer->appends(['search' => Request::get('search')])->render() !!} </div>
