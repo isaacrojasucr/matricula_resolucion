@@ -8,6 +8,7 @@ use App\carrer;
 use App\course;
 use Illuminate\Http\Request;
 use Session;
+use Illuminate\Support\Facades\Storage;
 
 class courseController extends Controller
 {
@@ -45,6 +46,10 @@ class courseController extends Controller
             $carrers =  array_add($carrers, $i, $temp->name);
 
             $i++;
+        }
+
+        foreach ($course as $item){
+            $course->plan = Storage::url(''.$item->plan);
         }
 
 
@@ -89,7 +94,13 @@ class courseController extends Controller
         $course->initial = $request->initial;
         $course->carrer = $request->carrer;
         $course->cycle = $request->cycle;
-        $course->plan = $request->file('plan_file')->store('');
+        if (!empty($request->file('plan_file'))){
+
+            $course->plan = $request->file('plan_file')->store('');
+
+        }else{
+            $course->plan =  '';
+        }
 
         $course->save();
 
@@ -107,7 +118,9 @@ class courseController extends Controller
     {
         $course = course::findOrFail($id);
 
-        return view('course.course.show', compact('course'));
+        $carrer =  carrer::findOrFail($course->carrer);
+
+        return view('course.course.show', compact('course','carrer'));
     }
 
     /**
@@ -146,13 +159,23 @@ class courseController extends Controller
      */
     public function update($id, Request $request)
     {
-        
-        $requestData = $request->all();
-        
         $course = course::findOrFail($id);
-        $course->update($requestData);
 
-        Session::flash('flash_message', 'course updated!');
+        $course->name = $request->name;
+        $course->period = $request->period;
+        $course->initial = $request->initial;
+        $course->carrer = $request->carrer;
+        $course->cycle = $request->cycle;
+
+        if (!empty($request->file('plan_file'))){
+
+            $course->plan = $request->file('plan_file')->store('');
+            
+        }else{
+            $course->plan =  '';
+        }
+
+        $course->update();
 
         return redirect('course/course');
     }

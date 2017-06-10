@@ -3,29 +3,41 @@
         {!! Form::text('initial', null, ['class' => 'form-control center', 'placeholder'=>trans('form.initial'), 'required'=>'required']) !!}
         {!! $errors->first('initial', '<p class="help-block">:message</p>') !!}
     </div>
-</div><div class="form-group {{ $errors->has('name') ? 'has-error' : ''}}">
+</div>
+<div class="form-group {{ $errors->has('name') ? 'has-error' : ''}}">
     <div class="col-md-offset-2 col-md-8">
         {!! Form::text('name', null, ['class' => 'form-control center', 'placeholder'=>trans('form.name'), 'required'=>'required']) !!}
         {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
     </div>
-</div><div class="form-group {{ $errors->has('period') ? 'has-error' : ''}}">
+</div>
+<div class="form-group {{ $errors->has('period') ? 'has-error' : ''}}">
     <div class="col-md-offset-2 col-md-8">
         {!! Form::number('period', null, ['class' => 'form-control center', 'placeholder'=>trans('form.period'), 'required'=>'required']) !!}
         {!! $errors->first('period', '<p class="help-block">:message</p>') !!}
     </div>
-</div><div class="form-group {{ $errors->has('cycle') ? 'has-error' : ''}}">
+</div>
+<div class="form-group {{ $errors->has('cycle') ? 'has-error' : ''}}">
     <div class="col-md-offset-2 col-md-8">
         {!! Form::number('cycle', null, ['class' => 'form-control center', 'placeholder'=>trans('form.cycle'), 'required'=>'required'] ) !!}
         {!! $errors->first('cycle', '<p class="help-block">:message</p>') !!}
     </div>
-</div><div class="form-group {{ $errors->has('plan') ? 'has-error' : ''}}">
+</div>
+
+<div class="form-group {{ $errors->has('plan') ? 'has-error' : ''}}">
+
+    <div class="col-md-offset-2 col-md-8 center ">
+        {!! Form::label('', ''.trans('form.plan')) !!}
+    </div>
 
     <div class="col-md-offset-2 col-md-8 center">
-        {!! Form::label('', ''.trans('form.plan')) !!}
-        {!! Form::file('plan_file',['class' => 'form-control', 'required'=>'required']) !!}
-        {!! $errors->first('plan', '<p class="help-block">:message</p>') !!}
+        <div class=" col-md-12 btn btn-default fileUpload">
+            <span class="glyphicon glyphicon-file" aria-hidden="true"></span> @lang('form.file')
+            {!! Form::file('plan_file',['class' => 'form-control upload']) !!}
+        </div>
     </div>
-</div><div class="form-group {{ $errors->has('carrer') ? 'has-error' : ''}}">
+
+</div>
+<div class="form-group {{ $errors->has('carrer') ? 'has-error' : ''}}">
     <div class="col-md-offset-2 col-md-8 center">
         {!! Form::label('', ''.trans('form.carrer') ) !!}
         {!! Form::select('carrer', $carrers, null,['class' => 'form-control']) !!}
