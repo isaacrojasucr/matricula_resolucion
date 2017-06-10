@@ -21,5 +21,9 @@ return [
     'new' => 'Creando una nueva carrera',
     'save' => 'Guardar',
     'back' => 'Volver',
-    'editing' => 'Editando ',
+    'editing' => 'Editando',
+    'cycle'  => 'Ciclo',
+    'courses' => 'Cursos',
+    'period' => 'Periodo',
+
 ];

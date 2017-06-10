@@ -22,4 +22,7 @@ return [
     'save' => 'Save',
     'back' => 'Back',
     'editing' => 'Editing ',
+    'cycle'  => 'Cycle',
+    'courses' => 'Courses',
+    'period' => 'Period',
 ];

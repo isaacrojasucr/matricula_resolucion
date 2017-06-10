@@ -27,6 +27,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/home', 'HomeController@index')->name('home');
 
     Route::resource('carrer/carrer', 'Carrers\\carrerController');
+
+    Route::resource('course/course', 'Courses\\courseController');
 });
+
 
 
