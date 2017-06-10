@@ -7,7 +7,7 @@
  */
 return [
     'initial' => 'Initial',
-    'carrer' => 'Carrer',
+    'carrer' => 'Career',
     'page' => 'Web Site',
     'name' => 'Name',
     'search' => 'Search',
