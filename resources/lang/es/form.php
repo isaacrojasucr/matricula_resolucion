@@ -25,5 +25,17 @@ return [
     'cycle'  => 'Ciclo',
     'courses' => 'Cursos',
     'period' => 'Periodo',
-
+    'createUser' => 'Crear Nuevo Usuario',
+    'lastname' => 'Apellido',
+    'email' => 'Correo Electrónico',
+    'password' => 'Contraseña',
+    'register' => 'Registrar',
+    'holderName' => 'Ingrese el nombre aquí.',
+    'holderLastName' => 'Ingrese el apellido aquí.',
+    'holderEmail' => 'Ingrese el correo electrónico aquí.',
+    'holderPassword' => 'Ingrese la contraseña aquí.',
+    'editUser' => 'Editar Usuario',
+    'update' => 'Actualizar',
+    'user' => 'Usuario',
+    'toEditUser' => 'Editar Usuario',
 ];
