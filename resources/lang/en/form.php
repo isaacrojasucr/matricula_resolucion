@@ -28,5 +28,5 @@ return [
     'plan' => 'Plan',
     'addCourse' => 'Add new Course',
     'editCourse' => 'Edit Course',
-
+    'file'=> 'Plan´s file',
 ];

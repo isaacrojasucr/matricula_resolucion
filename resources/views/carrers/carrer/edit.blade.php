@@ -8,7 +8,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">@lang('form.editing'){{ $carrer-> name }}</div>
                     <div class="panel-body">
-                        <a href="{{ url('/career/career') }}" title="Back">
+                        <a href="{{ url('/career/career') }}" title=@lang('form.back')>
                             <button class="btn btn-info btn"><i class="fa fa-arrow-left" aria-hidden="true"></i>
                                 <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> @lang('form.back')
                             </button>
