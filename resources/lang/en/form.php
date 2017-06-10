@@ -25,4 +25,8 @@ return [
     'cycle'  => 'Cycle',
     'courses' => 'Courses',
     'period' => 'Period',
+    'plan' => 'Plan',
+    'addCourse' => 'Add new Course',
+    'editCourse' => 'Edit Course',
+
 ];

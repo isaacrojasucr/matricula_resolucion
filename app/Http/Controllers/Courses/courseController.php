@@ -60,7 +60,17 @@ class courseController extends Controller
      */
     public function create()
     {
-        return view('course.course.create');
+        $items = carrer::all();
+
+        $carrers =  array();
+
+        foreach ($items as $item){
+
+            $carrers =  array_add($carrers, $item->id, $item->name);
+
+        }
+
+        return view('course.course.create', compact('carrers'));
     }
 
     /**
@@ -72,12 +82,16 @@ class courseController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $requestData = $request->all();
-        
-        course::create($requestData);
+        $course = new course();
 
-        Session::flash('flash_message', 'course added!');
+        $course->name = $request->name;
+        $course->period = $request->period;
+        $course->initial = $request->initial;
+        $course->carrer = $request->carrer;
+        $course->cycle = $request->cycle;
+        $course->plan = $request->file('plan_file')->store('');
+
+        $course->save();
 
         return redirect('course/course');
     }
@@ -105,9 +119,21 @@ class courseController extends Controller
      */
     public function edit($id)
     {
+
+        $items = carrer::all();
+
+        $carrers =  array();
+
+        foreach ($items as $item){
+
+            $carrers =  array_add($carrers, $item->id, $item->name);
+
+        }
+
         $course = course::findOrFail($id);
 
-        return view('course.course.edit', compact('course'));
+
+        return view('course.course.edit', compact('course', 'carrers'));
     }
 
     /**

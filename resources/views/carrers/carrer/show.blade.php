@@ -8,11 +8,11 @@
                     <div class="panel-heading">carrer {{ $carrer->id }}</div>
                     <div class="panel-body">
 
-                        <a href="{{ url('/carrer/carrer') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <a href="{{ url('/carrer/carrer/' . $carrer->id . '/edit') }}" title="Edit carrer"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                        <a href="{{ url('/career/carrer') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/career/carrer/' . $carrer->id . '/edit') }}" title="Edit carrer"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
                         {!! Form::open([
                             'method'=>'DELETE',
-                            'url' => ['carrer/carrer', $carrer->id],
+                            'url' => ['career/career', $carrer->id],
                             'style' => 'display:inline'
                         ]) !!}
                             {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array(

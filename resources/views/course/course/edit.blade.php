@@ -6,9 +6,16 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Edit course #{{ $course->id }}</div>
+                    <div class="panel-heading">@lang('form.editCourse') {{ $course->name}}</div>
                     <div class="panel-body">
-                        <a href="{{ url('/course/course') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+
+                        <a href="{{ url('/course/course') }}" title=@lang('form.back')>
+                            <button class="btn btn-info btn">
+                                <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+                                @lang('form.back')
+                            </button>
+                        </a>
+
                         <br />
                         <br />
 
