@@ -8,7 +8,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">@lang('form.carrer')</div>
                     <div class="panel-body">
-                        <a href="{{ url('/carrer/carrer/create') }}" class="btn btn-success btn-sm" title="@lang('form.add')">
+                        <a href="{{ url('/career/career/create') }}" class="btn btn-success btn-sm" title="@lang('form.add')">
                             <i class="fa fa-plus" aria-hidden="true"></i> @lang('form.add')
                         </a>
                         {!! Form::open(['method' => 'GET', 'url' => '/carrer/carrer', 'class' => 'navbar-form navbar-right', 'role' => 'search'])  !!}

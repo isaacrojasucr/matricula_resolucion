@@ -12,3 +12,4 @@ return [
     'home'=> 'Home',
     'depa'=>'Natural Sciences',
 ];
+

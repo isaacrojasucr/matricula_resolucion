@@ -82,7 +82,7 @@ class carrerController extends Controller
 
         Session::flash('flash_message', 'carrer added!');
 
-        return redirect('carrer/carrer');
+        return redirect('career/career');
     }
 
     /**
@@ -141,7 +141,7 @@ class carrerController extends Controller
 
         Session::flash('flash_message', 'carrer updated!');
 
-        return redirect('carrer/carrer');
+        return redirect('career/career');
     }
 
     /**
@@ -157,6 +157,6 @@ class carrerController extends Controller
 
         Session::flash('flash_message', 'carrer deleted!');
 
-        return redirect('carrer/carrer');
+        return redirect('career/career');
     }
 }
