@@ -61,7 +61,11 @@
                                                         'onclick'=>'return confirm("'.trans('form.comfirm') .'")'
                                                 )) !!}
                                             {!! Form::close() !!}
-                                            <a href="{{ url('/course/course/' . $course[$i]->id . '/edit') }}" title=@lang('form.edit')><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></a>
+                                            <a href="{{ url('/download/'.$course[$i]->plan) }}" title=@lang('form.download')>
+                                                <button class="btn btn-warning btn-xs">
+                                                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
+                                                </button>
+                                            </a>
                                         </td>
                                     </tr>
                                 @endfor

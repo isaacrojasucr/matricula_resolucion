@@ -38,4 +38,5 @@ return [
     'update' => 'Actualizar',
     'user' => 'Usuario',
     'toEditUser' => 'Editar Usuario',
+    'download' => 'Descargar Plan',
 ];

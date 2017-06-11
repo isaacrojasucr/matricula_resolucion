@@ -38,4 +38,5 @@ return [
     'update' => 'Update',
     'user' => 'User',
     'toEditUser' => 'Edit User',
+    'download' => 'Download Plan',
 ];
