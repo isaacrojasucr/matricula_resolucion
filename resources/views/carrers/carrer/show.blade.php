@@ -5,21 +5,29 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">carrer {{ $carrer->id }}</div>
+                    <div class="panel-heading">@lang('form.carrer') {{ $carrer->name}}</div>
                     <div class="panel-body">
 
-                        <a href="{{ url('/career/career') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <a href="{{ url('/career/career/' . $carrer->id . '/edit') }}" title=@lang('form.edit')><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                        <a href="{{ url('/career/career') }}" title=@lang('form.back')>
+                            <button class="btn btn-info btn"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> @lang('form.back')
+                            </button>
+                        </a>
+                        <a href="{{ url('/career/career/' . $carrer->id . '/edit') }}" title=@lang('form.edit')>
+                            <button class="btn btn-primary ">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                            </button>
+                        </a>
                         {!! Form::open([
                             'method'=>'DELETE',
                             'url' => ['career/career', $carrer->id],
                             'style' => 'display:inline'
                         ]) !!}
-                            {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array(
+                            {!! Form::button('<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>', array(
                                     'type' => 'submit',
-                                    'class' => 'btn btn-danger btn-xs',
-                                    'title' => 'Delete carrer',
-                                    'onclick'=>'return confirm("Confirm delete?")'
+                                    'class' => 'btn btn-danger ',
+                                    'title' => ''.trans('form.delete'),
+                                    'onclick'=>'return confirm("'.trans('form.comfirm').'")'
                             ))!!}
                         {!! Form::close() !!}
                         <br/>
@@ -28,10 +36,10 @@
                         <div class="table-responsive">
                             <table class="table table-borderless">
                                 <tbody>
-                                    <tr>
-                                        <th>ID</th><td>{{ $carrer->id }}</td>
-                                    </tr>
-                                    <tr><th> Initial </th><td> {{ $carrer->initial }} </td></tr><tr><th> Name </th><td> {{ $carrer->name }} </td></tr><tr><th> Page </th><td> {{ $carrer->page }} </td></tr>
+                                    <tr><th> @lang('form.initial')</th><td> {{ $carrer->initial }} </td></tr>
+                                    <tr><th> @lang('form.name') </th><td> {{ $carrer->name }} </td></tr>
+                                    <tr><th> @lang('form.page')</th><td> {{ $carrer->page }} </td></tr>
+                                    <tr><th> @lang('form.manager')</th><td> {{ $manager->name.' '.$manager->lastname }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

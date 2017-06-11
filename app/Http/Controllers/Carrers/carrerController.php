@@ -96,7 +96,9 @@ class carrerController extends Controller
     {
         $carrer = carrer::findOrFail($id);
 
-        return view('carrers.carrer.show', compact('carrer'));
+        $manager = user::findOrfail($carrer->manager);
+
+        return view('carrers.carrer.show', compact('carrer','manager'));
     }
 
     /**
