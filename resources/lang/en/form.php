@@ -37,5 +37,7 @@ return [
     'editUser' => 'Editing User',
     'update' => 'Update',
     'user' => 'User',
+    'users' => 'Users',
     'toEditUser' => 'Edit User',
+    'role' => 'Role',
 ];

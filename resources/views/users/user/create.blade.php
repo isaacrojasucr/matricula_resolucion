@@ -8,7 +8,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">@lang('form.createUser')</div>
                     <div class="panel-body">
-                        <a href="{{ url('/carrer/carrer') }}" title="Back">
+                        <a href="{{ url('/users/user') }}" title="Back">
                             <button class="btn btn-info btn"><i class="fa fa-arrow-left" aria-hidden="true"></i>
                                 <span class="glyphicon glyphicon-circle-arrow-left"
                                       aria-hidden="true"></span> @lang('form.back')

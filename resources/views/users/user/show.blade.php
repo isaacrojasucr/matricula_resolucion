@@ -6,21 +6,27 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">@lang(form.user) {{ $user->id }}</div>
+                    <div class="panel-heading">@lang('form.user') {{ $user->name }}</div>
                     <div class="panel-body">
 
-                        <a href="{{ url('/users/user') }}" title="@lang('form.back')"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <a href="{{ url('/users/user/' . $user->id . '/edit') }}" title="@lang('form.toEditUser')"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                        <a href="{{ url('/users/user') }}" title="Back">
+                            <button class="btn btn-info btn"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> @lang('form.back')
+                            </button>
+                        </a>
+                        <a href="{{ url('/users/user/' . $user->id . '/edit') }}" class="btn btn-primary btn" title=@lang('form.edit') >
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                        </a>
                         {!! Form::open([
                             'method'=>'DELETE',
-                            'url' => ['course/course', $course->id],
+                            'url' => ['users/user', $user->id],
                             'style' => 'display:inline'
                         ]) !!}
-                        {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array(
+                        {!! Form::button('<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>', array(
                                 'type' => 'submit',
-                                'class' => 'btn btn-danger btn-xs',
-                                'title' => 'Delete course',
-                                'onclick'=>'return confirm("Confirm delete?")'
+                                'class' => 'btn btn-danger btn',
+                                'title' => trans('delete'),
+                                'onclick'=>'return confirm("'.trans('form.comfirm').'")'
                         ))!!}
                         {!! Form::close() !!}
                         <br/>
@@ -30,9 +36,25 @@
                             <table class="table table-borderless">
                                 <tbody>
                                 <tr>
-                                    <th>ID</th><td>{{ $course->id }}</td>
+                                    <th>ID</th>
+                                    <td>{{ $user->id }}</td>
                                 </tr>
-                                <tr><th> Initial </th><td> {{ $course->initial }} </td></tr><tr><th> Name </th><td> {{ $course->name }} </td></tr><tr><th> Period </th><td> {{ $course->period }} </td></tr>
+                                <tr>
+                                    <th> @lang('form.name') </th>
+                                    <td> {{ $user->name }} </td>
+                                </tr>
+                                <tr>
+                                    <th> @lang('form.lastname') </th>
+                                    <td> {{ $user->lastname }} </td>
+                                </tr>
+                                <tr>
+                                    <th> @lang('form.email')  </th>
+                                    <td> {{ $user->email }} </td>
+                                </tr>
+                                <tr>
+                                    <th> @lang('form.role')  </th>
+                                    <td> {{ $user->role }} </td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>

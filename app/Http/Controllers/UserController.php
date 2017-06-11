@@ -7,15 +7,29 @@ use App\User;
 
 class UserController extends Controller
 {
-
     /**
-     * Display a listing of the resource
+     * Display a listing of the resource.
      *
-     * @return Response
+     * @return \Illuminate\View\View
      */
-    public function index(){
-        //
+    public function index(Request $request)
+    {
+        $keyword = $request->get('search');
+        $perPage = 25;
+
+        if (!empty($keyword)) {
+            $user = user::where('name', 'LIKE', "%$keyword%")
+                ->orWhere('lastname', 'LIKE', "%$keyword%")
+                ->orWhere('email', 'LIKE', "%$keyword%")
+                ->orWhere('role', 'LIKE', "%$keyword%")
+                ->paginate($perPage);
+        } else {
+            $user = user::paginate($perPage);
+        }
+
+        return view('users.user.index', compact('user'));
     }
+
 
     /**
      * Show the form for creating a new resource
@@ -62,10 +76,38 @@ class UserController extends Controller
         $user->email = $Request->email;
         $user->role = 1;
 
-
         $user->update();
-
 
         return redirect('users/user/3/edit');
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\View\View
+     */
+    public function show($id)
+    {
+        $user = user::findOrFail($id);
+
+
+        return view('users.user.show', compact('user'));
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function destroy($id)
+    {
+        user::destroy($id);
+
+        return redirect('users/user');
+    }
+
 }
