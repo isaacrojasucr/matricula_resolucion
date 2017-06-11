@@ -48,15 +48,16 @@ class courseController extends Controller
             $i++;
         }
 
-        foreach ($course as $item){
-            $course->plan = Storage::url(''.$item->plan);
-        }
 
 
 
         return view('course.course.index', compact('course','carrers'));
     }
 
+    public function downloadFile($file){
+        $pathtoFile = storage_path().'\app\\'.$file;
+        return response()->download(''.$pathtoFile);
+    }
 
     /**
      * Show the form for creating a new resource.

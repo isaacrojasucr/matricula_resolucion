@@ -31,6 +31,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::resource('course/course', 'Courses\\courseController');
 
     Route::resource('users/user', 'UserController');
+    
+    Route::get('/download/{file}' , 'Courses\\courseController@downloadFile');
 });
 
 
