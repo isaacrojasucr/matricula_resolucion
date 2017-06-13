@@ -40,4 +40,6 @@ return [
     'users' => 'Users',
     'toEditUser' => 'Edit User',
     'role' => 'Role',
+    'download' => 'Download',
+
 ];
