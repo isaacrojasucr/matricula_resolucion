@@ -8,6 +8,7 @@
 return [
     'initial' => 'Initial',
     'carrer' => 'Career',
+    'careers' => 'Careers',
     'page' => 'Web Site',
     'name' => 'Name',
     'search' => 'Search',

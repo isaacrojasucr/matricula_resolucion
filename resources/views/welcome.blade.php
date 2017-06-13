@@ -69,7 +69,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
-                        <a href="{{ url('/home') }}">{{trans('resolucion.home')}}</a>
+                        <a href="{{ url('/inicio') }}">{{trans('resolucion.home')}}</a>
                     @else
                         <a href="{{ url('/login') }}">{{trans('resolucion.login')}}</a>
                     @endif

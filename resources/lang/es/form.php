@@ -8,6 +8,7 @@
 return [
     'initial' => 'Sigla',
     'carrer' => 'Carrera',
+    'careers' => 'Carreras',
     'page' => 'Sitio web',
     'name' => 'Nombre',
     'search' => 'Buscar',

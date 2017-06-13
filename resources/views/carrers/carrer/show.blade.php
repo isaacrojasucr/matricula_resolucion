@@ -8,19 +8,19 @@
                     <div class="panel-heading">@lang('form.carrer') {{ $carrer->name}}</div>
                     <div class="panel-body">
 
-                        <a href="{{ url('/career/career') }}" title=@lang('form.back')>
+                        <a href="{{ url('/admin/carreras') }}" title=@lang('form.back')>
                             <button class="btn btn-info btn"><i class="fa fa-arrow-left" aria-hidden="true"></i>
                                 <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> @lang('form.back')
                             </button>
                         </a>
-                        <a href="{{ url('/career/career/' . $carrer->id . '/edit') }}" title=@lang('form.edit')>
+                        <a href="{{ url('/admin/carreras/' . $carrer->id . '/edit') }}" title=@lang('form.edit')>
                             <button class="btn btn-primary ">
                                 <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                             </button>
                         </a>
                         {!! Form::open([
                             'method'=>'DELETE',
-                            'url' => ['career/career', $carrer->id],
+                            'url' => ['admin/carreras', $carrer->id],
                             'style' => 'display:inline'
                         ]) !!}
                             {!! Form::button('<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>', array(
