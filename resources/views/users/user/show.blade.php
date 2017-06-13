@@ -9,17 +9,17 @@
                     <div class="panel-heading">@lang('form.user') {{ $user->name }}</div>
                     <div class="panel-body">
 
-                        <a href="{{ url('/users/user') }}" title="Back">
+                        <a href="{{ url('/admin/usuarios') }}" title="Back">
                             <button class="btn btn-info btn"><i class="fa fa-arrow-left" aria-hidden="true"></i>
                                 <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> @lang('form.back')
                             </button>
                         </a>
-                        <a href="{{ url('/users/user/' . $user->id . '/edit') }}" class="btn btn-primary btn" title=@lang('form.edit') >
+                        <a href="{{ url('/admin/usuarios/' . $user->id . '/edit') }}" class="btn btn-primary btn" title=@lang('form.edit') >
                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                         </a>
                         {!! Form::open([
                             'method'=>'DELETE',
-                            'url' => ['users/user', $user->id],
+                            'url' => ['admin/usuarios', $user->id],
                             'style' => 'display:inline'
                         ]) !!}
                         {!! Form::button('<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>', array(

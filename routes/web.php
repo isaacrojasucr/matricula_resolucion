@@ -30,7 +30,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::resource('admin/cursos', 'Courses\\courseController');
 
-    Route::resource('users/user', 'UserController');
+    Route::resource('admin/usuarios', 'UserController');
     
     Route::get('/download/{file}' , 'Courses\\courseController@downloadFile');
 

@@ -8,11 +8,11 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">@lang('form.users')</div>
                     <div class="panel-body">
-                        <a href="{{ url('/users/user/create') }}" class="btn btn-success btn-sm" title=@lang('form.add')>
+                        <a href="{{ url('/admin/usuarios/create') }}" class="btn btn-success btn-sm" title=@lang('form.add')>
                             <i class="fa fa-plus" aria-hidden="true"></i> @lang('form.add')
                         </a>
 
-                        {!! Form::open(['method' => 'GET', 'url' => '/users/user', 'class' => 'navbar-form navbar-right', 'role' => 'search'])  !!}
+                        {!! Form::open(['method' => 'GET', 'url' => '/admin/usuarios', 'class' => 'navbar-form navbar-right', 'role' => 'search'])  !!}
                         <div class="input-group">
                             <input type="text" class="form-control" name="search" placeholder=@lang('form.search')>
                             <span class="input-group-btn">
@@ -44,11 +44,11 @@
                                         <td>{{ $user[$i]->lastname }}</td>
                                         <td>{{ $user[$i]->email }}</td>
                                         <td>
-                                            <a href="{{ url('/users/user/' . $user[$i]->id) }}" title= @lang('form.view') ><button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button></a>
-                                            <a href="{{ url('/users/user/' . $user[$i]->id . '/edit') }}" title=@lang('form.edit')><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></a>
+                                            <a href="{{ url('/admin/usuarios/' . $user[$i]->id) }}" title= @lang('form.view') ><button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button></a>
+                                            <a href="{{ url('/admin/usuarios/' . $user[$i]->id . '/edit') }}" title=@lang('form.edit')><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></a>
                                             {!! Form::open([
                                                 'method'=>'DELETE',
-                                                'url' => ['/users/user', $user[$i]->id],
+                                                'url' => ['/admin/usuarios', $user[$i]->id],
                                                 'style' => 'display:inline'
                                             ]) !!}
                                             {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>', array(
@@ -58,8 +58,7 @@
                                                     'onclick'=>'return confirm("'.trans('form.comfirm') .'")'
                                             )) !!}
                                             {!! Form::close() !!}
-                                            <a href="{{ url('/users/user/' . $user[$i]->id . '/edit') }}" title=@lang('form.edit')><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></a>
-                                        </td>
+                                         </td>
                                     </tr>
                                 @endfor
                                 </tbody>

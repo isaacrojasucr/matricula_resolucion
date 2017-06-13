@@ -8,7 +8,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">@lang('form.createUser')</div>
                     <div class="panel-body">
-                        <a href="{{ url('/users/user') }}" title="Back">
+                        <a href="{{ url('/admin/usuarios') }}" title="Back">
                             <button class="btn btn-info btn"><i class="fa fa-arrow-left" aria-hidden="true"></i>
                                 <span class="glyphicon glyphicon-circle-arrow-left"
                                       aria-hidden="true"></span> @lang('form.back')
@@ -24,7 +24,7 @@
                                 @endforeach
                             </ul>
                         @endif
-                        {!! Form::open(['route'=>'user.store', 'method'=>'POST']) !!}
+                        {!! Form::open(['route'=>'usuarios.store', 'method'=>'POST']) !!}
                         <div class="form-group">
                             {!! Form::label('', trans('form.name').': ') !!}
                             {!! Form::text('name', null, ['class' => 'form-control', 'placeholder'=>trans('form.holderName'), 'required'=>'required']) !!}

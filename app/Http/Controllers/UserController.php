@@ -55,7 +55,7 @@ class UserController extends Controller
         $user->role = 1;
         $user->save();
 
-        return view('users.user.create');
+        return redirect('admin/usuarios');
     }
 
     public function edit($id)
@@ -78,7 +78,7 @@ class UserController extends Controller
 
         $user->update();
 
-        return redirect('users/user/3/edit');
+        return redirect('admin/usuarios');
     }
 
     /**
@@ -107,7 +107,7 @@ class UserController extends Controller
     {
         user::destroy($id);
 
-        return redirect('users/user');
+        return redirect('admin/usuarios');
     }
 
 }
