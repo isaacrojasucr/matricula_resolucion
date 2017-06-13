@@ -8,11 +8,11 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">@lang('form.courses')</div>
                     <div class="panel-body">
-                        <a href="{{ url('/course/course/create') }}" class="btn btn-success btn-sm" title=@lang('form.add')>
+                        <a href="{{ url('/admin/cursos/create') }}" class="btn btn-success btn-sm" title=@lang('form.add')>
                             <i class="fa fa-plus" aria-hidden="true"></i> @lang('form.add')
                         </a>
 
-                        {!! Form::open(['method' => 'GET', 'url' => '/course/course', 'class' => 'navbar-form navbar-right', 'role' => 'search'])  !!}
+                        {!! Form::open(['method' => 'GET', 'url' => '/admin/cursos', 'class' => 'navbar-form navbar-right', 'role' => 'search'])  !!}
                         <div class="input-group">
                             <input type="text" class="form-control" name="search" placeholder=@lang('form.search')>
                             <span class="input-group-btn">
@@ -47,11 +47,11 @@
                                         <td>{{ $course[$i]->period }}</td>
                                         <td>{{ $carrers[$i] }}</td>
                                         <td>
-                                            <a href="{{ url('/course/course/' . $course[$i]->id) }}" title= @lang('form.view') ><button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button></a>
-                                            <a href="{{ url('/course/course/' . $course[$i]->id . '/edit') }}" title=@lang('form.edit')><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></a>
+                                            <a href="{{ url('/admin/cursos/' . $course[$i]->id) }}" title= @lang('form.view') ><button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button></a>
+                                            <a href="{{ url('/admin/cursos/' . $course[$i]->id . '/edit') }}" title=@lang('form.edit')><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></a>
                                             {!! Form::open([
                                                 'method'=>'DELETE',
-                                                'url' => ['/course/course', $course[$i]->id],
+                                                'url' => ['/admin/cursos', $course[$i]->id],
                                                 'style' => 'display:inline'
                                             ]) !!}
                                                 {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>', array(

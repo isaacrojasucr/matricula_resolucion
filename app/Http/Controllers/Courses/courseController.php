@@ -105,7 +105,7 @@ class courseController extends Controller
 
         $course->save();
 
-        return redirect('course/course');
+        return redirect('admin/cursos');
     }
 
     /**
@@ -178,7 +178,7 @@ class courseController extends Controller
 
         $course->update();
 
-        return redirect('course/course');
+        return redirect('admin/cursos');
     }
 
     /**
@@ -194,6 +194,6 @@ class courseController extends Controller
 
         Session::flash('flash_message', 'course deleted!');
 
-        return redirect('course/course');
+        return redirect('admin/cursos');
     }
 }

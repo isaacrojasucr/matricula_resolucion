@@ -8,7 +8,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">@lang('form.addCourse')</div>
                     <div class="panel-body">
-                        <a href="{{ url('/course/course') }}" title=@lang('form.back')>
+                        <a href="{{ url('/admin/cursos') }}" title=@lang('form.back')>
                             <button class="btn btn-info btn">
                                 <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
                                  @lang('form.back')
@@ -25,7 +25,7 @@
                             </ul>
                         @endif
 
-                        {!! Form::open(['url' => '/course/course', 'class' => 'form-horizontal', 'files' => true]) !!}
+                        {!! Form::open(['url' => '/admin/cursos', 'class' => 'form-horizontal', 'files' => true]) !!}
 
                         @include ('course.course.form')
 

@@ -28,7 +28,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::resource('admin/carreras', 'Carrers\\carrerController');
 
-    Route::resource('course/course', 'Courses\\courseController');
+    Route::resource('admin/cursos', 'Courses\\courseController');
 
     Route::resource('users/user', 'UserController');
     

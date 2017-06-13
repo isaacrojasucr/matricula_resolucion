@@ -9,7 +9,7 @@
                     <div class="panel-heading">@lang('form.editCourse') {{ $course->name}}</div>
                     <div class="panel-body">
 
-                        <a href="{{ url('/course/course') }}" title=@lang('form.back')>
+                        <a href="{{ url('/admin/cursos') }}" title=@lang('form.back')>
                             <button class="btn btn-info btn">
                                 <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
                                 @lang('form.back')
@@ -29,7 +29,7 @@
 
                         {!! Form::model($course, [
                             'method' => 'PATCH',
-                            'url' => ['/course/course', $course->id],
+                            'url' => ['/admin/cursos', $course->id],
                             'class' => 'form-horizontal',
                             'files' => true
                         ]) !!}
