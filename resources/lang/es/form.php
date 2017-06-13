@@ -12,7 +12,7 @@ return [
     'page' => 'Sitio web',
     'name' => 'Nombre',
     'search' => 'Buscar',
-    'add' => 'Agregar Nueva',
+    'add' => 'Agregar ',
     'act' => 'Acciones',
     'manager' => 'Coordinador',
     'view' => 'Ver',
@@ -42,5 +42,15 @@ return [
     'toEditUser' => 'Editar Usuario',
     'role' => 'Puesto',
     'download' => 'Descargar',
+    'processes' => 'Procesos',
+    'createProcess' => 'Creando un nuevo proceso',
+    'editProcess'=> 'Editando Proceso',
+    'process' => 'Proceso',
+    'year' => 'Año',
+    'iniDate' => 'Fecha Inicial',
+    'finalDate' => 'Fecha Final',
+    'remDays' => 'Dias Restantes',
+    'ended' => 'Finalizado',
+
 
 ];

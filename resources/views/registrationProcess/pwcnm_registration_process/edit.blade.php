@@ -4,12 +4,16 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-md-9">
+            <div class="col-md-9 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Edit pwcnm_registration_process #{{ $pwcnm_registration_process->id }}</div>
+                    <div class="panel-heading">@lang('form.editProcess')</div>
                     <div class="panel-body">
-                        <a href="{{ url('/registrationProcess/pwcnm_registration_process') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <br />
+                        <a href="{{ url('/admin/procesos') }}" title=@lang('form.back')>
+                            <button class="btn btn-info btn"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> @lang('form.back')
+                            </button>
+                        </a>
+                            <br />
                         <br />
 
                         @if ($errors->any())
@@ -22,12 +26,12 @@
 
                         {!! Form::model($pwcnm_registration_process, [
                             'method' => 'PATCH',
-                            'url' => ['/registrationProcess/pwcnm_registration_process', $pwcnm_registration_process->id],
+                            'url' => ['/admin/procesos', $pwcnm_registration_process->id],
                             'class' => 'form-horizontal',
                             'files' => true
                         ]) !!}
 
-                        @include ('registrationProcess.pwcnm_registration_process.form', ['submitButtonText' => 'Update'])
+                        @include ('registrationProcess.pwcnm_registration_process.form', ['submitButtonText' => ''.trans('form.save')])
 
                         {!! Form::close() !!}
 

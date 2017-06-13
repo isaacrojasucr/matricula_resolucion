@@ -31,6 +31,12 @@ class pwcnm_registration_processController extends Controller
             $pwcnm_registration_process = pwcnm_registration_process::paginate($perPage);
         }
 
+        foreach ($pwcnm_registration_process as $item){
+            $dias = $this->dias_restantes($item->FinalDate);
+
+            $item->FinalDate = $dias;
+        }
+
         return view('registrationProcess.pwcnm_registration_process.index', compact('pwcnm_registration_process'));
     }
 
@@ -58,9 +64,8 @@ class pwcnm_registration_processController extends Controller
         
         pwcnm_registration_process::create($requestData);
 
-        Session::flash('flash_message', 'pwcnm_registration_process added!');
 
-        return redirect('registrationProcess/pwcnm_registration_process');
+        return redirect('admin/procesos');
     }
 
     /**
@@ -109,7 +114,7 @@ class pwcnm_registration_processController extends Controller
 
         Session::flash('flash_message', 'pwcnm_registration_process updated!');
 
-        return redirect('registrationProcess/pwcnm_registration_process');
+        return redirect('admin/procesos');
     }
 
     /**
@@ -126,5 +131,13 @@ class pwcnm_registration_processController extends Controller
         Session::flash('flash_message', 'pwcnm_registration_process deleted!');
 
         return redirect('registrationProcess/pwcnm_registration_process');
+    }
+
+    function dias_restantes($fecha_final) {
+        $fecha_actual = date("Y-m-d");
+        $s = strtotime($fecha_final)-strtotime($fecha_actual);
+        $d = intval($s/86400);
+        $diferencia = $d;
+        return $diferencia;
     }
 }

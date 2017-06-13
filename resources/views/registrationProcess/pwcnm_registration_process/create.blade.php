@@ -6,9 +6,13 @@
 
             <div class="col-md-9">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Create New pwcnm_registration_process</div>
+                    <div class="panel-heading">@lang('form.createProcess')</div>
                     <div class="panel-body">
-                        <a href="{{ url('/registrationProcess/pwcnm_registration_process') }}" title="Back"><button class="btn btn-warning btn-xs"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/admin/procesos') }}" title=@lang('form.back')>
+                            <button class="btn btn-info btn"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> @lang('form.back')
+                            </button>
+                        </a>
                         <br />
                         <br />
 
@@ -20,7 +24,7 @@
                             </ul>
                         @endif
 
-                        {!! Form::open(['url' => '/registrationProcess/pwcnm_registration_process', 'class' => 'form-horizontal', 'files' => true]) !!}
+                        {!! Form::open(['url' => '/admin/procesos', 'class' => 'form-horizontal', 'files' => true]) !!}
 
                         @include ('registrationProcess.pwcnm_registration_process.form')
 

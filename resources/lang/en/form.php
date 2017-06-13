@@ -12,7 +12,7 @@ return [
     'page' => 'Web Site',
     'name' => 'Name',
     'search' => 'Search',
-    'add' => 'Add New',
+    'add' => 'Add ',
     'act' => 'Actions',
     'manager' => 'Manager',
     'view' => 'View',
@@ -42,5 +42,13 @@ return [
     'toEditUser' => 'Edit User',
     'role' => 'Role',
     'download' => 'Download',
-
+    'processes' => 'Processes',
+    'createProcess' => 'Creating a new process',
+    'editProcess'=> 'Process Edition',
+    'process' => 'Process',
+    'year' => 'Year',
+    'iniDate' => 'Initial date',
+    'finalDate' => 'Final Date',
+    'remDays' => 'Remaining days',
+    'ended' => 'Ended',
 ];
