@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Isaac
- * Date: 8/6/2017
- * Time: 3:27 PM
- */
 return [
     'initial' => 'Sigla',
     'carrer' => 'Carrera',
@@ -51,6 +45,10 @@ return [
     'finalDate' => 'Fecha Final',
     'remDays' => 'Dias Restantes',
     'ended' => 'Finalizado',
+    'id' => 'Identificador',
+    'createLocation' => 'Creando Sede',
+    'editLocation' => 'Editando Sede',
+    'location' => 'Sede',
 
 
 ];

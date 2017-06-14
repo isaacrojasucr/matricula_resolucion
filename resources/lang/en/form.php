@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Isaac
- * Date: 8/6/2017
- * Time: 3:49 PM
- */
 return [
     'initial' => 'Initial',
     'carrer' => 'Career',
@@ -51,4 +45,8 @@ return [
     'finalDate' => 'Final Date',
     'remDays' => 'Remaining days',
     'ended' => 'Ended',
+    'id' => 'Identificator',
+    'createLocation' => 'Creanting second location',
+    'editLocation' => 'Editing second location',
+    'location' => 'Second location',
 ];

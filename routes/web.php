@@ -35,5 +35,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/download/{file}' , 'Courses\\courseController@downloadFile');
 
     Route::resource('admin/procesos', 'RegistrationProcesses\\pwcnm_registration_processController');
-});
 
+    Route::resource('admin/sedes', 'SecondLocations\\pwcnm_second_locationController');
+});
