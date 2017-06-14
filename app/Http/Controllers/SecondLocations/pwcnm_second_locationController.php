@@ -100,7 +100,7 @@ class pwcnm_second_locationController extends Controller
         
         $requestData = $request->all();
 
-        
+
         
         $pwcnm_second_location = pwcnm_second_location::findOrFail($id);
         $pwcnm_second_location->update($requestData);
