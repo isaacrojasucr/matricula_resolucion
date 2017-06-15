@@ -122,12 +122,18 @@
 
                 <div class="form-group">
 
-                    <div class="col-md-3">
-                        {!! Form::label('', ''.trans('form.studentName')) !!}
-                    </div>
-                    <div class="col-md-9">
-                        {!! Form::text('studentName', null, ['class' => 'form-control' , 'required' => 'required', 'placeholder'=>''.trans('form.studentName')]) !!}
-                    </div>
+                    <table class="table table-hover" id="tabla">
+                        <thead>
+                        <tr>
+                            <th>@lang('form.course')</th>
+                            <th>@lang('form.group')</th>
+                            <th>@lang('form.timesAttended')</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
 
                 </div>
 
