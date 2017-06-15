@@ -26,6 +26,8 @@
                     {!! Form::label('', ''.trans('form.oficio')) !!}
                 </div>
 
+                <hr style="width:100%;">
+
                 <div class="form-group">
 
                     <div class="col-md-3">
@@ -36,10 +38,11 @@
                     </div>
 
                 </div>
-                 </br>
+                </br>
+                <hr style="width:100%;">
+
                 <div class="form-group">
-                    </br>
-                    <div  class="col-md-4">
+                    <div class="col-md-4">
                         <div class="col-md-6">
 
                             {!! Form::label('', ''.trans('form.carne')) !!}
@@ -50,9 +53,66 @@
                     </div>
 
                     <div class="col-md-8">
+                        <div class="col-md-4">
 
+                            {!! Form::label('', ''.trans('form.phone')) !!}
+                        </div>
+                        <div class="col-md-8">
+                            {!! Form::number('phone', null, ['class' => 'form-control' , 'required' => 'required', 'placeholder'=>''.trans('form.phone')]) !!}
+                        </div>
                     </div>
                 </div>
+                </br>
+                <hr style="width:100%;">
+
+                <div class="form-group">
+
+                    <div class="col-md-3">
+                        {!! Form::label('', ''.trans('form.email')) !!}
+                    </div>
+                    <div class="col-md-9">
+                        {!! Form::email('email', null, ['class' => 'form-control' , 'required' => 'required', 'placeholder'=>''.trans('form.email')]) !!}
+                    </div>
+
+                </div>
+                </br>
+                <hr style="width:100%;">
+
+                <div class="form-group">
+
+                    <div class="col-md-3">
+                        {!! Form::label('', ''.trans('form.courses')) !!}
+                    </div>
+                    <div class="col-md-9">
+                        {!! Form::select('carrer', $course, null,['class' => 'form-control']) !!}
+                    </div>
+
+                </div>
+                </br>
+                <hr style="width:100%;">
+
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <div class="col-md-3">
+                            {!! Form::label('', ''.trans('form.group')) !!}
+                        </div>
+                        <div class="col-md-9">
+                            {!! Form::number('group', null, ['class' => 'form-control' , 'required' => 'required', 'placeholder'=>''.trans('form.studentName')]) !!}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-3">
+                            {!! Form::label('', ''.trans('form.group')) !!}
+                        </div>
+                        <div class="col-md-9">
+                            {!! Form::number('group', null, ['class' => 'form-control' , 'required' => 'required', 'placeholder'=>''.trans('form.studentName')]) !!}
+                        </div>
+                    </div>
+
+                </div>
+                </br>
+                <hr style="width:100%;">
+
 
 
                 <div class="form-group center">

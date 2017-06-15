@@ -35,7 +35,16 @@ class inscriptionController extends Controller
      */
     public function creation($id)
     {
-        return view('inscription.student.create', compact($id));
+        $temp = course::where('carrer','=',$id)->get();
+
+        $course = array();
+
+
+        foreach ($temp as $item){
+            $course =  array_add($course, $item->id, $item->initial.' - '.$item->name);
+        }
+
+        return view('inscription.student.create', compact('id','course'));
     }
 
     /**
