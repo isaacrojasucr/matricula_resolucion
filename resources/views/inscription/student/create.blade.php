@@ -39,7 +39,7 @@
                  </br>
                 <div class="form-group">
                     </br>
-                    <div class="col-md-4">
+                    <div  class="col-md-4">
                         <div class="col-md-6">
 
                             {!! Form::label('', ''.trans('form.carne')) !!}
@@ -48,11 +48,16 @@
                             {!! Form::text('studentId', null, ['class' => 'form-control' , 'required' => 'required', 'placeholder'=>''.trans('form.carne')]) !!}
                         </div>
                     </div>
+
+                    <div class="col-md-8">
+
+                    </div>
                 </div>
 
 
-                <div class="form-group">
-                    {!! Form::submit('Enviar', ['class' => 'btn btn-success ' ] ) !!}
+                <div class="form-group center">
+                    </br>
+                    {!! Form::submit(''.trans('form.save'), ['class' => 'btn btn-success ' ] ) !!}
                 </div>
                 {!! Form::close() !!}
             </div>
