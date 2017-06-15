@@ -42,5 +42,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('matricula/carrera/{id}' , 'inscriptionController@creation');
 
+    Route::resource('proceso/coordinador','managerCheckController');
+
 
 });

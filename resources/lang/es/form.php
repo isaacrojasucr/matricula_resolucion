@@ -58,6 +58,7 @@ return [
     'carne' => 'Carné',
     'phone' => 'Telefono',
     'SLtoattended' => 'Sede en la que desea llevar el curso',
-
-
+    'studentRequestCheck' => 'Revisión de Peticiones de Estudiantes para Cursos por Resolución',
+    'courseName' => 'Curso Solicitado',
+    'timesAttended' => 'Veces Cursado',
 ];
