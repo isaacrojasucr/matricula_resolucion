@@ -49,4 +49,6 @@ return [
     'createLocation' => 'Creanting second location',
     'editLocation' => 'Editing second location',
     'location' => 'Second location',
+    'selectCareer' => 'Select a career to start your resolution inscription',
+    'careersdep' => 'departament´s careers',
 ];

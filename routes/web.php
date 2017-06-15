@@ -37,4 +37,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::resource('admin/procesos', 'RegistrationProcesses\\pwcnm_registration_processController');
 
     Route::resource('admin/sedes', 'SecondLocations\\pwcnm_second_locationController');
+
+    Route::resource('matricula','inscriptionController');
+
+    Route::get('matricula/carrera/{id}' , 'inscriptionController@creation');
+
+
 });

@@ -49,6 +49,9 @@ return [
     'createLocation' => 'Creando Sede',
     'editLocation' => 'Editando Sede',
     'location' => 'Sede',
+    'selectCareer' => 'Seleccione una carrera para iniciar su matrícula por resolución',
+    'careersdep' => 'Carreras del departamento',
+    
 
 
 ];
