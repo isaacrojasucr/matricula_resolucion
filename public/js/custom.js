@@ -25,3 +25,25 @@ function genera_tabla() {
 
 }
 
+function genera_req() {
+    var tabla = document.getElementById("tabla2");
+
+    var fila = tabla.insertRow(2);
+    var celda1 = fila.insertCell(0);
+    var celda2 =  fila.insertCell(1);
+    var celda3 =  fila.insertCell(2);
+    var celda4 =  fila.insertCell(3);
+
+    var id = document.getElementsByName("subid")[0].value;
+    var name = document.getElementsByName("subname")[0].value;
+    var result = document.getElementsByName("result")[0].value;
+    var cycle = document.getElementsByName("carrer")[0].value;
+
+
+    celda1.innerHTML = id;
+    celda2.innerHTML = name;
+    celda3.innerHTML = result;
+    celda4.innerHTML = cycle;
+
+}
+

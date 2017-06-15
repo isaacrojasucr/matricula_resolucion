@@ -62,5 +62,11 @@ return [
     'courseName' => 'Curso Solicitado',
     'timesAttended' => 'Veces Cursado',
     'group' => 'Grupo',
-    'observation' => 'Observaciones'
-];
+    'observation' => 'Observaciones',
+    'declaration' => 'Declaración jurada',
+    'headDeclaration' => 'Si el o los cursos solicitados posee requisitos, por favor completar la siguiente Declaración jurada.',
+    'warning' => 'Para efectos de matricula declaro bajo juramento que cursé las siguientes asignaturas que indico a continuación y obtuve los siguientes resultados',
+    'subjectid'=>'Sigla de la asignatura',
+    'result'=>'Resultado',
+    'cycleAP'=>'Ciclo de aprobación',
+    ];

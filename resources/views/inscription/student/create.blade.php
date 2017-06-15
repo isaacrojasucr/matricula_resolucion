@@ -139,13 +139,67 @@
 
 
                 </div>
+                <hr style="width:100%;">
+
+                <div class="form-group">
+
+                    <div class="col-md-8 well">
+                        {!! Form::label('', ''.trans('form.headDeclaration')) !!}
+
+                    </div>
+
+                    <div class="col-md-4 well center" style="font-size: large; height: 85px;">
+                        {!! Form::label('', ''.trans('form.declaration')) !!}
+                    </div>
+                    <div class="center">
+
+                        {!! Form::label('', ''.trans('form.warning')) !!}
+                    </div>
+
+
+                </div>
                 </br>
                 <hr style="width:100%;">
 
+                <div class="form-group">
+                    <div class="well">
+                        <table class="table table-hover" id="tabla2" name="tabla2">
+                            <thead>
+                            <tr>
+                                <th>@lang('form.subjectid')</th>
+                                <th>@lang('form.name')</th>
+                                <th>@lang('form.result')</th>
+                                <th>@lang('form.cycleAP')</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th>{!! Form::text('subid', null, ['class' => 'form-control' ]) !!}</th>
+                                <th>{!! Form::text('subname', null, ['class' => 'form-control' ]) !!}</th>
+                                <th>{!! Form::number('result', null, ['class' => 'form-control' ]) !!}</th>
+
+                                <th>{!! Form::number('cycle', null, ['class' => 'form-control col-md-3' ]) !!}
+                                </th>
+                                <th>
+                                    <button type="button" class="btn btn-info col-md-12 " onclick="genera_req()"> @lang('form.add')
+                                    </button>
+                                </th>
+
+
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+                <hr style="width:100%;">
 
                 <div class="form-group center">
                     </br>
                     {!! Form::submit(''.trans('form.save'), ['class' => 'btn btn-success ' ] ) !!}
+
+
                 </div>
                 {!! Form::close() !!}
             </div>

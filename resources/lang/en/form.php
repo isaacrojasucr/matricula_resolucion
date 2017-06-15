@@ -46,7 +46,7 @@ return [
     'remDays' => 'Remaining days',
     'ended' => 'Ended',
     'id' => 'Identificator',
-    'createLocation' => 'Creanting second location',
+    'createLocation' => 'Creating second location',
     'editLocation' => 'Editing second location',
     'location' => 'Second location',
     'selectCareer' => 'Select a career to start your resolution inscription',
@@ -62,5 +62,13 @@ return [
     'courseName' => 'Course Requested',
     'timesAttended' => 'Times Attended',
     'group' => 'Group',
-    'observation' => 'Observations'
+    'observation' => 'Observations',
+    'declaration' => 'Affidavit',
+    'headDeclaration' => 'If the requested course (s) has requirements, please complete the following Affidavit.',
+    'headDeclaration' => 'For purposes of enrollment I declare under oath that I attended the following subjects that I indicated below and obtained the following results',
+    'subjectid'=>'subject initial',
+    'result'=>'Result',
+    'cycleAP'=>'Approval Cycle ',
+
+
 ];
