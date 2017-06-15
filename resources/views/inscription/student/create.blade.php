@@ -111,7 +111,7 @@
                     </div>
 
                     <div class="col-md-4">
-                        <button type="button" id="add" class="btn btn-info col-md-12" onclick=""> @lang('form.add')
+                        <button type="button" class="btn btn-info col-md-12" onclick="genera_tabla()"> @lang('form.add')
                         </button>
                     </div>
 
@@ -121,22 +121,26 @@
                 <hr style="width:100%;">
 
                 <div class="form-group">
+                    <div class="well">
+                        <table class="table table-hover" id="tabla" name="tabla">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>@lang('form.courses')</th>
+                                <th>@lang('form.group')</th>
+                                <th>@lang('form.timesAttended')</th>
+                            </tr>
+                            </thead>
+                            <tbody>
 
-                    <table class="table table-hover" id="tabla">
-                        <thead>
-                        <tr>
-                            <th>@lang('form.course')</th>
-                            <th>@lang('form.group')</th>
-                            <th>@lang('form.timesAttended')</th>
-                        </tr>
-                        </thead>
-                        <tbody>
+                            </tbody>
+                        </table>
+                    </div>
 
-                        </tbody>
-                    </table>
 
                 </div>
-
+                </br>
+                <hr style="width:100%;">
 
 
                 <div class="form-group center">

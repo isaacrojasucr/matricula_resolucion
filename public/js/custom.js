@@ -2,29 +2,26 @@
  * Created by kevsa on 6/6/2017.
  */
 
+function genera_tabla() {
+    var tabla = document.getElementById("tabla");
 
-$(document).ready(function(){
-    /**
-     * Funcion para añadir una nueva columna en la tabla
-     */
-    $("#add").click(function(){
-        var tds=$("#tabla tr:first td").length;
-        var trs=$("#tabla tr").length;
+    var fila = tabla.insertRow(1);
+    var celda1 = fila.insertCell(0);
+    var celda2 =  fila.insertCell(1);
+    var celda3 =  fila.insertCell(2);
+    var celda4 =  fila.insertCell(3);
 
-        var nuevaFila="<tr>";
+    var group = document.getElementsByName("group")[0].value;
+    var ta = document.getElementsByName("timesAttended")[0].value;
+    var id = document.getElementsByName("carrer")[0].value;
+    var v = document.getElementsByName("carrer")[0];
+    var text = v.options[v.selectedIndex].text;
 
-        var group = document.getElementsByName("group")[0].value;
-        var TA = document.getElementsByName("group")[0].value
-        var carrer = document.getElementsByName("group")[0].value
+    
+    celda1.innerHTML = id;
+    celda2.innerHTML = text;
+    celda3.innerHTML = group;
+    celda4.innerHTML = ta;
 
-        nuevaFila+="<td>columna "+(1)+" Añadida con jquery</td>";
-        nuevaFila+="<td>columna "+(2)+" Añadida con jquery</td>";
-        nuevaFila+="<td>columna "+(3)+" Añadida con jquery</td>";
+}
 
-        nuevaFila+="<td>"+(trs+1)+" columnas";
-        nuevaFila+="</tr>";
-        $("#tabla").append(nuevaFila);
-
-
-    });
-});
