@@ -61,4 +61,6 @@ return [
     'studentRequestCheck' => 'Students Request Check For Resolution Courses',
     'courseName' => 'Course Requested',
     'timesAttended' => 'Times Attended',
+    'group' => 'Group',
+    'observation' => 'Observations'
 ];

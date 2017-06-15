@@ -3,6 +3,11 @@
  */
 
 
-function addToTable() {
-    
-}
+$(document).ready(function(){
+    /**
+     * Funcion para añadir una nueva columna en la tabla
+     */
+    $("#add").click(function(){
+        
+    })
+});

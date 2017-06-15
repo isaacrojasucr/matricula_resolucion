@@ -92,26 +92,44 @@
                 <hr style="width:100%;">
 
                 <div class="form-group">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="col-md-3">
                             {!! Form::label('', ''.trans('form.group')) !!}
                         </div>
                         <div class="col-md-9">
-                            {!! Form::number('group', null, ['class' => 'form-control' , 'required' => 'required', 'placeholder'=>''.trans('form.studentName')]) !!}
+                            {!! Form::number('group', null, ['class' => 'form-control' ]) !!}
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="col-md-3">
-                            {!! Form::label('', ''.trans('form.group')) !!}
+
+                    <div class="col-md-4">
+                        <div class="col-md-6">
+                            {!! Form::label('', ''.trans('form.timesAttended')) !!}
                         </div>
-                        <div class="col-md-9">
-                            {!! Form::number('group', null, ['class' => 'form-control' , 'required' => 'required', 'placeholder'=>''.trans('form.studentName')]) !!}
+                        <div class="col-md-6">
+                            {!! Form::number('timesAttended', null, ['class' => 'form-control' ]) !!}
                         </div>
                     </div>
+
+                    <div class="col-md-4">
+                        <button type="button" id="add" class="btn btn-info col-md-12" onclick=""> @lang('form.add')
+                        </button>
+                    </div>
+
 
                 </div>
                 </br>
                 <hr style="width:100%;">
+
+                <div class="form-group">
+
+                    <div class="col-md-3">
+                        {!! Form::label('', ''.trans('form.studentName')) !!}
+                    </div>
+                    <div class="col-md-9">
+                        {!! Form::text('studentName', null, ['class' => 'form-control' , 'required' => 'required', 'placeholder'=>''.trans('form.studentName')]) !!}
+                    </div>
+
+                </div>
 
 
 

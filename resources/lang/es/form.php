@@ -61,4 +61,6 @@ return [
     'studentRequestCheck' => 'Revisión de Peticiones de Estudiantes para Cursos por Resolución',
     'courseName' => 'Curso Solicitado',
     'timesAttended' => 'Veces Cursado',
+    'group' => 'Grupo',
+    'observation' => 'Observaciones'
 ];
