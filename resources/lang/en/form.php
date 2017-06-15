@@ -62,5 +62,10 @@ return [
     'courseName' => 'Course Requested',
     'timesAttended' => 'Times Attended',
     'group' => 'Group',
-    'observation' => 'Observations'
+    'observation' => 'Observations',
+    'accept' => 'Accept',
+    'deny' => 'Deny',
+    'infoManagerCheck1' => 'By pressing the option accept',
+    'infoManagerCheck2' => 'you will accept the student\'s inscription by resolution and he/she will go to the next part of the process, and by the opction deny',
+    'infoManagerCheck3' => 'you will deny the inscription and will have to send an email with the reason why.',
 ];

@@ -10,16 +10,24 @@
 
                 <div class="panel-body">
 
+                    <div class="well">
+                        @lang('form.infoManagerCheck1') <button class="btn btn-success btn-xs"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+                        @lang('form.infoManagerCheck2') <button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                        @lang('form.infoManagerCheck3')
+                    </div>
+
+
+
                     <br/>
                     <br/>
-                    <div class="table-responsive">
+                    <div class="table-responsive" style="height: 500px !important;    overflow: scroll;">
                         <table class="table table-borderless">
                             <thead>
                             <tr>
-                                <th>@lang('form.name')</th>
+                                <th style="max-width: 70px">@lang('form.name')</th>
                                 <th>@lang('form.carne')</th>
                                 <th>@lang('form.courseName')</th>
-                                <th>@lang('form.timesAttended')</th>
+                                <th style="max-width: 35px">@lang('form.timesAttended')</th>
                                 <th>@lang('form.phone')</th>
                                 <th>@lang('form.observation')</th>
                                 <th>@lang('form.act')</th>
@@ -29,12 +37,12 @@
                             @for($i = 0; $i < count($petitions); $i++)
 
                                 <tr>
-                                    <td>{{ $petitions[$i]->studentName }}</td>
-                                    <td>{{ $petitions[$i]->studentId }}</td>
-                                    <td>{{ $courses[$i]->name}}</td>
-                                    <td>{{ $petitions[$i]->timesAttended}}</td>
-                                    <td>{{ $petitions[$i]->phone }}</td>
-                                    <td>{{ $petitions[$i]->observations}}</td>
+                                    <td style="max-width: 70px">{{ $petitions[$i]->studentName }}</td>
+                                    <td style="max-width: 15px">{{ $petitions[$i]->studentId }}</td>
+                                    <td style="max-width: 30px">{{ $courses[$i]->name}}</td>
+                                    <td style="max-width: 10px">{{ $petitions[$i]->timesAttended}}</td>
+                                    <td style="max-width: 10px">{{ $petitions[$i]->phone }}</td>
+                                    <td style="max-width: 25px">{{ $petitions[$i]->observations}}</td>
 
                                     <td>
                                         <a title= @lang('form.accept') ><button class="btn btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button></a>
@@ -42,8 +50,10 @@
                                     </td>
                                 </tr>
                             @endfor
+
                             </tbody>
                         </table>
+                        <div class="pagination-wrapper">  </div>
                      </div>
 
                 </div>

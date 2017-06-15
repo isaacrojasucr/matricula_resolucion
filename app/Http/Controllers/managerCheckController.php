@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\pwcnm_registration_process;
 use App\pwcnm_inscriptionRequest;
 use App\course;
+use App\carrer;
+
+
+
 
 class managerCheckController extends Controller
 {
@@ -16,16 +20,25 @@ class managerCheckController extends Controller
      */
     public function index(Request $request)
     {
+
         $process = pwcnm_registration_process::all();
         $process = $process->last();
         $process = $process->id;
 
         $requested = pwcnm_inscriptionRequest::where('fk_process', '=', $process)->get();
+        $manager = app()->make('auth');
+        $manager = $manager->user()->id;
+
+        $career = carrer::where('manager','=',$manager)->get();
+
+        foreach ($career as $item) {
+            $career = $item->id;
+        }
 
         $petitions = array();
         $i = 0;
         foreach ($requested as $item) {
-            if ($item->fk_career == '1') {
+            if ($item->fk_career == $career) {
                 $petitions = array_add($petitions,$i,$item);
                 $i++;
             }
@@ -39,5 +52,15 @@ class managerCheckController extends Controller
         }
 
         return view('inscription.manager.managerCheck', compact('petitions', 'courses'));
+    }
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
 }

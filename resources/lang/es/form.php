@@ -62,5 +62,10 @@ return [
     'courseName' => 'Curso Solicitado',
     'timesAttended' => 'Veces Cursado',
     'group' => 'Grupo',
-    'observation' => 'Observaciones'
+    'observation' => 'Observaciones',
+    'accept' => 'Aceptar',
+    'deny' => 'Denegar',
+    'infoManagerCheck1' => 'Presionando la opción aceptar',
+    'infoManagerCheck2' => 'aceptará la matricula por resolución del estudiante y pasará a la siguiente parte del proceso y presionando la opción denegar',
+    'infoManagerCheck3' => 'denegará la matricula y deberá enviar un correo indicando la razón.',
 ];
