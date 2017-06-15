@@ -51,4 +51,11 @@ return [
     'location' => 'Second location',
     'selectCareer' => 'Select a career to start your resolution inscription',
     'careersdep' => 'departament´s careers',
+    'average' => 'Weighted average',
+    'headInscription' => 'Application for courses per resolution',
+    'oficio' => 'VD-R-4468-89',
+    'studentName' => 'Student´s name',
+    'carne' => 'Student ID',
+    'phone' => 'Phone',
+    'SLtoattended' => 'Second location where you want to take the course',
 ];

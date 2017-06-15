@@ -51,7 +51,13 @@ return [
     'location' => 'Sede',
     'selectCareer' => 'Seleccione una carrera para iniciar su matrícula por resolución',
     'careersdep' => 'Carreras del departamento',
-    
+    'average' => 'Promedio ponderado',
+    'headInscription' => 'Solicitud de cursos por resolución',
+    'oficio' => 'VD-R-4468-89',
+    'studentName' => 'Nombre del estudiante',
+    'carne' => 'Carné',
+    'phone' => 'Telefono',
+    'SLtoattended' => 'Sede en la que desea llevar el curso',
 
 
 ];
