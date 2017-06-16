@@ -49,8 +49,18 @@ class inscriptionController extends Controller
         foreach ($temp as $item){
             $course =  array_add($course, $item->id, $item->initial.' - '.$item->name);
         }
+        
+        $SLocation = pwcnm_second_location::all();
+        $location =  array();
+        foreach ($SLocation as $item){
+            if($item->id != 2){
+                $location = array_add($location,$item->id, $item->name);
+            }
 
-        return view('inscription.student.create', compact('id','course','pro'));
+        }
+        
+        
+        return view('inscription.student.create', compact('id','course','pro', 'location'));
     }
 
     /**
@@ -66,6 +76,18 @@ class inscriptionController extends Controller
         $studentId = $request->studentId;
         $phone = $request->phone;
         $email = $request->email;
+        $process = $request->process;
+        $average = $request->weightedAverage;
+        $id = $request->id;
+        
+        if($request->observation == null){
+            $observation = "";
+        }else{
+            $observation = $request->observation;
+        }
+
+        
+        dd($observation);
 
         $courseTable = $request->t1;
         $courses = array();
@@ -77,6 +99,23 @@ class inscriptionController extends Controller
             $i++;
         }
 
+        
+
+        $inscription = new pwcnm_inscriptionRequest();
+        
+        $inscription->studentId = $studentId;
+        $inscription->studentName = $studentName;
+        $inscription->phone = $phone;
+        $inscription->email = $email;
+        $inscription->observations = $observation;
+        $inscription->weightedAverage = $average;
+        $inscription->fk_process = $process;
+        $inscription->fk_career = $id;
+
+        foreach ($courses as $item){
+            
+        }
+
         $requirementsTable = $request->t2;
         $table2Array= explode('?', $requirementsTable);
         $requirements =  array();
@@ -86,7 +125,7 @@ class inscriptionController extends Controller
             $requirements = array_add($requirements,$i,$temp);
             $i++;
         }
-
+        
         return redirect('/');
     }
 

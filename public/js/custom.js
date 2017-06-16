@@ -10,6 +10,7 @@ function genera_tabla() {
     var celda2 =  fila.insertCell(1);
     var celda3 =  fila.insertCell(2);
     var celda4 =  fila.insertCell(3);
+    var celda5 =  fila.insertCell(4);
 
     var group = document.getElementsByName("group")[0].value;
     var ta = document.getElementsByName("timesAttended")[0].value;
@@ -17,15 +18,20 @@ function genera_tabla() {
     var v = document.getElementsByName("carrer")[0];
     var text = v.options[v.selectedIndex].text;
 
+    var idlocation = document.getElementsByName("location")[0].value;
+    var vv = document.getElementsByName("location")[0];
+    var textlocation = vv.options[vv.selectedIndex].text;
+
     
     celda1.innerHTML = id;
     celda2.innerHTML = text;
     celda3.innerHTML = group;
     celda4.innerHTML = ta;
+    celda5.innerHTML = textlocation;
 
-    var row = id + "_" + ta + "_" + group ;
+    var row = id + "_" + ta + "_" + group + "_" + idlocation;
 
-    var row2 = "?" + id + "_" + ta + "_" + group ;
+    var row2 = "?" + id + "_" + ta + "_" + group + "_" + idlocation;
 
     var data = document.getElementById("t1").value;
 

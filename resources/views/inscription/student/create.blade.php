@@ -80,12 +80,23 @@
 
                 <div class="form-group">
 
-                    <div class="col-md-3">
-                        {!! Form::label('', ''.trans('form.courses')) !!}
+                    <div class="col-md-6">
+                        <div class="col-md-3">
+                            {!! Form::label('', ''.trans('form.courses')) !!}
+                        </div>
+                        <div class="col-md-9">
+                            {!! Form::select('carrer', $course, null,['class' => 'form-control']) !!}
+                        </div>
                     </div>
-                    <div class="col-md-9">
-                        {!! Form::select('carrer', $course, null,['class' => 'form-control']) !!}
+                    <div class="col-md-6">
+                        <div class="col-md-3">
+                            {!! Form::label('', ''.trans('form.location')) !!}
+                        </div>
+                        <div class="col-md-9">
+                            {!! Form::select('location', $location, null,['class' => 'form-control']) !!}
+                        </div>
                     </div>
+
 
                 </div>
                 </br>
@@ -93,12 +104,13 @@
 
                 <div class="form-group">
                     <div class="col-md-4">
-                        <div class="col-md-3">
-                            {!! Form::label('', ''.trans('form.group')) !!}
-                        </div>
-                        <div class="col-md-9">
-                            {!! Form::number('group', null, ['class' => 'form-control' ]) !!}
-                        </div>
+                            <div class="col-md-3">
+                                {!! Form::label('', ''.trans('form.group')) !!}
+                            </div>
+                            <div class="col-md-9">
+                                {!! Form::number('group', null, ['class' => 'form-control' ]) !!}
+                            </div>
+
                     </div>
 
                     <div class="col-md-4">
@@ -129,6 +141,7 @@
                                 <th>@lang('form.courses')</th>
                                 <th>@lang('form.group')</th>
                                 <th>@lang('form.timesAttended')</th>
+                                <th>@lang('form.location')</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -201,8 +214,7 @@
                         {!! Form::label('', ''.trans('form.observation')) !!}
 
                     </div>
-
-                    <div class="col-md-10 center" style="font-size: large; height: 85px;">
+                    <div class="col-md-10 ">
                         {!! Form::text('observation', null, ['class' => 'form-control', 'placeholder'=>''.trans('form.observation')]) !!}
                     </div>
 
@@ -211,20 +223,22 @@
                 </br>
                 <hr style="width:100%;">
 
-
+                {{ Form::hidden('process', ''.$pro) }}
+                {{ Form::hidden('id', ''.$id) }}
                 <input type="hidden" id="t1" name="t1" value="">
                 <input type="hidden" id="t2" name="t2" value="">
 
                 <div class="form-group center">
                     </br>
-                    {!! Form::submit(''.trans('form.save'), ['class' => 'btn btn-success ' ] ) !!}
+                    {!! Form::submit(''.trans('form.save'), ['class' => 'btn btn-success col-md-4 col-md-offset-4 ' ] ) !!}
 
 
                 </div>
 
-                {{ Form::hidden('process', ''.$pro) }}
 
                 {!! Form::close() !!}
+
+
             </div>
         </div>
     </div>
