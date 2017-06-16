@@ -113,6 +113,19 @@ class inscriptionController extends Controller
         $inscription->fk_career = $id;
 
         foreach ($courses as $item){
+            $inscription->fk_location = $item[3];
+            $inscription->fk_course = $item[0];
+            $inscription->group = $item[2];
+            $inscription->timesAttended = $item[1];
+
+            $inscription->save();
+
+            $last = pwcnm_inscriptionRequest::where('studentId', '=',''.$studentName)->orderby('created_at','DESC')->take(1)->get();
+
+            foreach ($last as $item2){
+                $last = $item->id;
+            }
+
             
         }
 
