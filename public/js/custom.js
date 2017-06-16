@@ -23,6 +23,22 @@ function genera_tabla() {
     celda3.innerHTML = group;
     celda4.innerHTML = ta;
 
+    var row = id + "_" + ta + "_" + group ;
+
+    var row2 = "? " + id + "_" + ta + "_" + group ;
+
+    var data = document.getElementsByName("t1")[0].value;
+
+    if(data == ""){
+        document.getElementsByName("t1")[0].value = row;
+    }else{
+        
+    }
+
+
+
+
+
 }
 
 function genera_req() {

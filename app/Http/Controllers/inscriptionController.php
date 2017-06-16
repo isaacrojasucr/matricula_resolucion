@@ -10,6 +10,7 @@ use App\carrer;
 use App\course;
 use App\pwcnm_requirement;
 use App\pwcnm_second_location;
+use  App\pwcnm_registration_process;
 use Illuminate\Http\Request;
 use Session;
 
@@ -37,6 +38,11 @@ class inscriptionController extends Controller
     {
         $temp = course::where('carrer','=',$id)->get();
 
+        $process = pwcnm_registration_process::all();
+        $process = $process->last();
+        $pro = $process->id;
+
+
         $course = array();
 
 
@@ -44,7 +50,7 @@ class inscriptionController extends Controller
             $course =  array_add($course, $item->id, $item->initial.' - '.$item->name);
         }
 
-        return view('inscription.student.create', compact('id','course'));
+        return view('inscription.student.create', compact('id','course','pro'));
     }
 
     /**
@@ -56,9 +62,17 @@ class inscriptionController extends Controller
      */
     public function store(Request $request)
     {
+        $studentName  = $request->studentName;
+        $studentId = $request->studentId;
+        $phone = $request->phone;
+        $email = $request->email;
+
+        $table = $request->tabla;
+
+        dd($table);
 
 
-        return redirect('');
+        return redirect('/');
     }
 
     /**

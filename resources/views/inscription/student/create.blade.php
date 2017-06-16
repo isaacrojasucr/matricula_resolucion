@@ -201,6 +201,10 @@
 
 
                 </div>
+
+                {{ Form::hidden('process', ''.$pro) }}
+                {{ Form::hidden('t1', '') }}
+                {{ Form::hidden('t2', '') }}
                 {!! Form::close() !!}
             </div>
         </div>
