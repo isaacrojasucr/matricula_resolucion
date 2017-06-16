@@ -25,18 +25,18 @@ function genera_tabla() {
 
     var row = id + "_" + ta + "_" + group ;
 
-    var row2 = "? " + id + "_" + ta + "_" + group ;
+    var row2 = "?" + id + "_" + ta + "_" + group ;
 
-    var data = document.getElementsByName("t1")[0].value;
+    var data = document.getElementById("t1").value;
 
-    if(data == ""){
-        document.getElementsByName("t1")[0].value = row;
+    if(data === ""){
+        document.getElementById("t1").value = row;
+
     }else{
-        
+        document.getElementById("t1").value = data + row2;
+
+
     }
-
-
-
 
 
 }
@@ -61,5 +61,31 @@ function genera_req() {
     celda3.innerHTML = result;
     celda4.innerHTML = cycle;
 
+    var row = id + "_" + name + "_" + result + "_" + cycle ;
+
+    var row2 = "?" + id + "_" + name + "_" + result + "_" + cycle ;
+
+    var data = document.getElementById("t2").value;
+
+    if(data === ""){
+        document.getElementById("t2").value = row;
+
+    }else{
+        document.getElementById("t2").value = data + row2;
+
+
+    }
+
+}
+
+function valform (text) {
+    var courses = document.getElementById("t1").value;
+
+    if(courses === ""){
+        alert(text + "");
+        return false;
+    }
+
+    return true;
 }
 

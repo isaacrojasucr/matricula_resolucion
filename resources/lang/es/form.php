@@ -69,4 +69,5 @@ return [
     'subjectid'=>'Sigla de la asignatura',
     'result'=>'Resultado',
     'cycleAP'=>'Ciclo de aprobación',
+    'textleft' => 'No has agregado ningun curso',
     ];

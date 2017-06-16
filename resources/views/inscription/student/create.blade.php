@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                {!! Form::open(['route' => 'matricula.store', 'method' => 'post']) !!}
+                {!! Form::open(['route' => 'matricula.store', 'method' => 'post','onsubmit' => 'return valform("'.trans('form.textleft').'")']) !!}
 
                 <div class="form-group" style="height: 79px;">
                     <div class="col-md-6">
@@ -195,6 +195,26 @@
                 </div>
                 <hr style="width:100%;">
 
+                <div class="form-group">
+
+                    <div class="col-md-2 ">
+                        {!! Form::label('', ''.trans('form.observation')) !!}
+
+                    </div>
+
+                    <div class="col-md-10 center" style="font-size: large; height: 85px;">
+                        {!! Form::text('observation', null, ['class' => 'form-control', 'placeholder'=>''.trans('form.observation')]) !!}
+                    </div>
+
+
+                </div>
+                </br>
+                <hr style="width:100%;">
+
+
+                <input type="hidden" id="t1" name="t1" value="">
+                <input type="hidden" id="t2" name="t2" value="">
+
                 <div class="form-group center">
                     </br>
                     {!! Form::submit(''.trans('form.save'), ['class' => 'btn btn-success ' ] ) !!}
@@ -203,8 +223,7 @@
                 </div>
 
                 {{ Form::hidden('process', ''.$pro) }}
-                {{ Form::hidden('t1', '') }}
-                {{ Form::hidden('t2', '') }}
+
                 {!! Form::close() !!}
             </div>
         </div>

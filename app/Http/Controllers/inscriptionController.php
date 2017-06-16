@@ -67,10 +67,25 @@ class inscriptionController extends Controller
         $phone = $request->phone;
         $email = $request->email;
 
-        $table = $request->tabla;
+        $courseTable = $request->t1;
+        $courses = array();
+        $table1Array= explode('?', $courseTable);
+        $i = 0;
+        foreach ($table1Array as $item){
+            $temp = explode('_', $item);
+            $courses = array_add($courses,$i,$temp);
+            $i++;
+        }
 
-        dd($table);
-
+        $requirementsTable = $request->t2;
+        $table2Array= explode('?', $requirementsTable);
+        $requirements =  array();
+        $i = 0;
+        foreach ($table2Array as $item){
+            $temp = explode('_', $item);
+            $requirements = array_add($requirements,$i,$temp);
+            $i++;
+        }
 
         return redirect('/');
     }

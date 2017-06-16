@@ -69,6 +69,7 @@ return [
     'subjectid'=>'subject initial',
     'result'=>'Result',
     'cycleAP'=>'Approval Cycle ',
+    'textleft' => 'you don´t add any course',
 
 
 ];
