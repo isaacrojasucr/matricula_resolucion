@@ -46,7 +46,7 @@
 
                                     <td>
                                         <a title= @lang('form.accept') ><button class="btn btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button></a>
-                                        <a href="{{ url('/asd/ads' . $petitions[$i]->email) }}" title= @lang('form.deny') ><button class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></a>
+                                        <a href="{{ url('/general/correos/'.$petitions[$i]->id) }}" title= @lang('form.deny') ><button class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></a>
                                     </td>
                                 </tr>
                             @endfor
