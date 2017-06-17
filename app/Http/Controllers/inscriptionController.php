@@ -9,6 +9,7 @@ use App\pwcnm_inscriptionRequest;
 use App\carrer;
 use App\course;
 use App\pwcnm_requirement;
+use App\pwcnm_approval;
 use App\pwcnm_second_location;
 use  App\pwcnm_registration_process;
 use Illuminate\Http\Request;
@@ -155,6 +156,8 @@ class inscriptionController extends Controller
 
             $last = pwcnm_inscriptionRequest::max('id');
 
+            $this->addApproval($id,$last);
+
 
 
             if (count($requirements[0]) > 1 ) {
@@ -192,6 +195,13 @@ class inscriptionController extends Controller
         return view('inscription.student.show', compact('$inscription'));
     }
 
+    /**
+     * calculates the left days of the inscription process
+     * if the process finish return 0 or -1.
+     *
+     * @param  string $fecha_final
+     *
+     */
     function dias_restantes($fecha_final)
     {
         $fecha_actual = date("Y-m-d");
@@ -201,4 +211,25 @@ class inscriptionController extends Controller
         return $diferencia;
     }
 
+    /**
+     * Start the approvals tables
+     * with the default values except the manager id
+     * and the id of the inscription.
+     *
+     * @param  int $id, int last
+     *
+     *
+     */
+    function addApproval ($id, $last) {
+        $manager =  carrer::findOrFail($id)->manager;
+        $comment = "";
+
+        $approval =  new pwcnm_approval();
+        $approval->stade = 0;
+        $approval->comments = $comment;
+        $approval->fk_user = $manager;
+        $approval->fk_inscription = $last;
+
+        $approval->save();
+    }
 }

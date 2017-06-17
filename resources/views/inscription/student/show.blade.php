@@ -61,7 +61,6 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-md-12">
                                 <div class="form-group ">
                                     <label>
                                         @lang('form.average')
@@ -70,7 +69,6 @@
                                         {{$personal[4]}}
                                     </label>
                                 </div>
-                            </div>
                         </div>
                         </br>
                         </br>
