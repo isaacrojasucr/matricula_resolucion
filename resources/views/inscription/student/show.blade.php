@@ -13,19 +13,9 @@
 
                     <div class="panel-body">
                         <div class="well">
-                            <div class="col-md-6">
-                                <label >
-                                    INFORMACIÓN PERSONAL
-                                </label>
-                            </div>
-                            <div class="col-md-6">
-                                <label>
-                                    @lang('form.average')
-                                </label>
-                                <label class="form-control">
-                                    {{$personal[4]}}
-                                </label>
-                            </div>
+                            <label>
+                                @lang('form.personalData')
+                            </label>
                             <hr style="width:100%;">
 
                             <div class="col-md-6">
@@ -71,20 +61,31 @@
                                     </label>
                                 </div>
                             </div>
-
-
+                            <div class="col-md-12">
+                                <div class="form-group ">
+                                    <label>
+                                        @lang('form.average')
+                                    </label>
+                                    <label class="form-control" style="width:25%">
+                                        {{$personal[4]}}
+                                    </label>
+                                </div>
+                            </div>
                         </div>
+                        </br>
                         </br>
 
                         <div class="well">
-                            <label>
-                                INFORMACIÓN DE MATRÍCULA
-                            </label>
+                            <div class="form-group col-md-12">
+                                <label>
+                                    @lang('form.inscriptionData')
+                                </label>
+                            </div>
                             <hr style="width:100%;">
 
                             <div class="form-group">
                                 <label>
-                                    @lang('form.career')
+                                    @lang('form.carrer')
                                 </label>
                                 <label class="form-control">
                                     {{$career}}
@@ -94,20 +95,20 @@
                             <div class="form-group">
                                 <table class="table table-hover" id="tabla" name="tabla">
                                     <thead>
-                                        <tr>
-                                            <th>@lang('form.courses')</th>
-                                            <th>@lang('form.group')</th>
-                                            <th>@lang('form.location')</th>
-                                        </tr>
+                                    <tr>
+                                        <th>@lang('form.courses')</th>
+                                        <th>@lang('form.group')</th>
+                                        <th>@lang('form.location')</th>
+                                    </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($inscript as $item)
-                                            <tr>
-                                                <th>{{$item[1]}}</th>
-                                                <th>{{$item[2]}}</th>
-                                                <th>{{$item[0]}}</th>
-                                            </tr>
-                                        @endforeach
+                                    @foreach($inscript as $item)
+                                        <tr>
+                                            <th>{{$item[1]}}</th>
+                                            <th>{{$item[2]}}</th>
+                                            <th>{{$item[0]}}</th>
+                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>

@@ -72,4 +72,6 @@ return [
     'textleft' => 'No has agregado ningun curso',
     'noProcess' => 'En la fecha actual no se pueden tramitar matriculas por resolución',
     'infoInserted' => 'Esta es la información que usted ha insertado',
+    'personalData' => 'INFORMACIÓN PERSONAL',
+    'inscriptionData'=> 'INFORMACIÓN DE MATRÍCULA',
     ];

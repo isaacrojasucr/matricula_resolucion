@@ -155,7 +155,9 @@ class inscriptionController extends Controller
 
             $last = pwcnm_inscriptionRequest::max('id');
 
-            if (count($requirements) <= 0) {
+
+
+            if (count($requirements[0]) > 1 ) {
 
                 foreach ($requirements as $item) {
                     $requirement = new pwcnm_requirement();

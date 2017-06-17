@@ -189,7 +189,7 @@
                             <tr>
                                 <th>{!! Form::text('subid', null, ['class' => 'form-control' ]) !!}</th>
                                 <th>{!! Form::text('subname', null, ['class' => 'form-control' ]) !!}</th>
-                                <th>{!! Form::number('result', null, ['class' => 'form-control' ]) !!}</th>
+                                <th>{!! Form::number('result', null, ['class' => 'form-control','step'=>'any' ]) !!}</th>
 
                                 <th>{!! Form::number('cycle', null, ['class' => 'form-control col-md-3' ]) !!}
                                 </th>
