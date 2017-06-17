@@ -15,7 +15,7 @@
                             {!! Form::label('',''.trans('form.average') ) !!}
                         </div>
                         <div class="col-md-6">
-                            {!! Form::number('weightedAverage', null, ['class' => 'form-control' , 'required' => 'required']) !!}
+                            {!! Form::number('weightedAverage', null, ['class' => 'form-control' , 'required' => 'required', 'step'=>'any']) !!}
                         </div>
                     </div>
                 </div>

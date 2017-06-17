@@ -7,26 +7,32 @@
                 <div class="well">
                     <div class="form-group">
                         <div>
-                            <div class="center">
-                                <h3>@lang('form.selectCareer')</h3>
-                            </div>
-
-                            </br></br>
-
-                            <div class="col-md-offset-4">
-                                <div class="dropdown">
-                                    <button class="btn btn-default dropdown-toggle" type="button"
-                                            data-toggle="dropdown">@lang('form.careersdep')
-                                        <span class="caret"></span></button>
-                                    <ul class="dropdown-menu">
-                                        @foreach($careers as $item)
-                                            <li>
-                                                <a href="{{url('/matricula/carrera/'.$item->id)}}">{{$item->name}}</a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
+                            @if($daysLeft > 0 )
+                                <div class="center">
+                                    <h3>@lang('form.selectCareer')</h3>
                                 </div>
-                            </div>
+
+                                </br></br>
+
+                                <div class="col-md-offset-4">
+                                    <div class="dropdown">
+                                        <button class="btn btn-default dropdown-toggle" type="button"
+                                                data-toggle="dropdown">@lang('form.careersdep')
+                                            <span class="caret"></span></button>
+                                        <ul class="dropdown-menu">
+                                            @foreach($careers as $item)
+                                                <li>
+                                                    <a href="{{url('/matricula/carrera/'.$item->id)}}">{{$item->name}}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            @else
+                                <div class="center">
+                                    <h2>@lang('form.noProcess')</h2>
+                                </div>
+                            @endif
                         </div>
 
                     </div>

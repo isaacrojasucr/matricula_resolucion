@@ -67,9 +67,9 @@ function genera_req() {
     celda3.innerHTML = result;
     celda4.innerHTML = cycle;
 
-    var row = id + "_" + name + "_" + result + "_" + cycle ;
+    var row = id + "-" + name + "_" + result + "_" + cycle ;
 
-    var row2 = "?" + id + "_" + name + "_" + result + "_" + cycle ;
+    var row2 = "?" + id + "-" + name + "_" + result + "_" + cycle ;
 
     var data = document.getElementById("t2").value;
 

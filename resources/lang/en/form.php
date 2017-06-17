@@ -70,6 +70,8 @@ return [
     'result'=>'Result',
     'cycleAP'=>'Approval Cycle ',
     'textleft' => 'you don´t add any course',
+    'noProcess' =>'At the present date, no enrollment can be processed by resolution',
+    'infoInserted' => 'this is the info that you inserted',
 
 
 ];
