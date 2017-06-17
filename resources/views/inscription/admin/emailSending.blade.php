@@ -11,10 +11,6 @@
                     <div class="panel-body">
                         {!! Form::open(['route'=>'correos.store', 'method'=>'POST']) !!}
                         <div class="form-group">
-                            {!! Form::label('',trans('form.emailSender').': ') !!}
-                            {!! Form::label('emailSender', ''.$managerEmail, ['class' => 'form-control']) !!}
-                        </div>
-                        <div class="form-group">
                             {!! Form::label('',trans('form.emailReceiver').': ') !!}
                             {!! Form::label('emailReceiver', ''.$petition->email, ['class' => 'form-control']) !!}
                         </div>
@@ -30,8 +26,11 @@
                         {!! Form::submit(trans('form.send'), ['class'=>'btn btn-primary col-md-12']) !!}
                         {!! Form::close() !!}
                     </div>
+
+
                 </div>
             </div>
         </div>
     </div>
+
 @endsection

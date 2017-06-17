@@ -81,7 +81,7 @@ return [
     'infoManagerCheck3' => 'la matrícula será denegada y usted deberá enviar un correo electrónico con la razón.',
     'emailSending' => 'Envio de Correo Electrónico',
     'emailSender' => 'Emisor del correo',
-    'emailReceiver' => 'Receptor del correo',
+    'emailReceiver' => 'Destinatario',
     'emailMotive' => 'Asunto',
     'holderMotive' => 'Ingrese el asunto aquí.',
     'emailMotiveExplained' => 'Matrícula por Resolución Denegada - Razones',

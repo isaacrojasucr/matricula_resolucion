@@ -86,5 +86,5 @@ return [
     'holderMotive' => 'Insert the motive here.',
     'emailMotiveExplained' => 'Inscription by Resolution Denied Motives',
     'emailContent' => 'Email content. Explain here the reason why de inscription is being denied',
-    'send' => 'Enviar',
+    'send' => 'Send',
 ];

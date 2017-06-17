@@ -48,5 +48,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::resource('correos', 'emailController');
 
+    Route::get('send', 'emailController@send');
 
 });

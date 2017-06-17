@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\pwcnm_approval;
 use App\pwcnm_inscriptionRequest;
 use Illuminate\Http\Request;
+use Mail;
 
 class emailController extends Controller
 {
@@ -25,15 +26,23 @@ class emailController extends Controller
 
     public function store(Request $Request){
 
-        $approval = pwcnm_approval::FindOrFail($Request->id);
+        $approval = pwcnm_approval::where('fk_inscription', '=',$Request->id)->get();
+        $approval = $approval[0];
 
         $approval->stade = 1;
         $approval->comments = $Request->emailContent;
         $approval->update();
-
-        return redirect('admin/usuarios');
+        $this->send();
+        return redirect('proceso/coordinador');
     }
 
+    public function send() {
+        Mail::send(['text'=>'mail'], ['name', 'Kevin'], function ($message){
+            $message->to('jorgeisaac.rojas@ucrso.info', 'Para Isaac')->subject('MOTIVO');
+            $message->from('kreisoftwaredeveloptment@gmail.com', 'NOMBRE COORDINADOR');
+        });
+        dd('PRUEBA');
+    }
 
 
     public function __construct()
