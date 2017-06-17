@@ -44,5 +44,5 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::resource('proceso/coordinador','managerCheckController');
 
-
+    Route::resource('general/correos','emailController');
 });
