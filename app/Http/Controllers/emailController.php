@@ -37,7 +37,7 @@ class emailController extends Controller
 
         $id = $approval->fk_inscription;
 
-        session('id_actual', $id);
+        session()->put('id_actual',$id);
         $this->send();
         return redirect('proceso/coordinador');
     }
