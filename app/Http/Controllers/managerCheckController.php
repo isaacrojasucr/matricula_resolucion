@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\pwcnm_approval;
 use Illuminate\Http\Request;
 use App\pwcnm_registration_process;
 use App\pwcnm_inscriptionRequest;
@@ -39,8 +40,12 @@ class managerCheckController extends Controller
         $i = 0;
         foreach ($requested as $item) {
             if ($item->fk_career == $career) {
-                $petitions = array_add($petitions,$i,$item);
-                $i++;
+                $tempApproval =  pwcnm_approval::where('fk_inscription','=',$item->id)->get();
+                if ($tempApproval[0]->stade == 0){
+                    $petitions = array_add($petitions,$i,$item);
+                    $i++;
+                }
+
             }
         }
 
