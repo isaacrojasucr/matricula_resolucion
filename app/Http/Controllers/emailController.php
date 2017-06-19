@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\pwcnm_approval;
 use App\pwcnm_inscriptionRequest;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Mail;
+use App\Mail\SendMail;
 
 class emailController extends Controller
 {
@@ -32,16 +34,19 @@ class emailController extends Controller
         $approval->stade = 1;
         $approval->comments = $Request->emailContent;
         $approval->update();
+
+        $id = $approval->fk_inscription;
+
+        session('id_actual', $id);
         $this->send();
         return redirect('proceso/coordinador');
     }
 
     public function send() {
-        Mail::send(['text'=>'mail'], ['name', 'Kevin'], function ($message){
-            $message->to('jorgeisaac.rojas@ucrso.info', 'Para Isaac')->subject('MOTIVO');
-            $message->from('kreisoftwaredeveloptment@gmail.com', 'NOMBRE COORDINADOR');
-        });
-        dd('PRUEBA');
+
+
+        Mail::send(new sendMail());
+
     }
 
 
