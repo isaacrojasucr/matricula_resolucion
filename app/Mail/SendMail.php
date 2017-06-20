@@ -7,8 +7,7 @@ use Illuminate\Contracts\Session\Session;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
-
-use Illuminate\Http\Request;
+use Illuminate\Http\request;
 use App\pwcnm_registration_process;
 use App\pwcnm_inscriptionRequest;
 use App\course;
@@ -34,14 +33,18 @@ class SendMail extends Mailable
      *
      * @return $this
      */
-    public function build()
+    public function build(request $request)
     {
-        $id = session()->get('id_actual');
-        dd($id);
-        $petition = pwcnm_inscriptionRequest::FindOrFail($id);
 
-        return $this->view('inscription.admin.emailSending', compact($petition))->to('kevin.salazar@ucrso.info') ;
+
+        $temporalContent = session()->get('content_actual');
+        $temporalReceiver = session()->get('receiver_actual');
+        $temporalMotive = session()->get('subject_actual');
+
+        return $this->view('textmail', ['emailContent'=>$temporalContent])->to($temporalReceiver)->subject($temporalMotive);
     }
+
+
 }
 
 
