@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\course;
+use App\pwcnm_approval;
 use App\pwcnm_inscriptionRequest;
 use App\pwcnm_registration_process;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Array_;
 
 class AdminInscriptionController extends Controller
 {
@@ -19,26 +23,70 @@ class AdminInscriptionController extends Controller
 
         $processId = $this->lastProcess();
 
-        $tempPetitions = pwcnm_inscriptionRequest::where('fk_process', '=', $processId);
+        $tempPetitions = pwcnm_inscriptionRequest::where('fk_process', '=', $processId)->get();
+
+        $appro = array();
+        $inscriptionApp = array();
+        $careerApp = array();
+        $courseApp = array();
+        $locationApp = array();
+        $appro = array_add($appro,0,$inscriptionApp);
+        $appro = array_add($appro,1,$careerApp);
+        $appro = array_add($appro,2,$courseApp);
+        $appro = array_add($appro,3,$locationApp);
+        //---------------------------------------------
+        $reject = array();
+        $inscriptionRej = array();
+        $careerRej = array();
+        $courseRej = array();
+        $locationRej = array();
+        $reject = array_add($reject,0,$inscriptionRej);
+        $reject = array_add($reject,1,$careerRej);
+        $reject = array_add($reject,2,$courseRej);
+        $reject = array_add($reject,3,$locationRej);
+        //---------------------------------------------
+        $pending = array();
+        $inscriptionPen = array();
+        $careerPen = array();
+        $coursePen = array();
+        $locationPen = array();
+        $pending = array_add($pending,0,$inscriptionPen);
+        $pending = array_add($pending,1,$careerPen);
+        $pending = array_add($pending,2,$coursePen);
+        $pending = array_add($pending,3,$locationPen);
+        //----------------------------------------------
+
+        foreach ($tempPetitions as $item) {
+            $state = pwcnm_approval::where('fk_inscription', '=', $item->id)->get();
+            $state = $state[0]->stade;
+            
+
+            if ($state == 2 and $state == 4 and $state == 6 ) {
+
+                $inscriptionApp = array_add($inscriptionApp, count($inscriptionApp), $item);
 
 
+            }elseif ($state == 1 and $state == 3 and $state == 5){
 
-        
-        return view('inscription.admin.allPetitions');
-    }
+                $inscriptionRej = array_add($inscriptionRej, count($inscriptionRej), $item);
 
-    private function approvals ($tempPetitions) {
-
-        $petitions =  array();
-
-        foreach ($tempPetitions as $item){
-            $state 
+            }elseif ($state == 0){
+                $inscriptionPen = array_add($inscriptionPen, count($inscriptionPen), $item);
+            }
         }
 
 
+        return view('inscription.admin.allPetitions');
     }
-    
-    private function lastProcess(){
+
+
+
+
+
+
+
+    private function lastProcess()
+    {
         $id = pwcnm_registration_process::max('id');
 
         $id = pwcnm_registration_process::findOrFail($id)->id;
@@ -61,7 +109,7 @@ class AdminInscriptionController extends Controller
         $diferencia = $d;
         return $diferencia;
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -77,7 +125,7 @@ class AdminInscriptionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return \Illuminate\View\View
      */
@@ -89,7 +137,7 @@ class AdminInscriptionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return \Illuminate\View\View
      */
@@ -101,7 +149,7 @@ class AdminInscriptionController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @param \Illuminate\Http\Request $request
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
@@ -114,7 +162,7 @@ class AdminInscriptionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
