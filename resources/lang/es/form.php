@@ -87,4 +87,9 @@ return [
     'emailMotiveExplained' => 'Matrícula por Resolución Denegada - Razones',
     'emailContent' => 'Contenido del Correo Electrónico. Explique las razones por las que se están denegando la matrícula por resolución',
     'send' => 'Enviar',
+    'approval' =>'Aprobados',
+    'reject' =>'Rechazados',
+    'pending' =>'Pendientes',
+    'actualPetitions'=>'Solicitudes Actuales',
+    'course' => 'Curso',
     ];

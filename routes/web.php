@@ -51,5 +51,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('send', 'emailController@send');
 
     Route::get('correo/correo', 'emailController@email');
+    
+    Route::resource('admin/matricula', 'AdminInscriptionController');
 
 });

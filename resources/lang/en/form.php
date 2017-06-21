@@ -87,4 +87,9 @@ return [
     'emailMotiveExplained' => 'Inscription by Resolution Denied Motives',
     'emailContent' => 'Email content. Explain here the reason why de inscription is being denied',
     'send' => 'Send',
+    'approval' =>'Approved',
+    'reject' =>'Rejected',
+    'pending' =>'Pending',
+    'actualPetitions'=>'Actual Petitions',
+    'course' => 'Course',
 ];

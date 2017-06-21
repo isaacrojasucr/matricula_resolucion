@@ -95,3 +95,6 @@ function valform (text) {
     return true;
 }
 
+jQuery(document).ready(function ($) {
+    $('#tabs').tab();
+});

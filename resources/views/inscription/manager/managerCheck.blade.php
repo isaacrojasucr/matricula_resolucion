@@ -37,12 +37,12 @@
                             @for($i = 0; $i < count($petitions); $i++)
 
                                 <tr>
-                                    <td style="max-width: 70px">{{ $petitions[$i]->studentName }}</td>
-                                    <td style="max-width: 15px">{{ $petitions[$i]->studentId }}</td>
-                                    <td style="max-width: 30px">{{ $courses[$i]->name}}</td>
-                                    <td style="max-width: 10px">{{ $petitions[$i]->timesAttended}}</td>
-                                    <td style="max-width: 10px">{{ $petitions[$i]->phone }}</td>
-                                    <td style="max-width: 25px">{{ $petitions[$i]->observations}}</td>
+                                    <td class="cell">{{ $petitions[$i]->studentName }}</td>
+                                    <td class="cell">{{ $petitions[$i]->studentId }}</td>
+                                    <td class="cell">{{ $courses[$i]->name}}</td>
+                                    <td class="cell">{{ $petitions[$i]->timesAttended}}</td>
+                                    <td class="cell">{{ $petitions[$i]->phone }}</td>
+                                    <td class="cell">{{ $petitions[$i]->observations}}</td>
 
                                     <td>
                                         <a title= @lang('form.accept') ><button class="btn btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button></a>
