@@ -54,4 +54,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     
     Route::resource('admin/matricula', 'AdminInscriptionController');
 
+    Route::get('proceso/coordinador/aceptar/{id}','managerCheckController@approveStudent');
+
 });

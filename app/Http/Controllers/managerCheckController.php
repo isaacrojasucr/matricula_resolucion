@@ -68,4 +68,19 @@ class managerCheckController extends Controller
     {
         $this->middleware('auth');
     }
+
+
+    public function approveStudent($id) {
+        $approval = pwcnm_approval::where('fk_inscription', '=',$id)->get();
+
+        $approval = $approval[0];
+
+        $approval->stade = 2;
+
+        $approval->update();
+
+        return redirect('proceso/coordinador');
+
+    }
+
 }

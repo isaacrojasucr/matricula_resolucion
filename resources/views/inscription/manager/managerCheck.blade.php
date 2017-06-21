@@ -45,7 +45,7 @@
                                     <td class="cell">{{ $petitions[$i]->observations}}</td>
 
                                     <td>
-                                        <a title= @lang('form.accept') ><button class="btn btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button></a>
+                                        <a href="{{ url('/proceso/coordinador/aceptar/'.$petitions[$i]->id)}}" title= @lang('form.accept') ><button class="btn btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button></a>
                                         <a href="{{ url('/general/correos/'.$petitions[$i]->id) }}" title= @lang('form.deny') ><button class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></a>
                                     </td>
                                 </tr>
