@@ -92,4 +92,7 @@ return [
     'pending' =>'Pending',
     'actualPetitions'=>'Actual Petitions',
     'course' => 'Course',
+    'studentRequest' => 'Student Consultation',
+    'studentConsultationInstructions' => 'Place here your Student ID to consult the state of the resolución inscription request',
+    'holderConsult' => 'Insert the ID here',
 ];

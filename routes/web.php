@@ -56,4 +56,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('proceso/coordinador/aceptar/{id}','managerCheckController@approveStudent');
 
+    Route::resource('consulta/estudiante', 'studentRequestController');
+
 });

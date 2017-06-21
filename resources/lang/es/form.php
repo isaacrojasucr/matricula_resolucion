@@ -92,4 +92,7 @@ return [
     'pending' =>'Pendientes',
     'actualPetitions'=>'Solicitudes Actuales',
     'course' => 'Curso',
+    'studentRequest' => 'Consulta Estudiantil',
+    'studentConsultationInstructions' => 'Ingrese aquí su carné de estudiante para consultar el estado de su solicitud de matrícula por inclusión',
+    'holderConsult' => 'Ingrese aquí el carné',
     ];
