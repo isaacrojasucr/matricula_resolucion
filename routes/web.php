@@ -26,6 +26,20 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/inicio', 'HomeController@index')->name('home');
 
+    Route::get('/Acerca', function () {
+    return view('aboutUs');
+    });
+
+    Route::get('/Carreras', 'CareerController@index');
+
+    Route::get('/Secciones', 'SectionController@index');
+
+    //Temporal
+    Route::get('/CarrerasAdmin', 'CareerController@indexAdmin');
+    Route::get('/SeccionesAdmin', 'SectionController@indexAdmin');
+
+    Route::get('/SeccionesAdmin/Agregar', 'SectionController@addSection');
+
     Route::resource('admin/carreras', 'Carrers\\carrerController');
 
     Route::resource('admin/cursos', 'Courses\\courseController');

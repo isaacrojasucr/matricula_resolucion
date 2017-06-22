@@ -1,0 +1,138 @@
+/*
+|--------------------------------------------------------------------------
+| Global Background Color
+|--------------------------------------------------------------------------
+*/
+
+#app {
+	background-color: #ffffff;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Navbar and Menu styles
+|--------------------------------------------------------------------------
+*/
+
+#topNav {
+	background-color: #00c0f3;
+	height: 56px;
+}
+
+#topNav .row,  #topNav .row .col-md-12, #topNav .row a {
+	height: 100%;
+}
+
+#topNav img {
+	height: 100%;
+}
+
+#navMenu {
+	padding: 0px;
+}
+
+#flags {
+	margin-top: 1em;
+}
+
+.navbar {
+	border: none;
+	border-bottom: 1px solid #005da4;
+	background-color: #005da4;
+	border-radius: 0;
+}
+
+.navbar-default .navbar-nav > li > a, 
+.navbar-default .navbar-text {
+	color: white;
+}
+
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:focus, 
+.navbar-default .navbar-nav > .active > a:hover {
+	color: white;
+	background-color: #004a83;
+}
+
+.navbar-default .navbar-toggle:focus, 
+.navbar-default .navbar-toggle:hover {
+	background-color: #005da4;
+}
+
+.navbar-default .navbar-toggle {
+	border-color: #00c0f3;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #00c0f3;
+}
+
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+	color: white;
+	background-color: #004a83;
+}
+
+.dropdown-menu {
+	background-color: #005da4;
+}
+
+.dropdown-menu .divider {
+	background-color: #004a83;
+}
+
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus {
+	background-color: #004a83;
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu>li>a {
+	color: white;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Content Styles
+|--------------------------------------------------------------------------
+*/
+
+#content {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+.modal-header {
+	background-color: #005da4;
+	color: #ffffff;
+}
+
+.modal-footer {
+	background-color: rgb(102, 102, 102);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Footer Styles
+|--------------------------------------------------------------------------
+*/
+
+#footer {
+	background-color: rgb(102, 102, 102);
+	color: white;
+	height: 60px;
+}
+
+#footer a, li {
+	color: white;
+	font-size: 12px;
+}
+
+#footer a:hover, a:active {
+	color: #8f9779;
+	text-decoration: none;
+}
+
+#legalRights, #footerLinks{
+	padding-top: 1.2em;
+}
