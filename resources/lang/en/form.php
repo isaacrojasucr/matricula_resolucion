@@ -95,4 +95,12 @@ return [
     'studentRequest' => 'Student Consultation',
     'studentConsultationInstructions' => 'Place here your Student ID to consult the state of the resolución inscription request',
     'holderConsult' => 'Insert the ID here',
+    'maintenance' => 'Maintenance',
+    'locations' => 'Second locations',
+    'inscription' => 'Inscription',
+    'studentSection' => 'Student\'s Section',
+    'managerSection' => 'Manager\' Section',
+    'actualPetitions' => 'Current petitions',
+    'process' => 'Processes',
+    'reports' => 'Reports',
 ];

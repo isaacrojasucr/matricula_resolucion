@@ -50,7 +50,16 @@ class emailController extends Controller
 
 
         $this->send();
-        return redirect('proceso/coordinador');
+
+        $manager = app()->make('auth');
+        $role = $manager->user()->role;
+
+        if ($role==2){
+            return redirect('proceso/coordinador');
+        }else{
+            return redirect('admin/matricula');
+        }
+
     }
 
     public function send() {

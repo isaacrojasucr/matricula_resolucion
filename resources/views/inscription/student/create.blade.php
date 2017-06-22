@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                {!! Form::open(['route' => 'matricula.store', 'method' => 'post','onsubmit' => 'return valform("'.trans('form.textleft').'")']) !!}
+                {!! Form::open(['route' => 'matricula/save', 'method' => 'post','onsubmit' => 'return valform("'.trans('form.textleft').'")']) !!}
 
                 <div class="form-group" style="height: 79px;">
                     <div class="col-md-6">

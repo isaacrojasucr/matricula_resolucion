@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\carrer;
 use App\course;
 use App\pwcnm_approval;
 use App\pwcnm_inscriptionRequest;
 use App\pwcnm_registration_process;
+use App\pwcnm_second_location;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\Array_;
@@ -25,62 +27,78 @@ class AdminInscriptionController extends Controller
 
         $tempPetitions = pwcnm_inscriptionRequest::where('fk_process', '=', $processId)->get();
 
-        $appro = array();
         $inscriptionApp = array();
-        $careerApp = array();
-        $courseApp = array();
-        $locationApp = array();
-        $appro = array_add($appro,0,$inscriptionApp);
-        $appro = array_add($appro,1,$careerApp);
-        $appro = array_add($appro,2,$courseApp);
-        $appro = array_add($appro,3,$locationApp);
         //---------------------------------------------
-        $reject = array();
+        
         $inscriptionRej = array();
-        $careerRej = array();
-        $courseRej = array();
-        $locationRej = array();
-        $reject = array_add($reject,0,$inscriptionRej);
-        $reject = array_add($reject,1,$careerRej);
-        $reject = array_add($reject,2,$courseRej);
-        $reject = array_add($reject,3,$locationRej);
         //---------------------------------------------
-        $pending = array();
+        
         $inscriptionPen = array();
-        $careerPen = array();
-        $coursePen = array();
-        $locationPen = array();
-        $pending = array_add($pending,0,$inscriptionPen);
-        $pending = array_add($pending,1,$careerPen);
-        $pending = array_add($pending,2,$coursePen);
-        $pending = array_add($pending,3,$locationPen);
         //----------------------------------------------
 
         foreach ($tempPetitions as $item) {
             $state = pwcnm_approval::where('fk_inscription', '=', $item->id)->get();
             $state = $state[0]->stade;
             
+            if ($state == 2 or $state == 4 or $state == 6 ) {
+                $career =  carrer::findOrFail($item->fk_career)->name;
+                $item->fk_career = $career;
 
-            if ($state == 2 and $state == 4 and $state == 6 ) {
+                $course = course::findOrFail($item->fk_course)->name;
+                $item->fk_course = $course;
+                
+                $location = pwcnm_second_location::findOrFail($item->fk_location)->name;
+                $item->fk_location = $location;
 
                 $inscriptionApp = array_add($inscriptionApp, count($inscriptionApp), $item);
 
+            }elseif ($state == 1 or $state == 3 or $state == 5){
+                $career =  carrer::findOrFail($item->fk_career)->name;
+                $item->fk_career = $career;
 
-            }elseif ($state == 1 and $state == 3 and $state == 5){
+                $course = course::findOrFail($item->fk_course)->name;
+                $item->fk_course = $course;
+
+                $location = pwcnm_second_location::findOrFail($item->fk_location)->name;
+                $item->fk_location = $location;
 
                 $inscriptionRej = array_add($inscriptionRej, count($inscriptionRej), $item);
 
             }elseif ($state == 0){
+                $career =  carrer::findOrFail($item->fk_career)->name;
+                $item->fk_career = $career;
+
+                $course = course::findOrFail($item->fk_course)->name;
+                $item->fk_course = $course;
+
+                $location = pwcnm_second_location::findOrFail($item->fk_location)->name;
+                $item->fk_location = $location;
+
                 $inscriptionPen = array_add($inscriptionPen, count($inscriptionPen), $item);
             }
         }
 
 
-        return view('inscription.admin.allPetitions');
+
+
+
+        return view('inscription.admin.allPetitions', compact('inscriptionApp','inscriptionRej', 'inscriptionPen'));
     }
 
 
 
+    public function approveStudent($id) {
+        $approval = pwcnm_approval::where('fk_inscription', '=',$id)->get();
+
+        $approval = $approval[0];
+
+        $approval->stade = 4;
+
+        $approval->update();
+
+        return redirect('admin/matricula');
+
+    }
 
 
 
@@ -170,5 +188,10 @@ class AdminInscriptionController extends Controller
     {
 
         return redirect('/');
+    }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
 }

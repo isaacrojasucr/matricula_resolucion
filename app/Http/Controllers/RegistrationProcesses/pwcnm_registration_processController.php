@@ -11,6 +11,12 @@ use Session;
 
 class pwcnm_registration_processController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *

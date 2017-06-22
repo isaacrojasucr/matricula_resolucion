@@ -57,6 +57,74 @@
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">{{trans('resolucion.login')}}</a></li>
                         @else
+
+                            <!-- Inscription Options -->
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    @lang('form.inscription') <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ url('/matricula') }}">
+                                            @lang('form.studentSection')
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ url('/admin/matricula') }}">
+                                            @lang('form.actualPetitions')
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ url('/admin/procesos') }}">
+                                            @lang('form.process')
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ url('/') }}">
+                                            @lang('form.reports')
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <!-- Maintenance Options -->
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    @lang('form.maintenance') <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ url('/admin/sedes') }}">
+                                            @lang('form.locations')
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ url('/admin/carreras') }}">
+                                            @lang('form.careers')
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ url('/admin/cursos') }}">
+                                            @lang('form.courses')
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ url('/admin/usuarios') }}">
+                                            @lang('form.users')
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <!--User Options -->
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -76,6 +144,11 @@
                                     </li>
                                 </ul>
                             </li>
+
+
+
+
+
                         @endif
                     </ul>
                 </div>

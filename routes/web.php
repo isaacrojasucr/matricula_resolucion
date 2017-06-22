@@ -40,6 +40,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::resource('matricula','inscriptionController');
 
+    Route::post('matricula/save',['as'=>'matricula/save', 'uses'=>'inscriptionController@store']);
+
     Route::get('matricula/carrera/{id}' , 'inscriptionController@creation');
 
     Route::resource('proceso/coordinador','managerCheckController');
@@ -51,8 +53,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::post('send', 'emailController@send');
 
     Route::get('correo/correo', 'emailController@email');
-    
+        
     Route::resource('admin/matricula', 'AdminInscriptionController');
+
+    Route::get('admin/matricula/aceptar/{id}','AdminInscriptionController@approveStudent');
 
     Route::get('proceso/coordinador/aceptar/{id}','managerCheckController@approveStudent');
 

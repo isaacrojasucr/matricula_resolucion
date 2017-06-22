@@ -86,6 +86,8 @@ class inscriptionController extends Controller
         $process = $request->process;
         $average = $request->weightedAverage;
         $id = $request->id;
+        
+       
 
         if ($request->observation == null) {
             $observation = "";
@@ -232,4 +234,6 @@ class inscriptionController extends Controller
 
         $approval->save();
     }
+
+    
 }
