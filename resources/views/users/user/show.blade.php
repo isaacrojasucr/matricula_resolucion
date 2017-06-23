@@ -36,10 +36,6 @@
                             <table class="table table-borderless">
                                 <tbody>
                                 <tr>
-                                    <th>ID</th>
-                                    <td>{{ $user->id }}</td>
-                                </tr>
-                                <tr>
                                     <th> @lang('form.name') </th>
                                     <td> {{ $user->name }} </td>
                                 </tr>
@@ -53,7 +49,17 @@
                                 </tr>
                                 <tr>
                                     <th> @lang('form.role')  </th>
-                                    <td> {{ $user->role }} </td>
+                                    <td>@if($user->role ==1)
+                                            @lang('form.admin')
+                                        @else
+                                            @lang('form.manager');
+                                        @endif
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th> @lang('form.phone')  </th>
+                                    <td> {{ $user->phone }} </td>
                                 </tr>
                                 </tbody>
                             </table>

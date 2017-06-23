@@ -8,9 +8,29 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">@lang('form.users')</div>
                     <div class="panel-body">
-                        <a href="{{ url('/admin/usuarios/create') }}" class="btn btn-success btn-sm" title=@lang('form.add')>
-                            <i class="fa fa-plus" aria-hidden="true"></i> @lang('form.add')
-                        </a>
+
+
+                        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal">@lang('form.add')</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="addSectionLabel">
+                            <div class="modal-dialog" role="document">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">@lang('form.add')</h4>
+                                    </div>
+                                    <div class="modal-body bg-modal">
+                                        @include('users.user.create')
+                                    </div>
+                                    <div class="modal-footer bg-modal">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">@lang('form.close')</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
 
                         {!! Form::open(['method' => 'GET', 'url' => '/admin/usuarios', 'class' => 'navbar-form navbar-right', 'role' => 'search'])  !!}
                         <div class="input-group">
@@ -34,6 +54,10 @@
                                     <th>@lang('form.lastname')</th>
                                     <th>@lang('form.email')</th>
                                     <th>@lang('form.role')</th>
+                                    <th>@lang('form.phone')</th>
+                                    <th>@lang('form.act')</th>
+
+
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -43,6 +67,14 @@
                                         <td>{{ $user[$i]->name }}</td>
                                         <td>{{ $user[$i]->lastname }}</td>
                                         <td>{{ $user[$i]->email }}</td>
+                                        <td>
+                                            @if($user[$i]->role == 1)
+                                                @lang('form.admin')
+                                            @else
+                                                @lang('form.manager')
+                                            @endif
+                                        </td>
+                                        <td>{{ $user[$i]->phone }}</td>
                                         <td>
                                             <a href="{{ url('/admin/usuarios/' . $user[$i]->id) }}" title= @lang('form.view') ><button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button></a>
                                             <a href="{{ url('/admin/usuarios/' . $user[$i]->id . '/edit') }}" title=@lang('form.edit')><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></a>

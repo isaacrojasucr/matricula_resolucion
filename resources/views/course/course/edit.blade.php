@@ -16,6 +16,8 @@
                             </button>
                         </a>
 
+
+                        @include('users.user.create')
                         <br />
                         <br />
 

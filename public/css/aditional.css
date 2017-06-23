@@ -31,3 +31,7 @@
 .cell{
     max-width: 70px
 }
+
+.bg-modal  {
+    background: white;
+}

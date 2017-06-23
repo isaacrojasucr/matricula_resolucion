@@ -47,6 +47,10 @@
                             {!! Form::label('', trans('form.password').': ') !!}
                             {!! Form::password('password',['class' => 'form-control', 'placeholder'=>trans('form.holderPassword'), 'required'=>'required']) !!}
                         </div>
+                        <div class="form-group">
+                            {!! Form::label('', trans('form.phone').': ') !!}
+                            {!! Form::text('phone',null,['class' => 'form-control', 'placeholder'=>trans('form.phone'), 'required'=>'required']) !!}
+                        </div>
 
 
                         {!! Form::submit(trans('form.update'), ['class'=>'btn btn-primary col-md-12']) !!}
