@@ -25,7 +25,7 @@ class carrer extends Model
      *
      * @var array
      */
-    protected $fillable = ['initial', 'name', 'page', 'manager'];
+    protected $fillable = ['initial', 'name', 'page', 'plan', 'manager'];
 
     
 }

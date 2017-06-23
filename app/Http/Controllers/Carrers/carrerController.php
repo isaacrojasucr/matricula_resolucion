@@ -26,7 +26,7 @@ class carrerController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 25;
+        $perPage = 15;
 
         if (!empty($keyword)) {
             $carrer = carrer::where('initial', 'LIKE', "%$keyword%")
@@ -38,28 +38,18 @@ class carrerController extends Controller
             $carrer = carrer::paginate($perPage);
         }
 
-        $managers = array();
+        $managerss = array();
 
         $i = 0;
         foreach ($carrer  as $item){
 
             $data = \DB::table('users')->where('id',''.$item->manager)->first();
 
-            $managers = array_add($managers,$i,$data->name.' '.$data->lastname);
+            $managerss = array_add($managerss,$i,$data->name.' '.$data->lastname);
             $i ++;
         }
 
-        return view('carrers.carrer.index', compact('carrer','managers'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function create()
-    {
-        $temp = User::all();
+        $temp = User::where('role', '=', 2)->get();
 
         $managers = array();
 
@@ -69,7 +59,16 @@ class carrerController extends Controller
 
         }
 
-        return view('carrers.carrer.create', compact('managers'));
+        return view('carrers.carrer.index', compact('carrer','managerss','managers'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function create()
+    {
     }
 
     /**
@@ -82,11 +81,23 @@ class carrerController extends Controller
     public function store(Request $request)
     {
         
-        $requestData = $request->all();
+        $career =  new carrer();
         
-        carrer::create($requestData);
+        $career->initial = $request->initial;
+        $career->name = $request->name;
+        $career->page = $request->page;
+        $career->manager = $request->manager;
 
-        Session::flash('flash_message', 'carrer added!');
+        if (!empty($request->file('plan_file'))){
+
+            $career->plan = $request->file('plan_file')->store('');
+
+        }else{
+            $career->plan =  '';
+        }
+
+
+        $career->save();
 
         return redirect('admin/carreras');
     }
@@ -118,7 +129,7 @@ class carrerController extends Controller
     {
         $carrer = carrer::findOrFail($id);
 
-        $temp = User::all();
+        $temp = User::where('role', '=', 2)->get();
 
         $managers = array();
 
@@ -144,10 +155,20 @@ class carrerController extends Controller
         
         $requestData = $request->all();
         
-        $carrer = carrer::findOrFail($id);
-        $carrer->update($requestData);
+        $career = carrer::findOrFail($id);
+        $career->initial = $request->initial;
+        $career->name = $request->name;
+        $career->page = $request->page;
+        $career->manager = $request->manager;
 
-        Session::flash('flash_message', 'carrer updated!');
+        if (!empty($request->file('plan_file'))){
+
+            $career->plan = $request->file('plan_file')->store('');
+
+        }
+
+
+        $career->update();
 
         return redirect('admin/carreras');
     }
