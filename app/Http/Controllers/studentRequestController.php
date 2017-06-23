@@ -10,8 +10,8 @@ class studentRequestController extends Controller
 {
     public function index(Request $request)
     {
-        $answer = null;
-        return view('externalRequest.studentRequest', compact('answer'));
+
+        return view('externalRequest.studentRequest');
     }
 
 
@@ -26,6 +26,6 @@ class studentRequestController extends Controller
                                       WHERE i.studentId = ? and i.fk_process= ? and i.studentId= ?', [$request->carne, $max, $request->carne]);
 
 
-        return view('externalRequest.studentRequest', compact('answer')) ;
+        return view('externalRequest.studentRequestAnswer', compact('answer')) ;
     }
 }
