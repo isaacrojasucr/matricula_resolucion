@@ -110,4 +110,11 @@ return [
     'close' => 'Close',
     'state' => 'State',
     'goodNews' => 'Inscription requested by ',
+    'form.pending' => 'Pending',
+    'denyManager' => 'Denied by Career Manager',
+    'acceptManager'=> 'Accepted by Career Manager',
+    'denyAdmin'=> 'Denied by Natural Sciences',
+    'acceptAdmin'=> 'Accepted by Natural Sciences',
+    'denyLocation'=> 'Denied by External University Location',
+    'acceptLocation'=> 'Accepted by External University Location',
 ];

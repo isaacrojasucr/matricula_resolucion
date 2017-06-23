@@ -47,8 +47,3 @@ class SendMail extends Mailable
 
 }
 
-
-/*['text'=>'inscription.admin.emailSending'], ['name', 'Kevin'], function ($message){
-    $message->to('jorgeisaac.rojas@ucrso.info', 'Para Isaac')->subject('MOTIVO');
-    $message->from('kreisoftwaredeveloptment@gmail.com', 'NOMBRE COORDINADOR');*/
-

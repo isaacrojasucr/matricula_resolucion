@@ -19,19 +19,13 @@ class studentRequestController extends Controller
     {
 
         $max = pwcnm_registration_process::max('id');
-        $answer = \DB::table('pwcnm_inscription_requests')
-            ->where('studentId', '=', $request->carne)
-            ->where('fk_process', '=', $max)
-            ->get();
+        $answer = $temp = \DB::select('SELECT i.studentId, c.name as course, i.group, l.name as location, a.stade 
+                                      from pwcnm_inscription_requests as i INNER JOIN pwcnm_approvals as a 
+                                      on i.id = a.fk_inscription INNER JOIN courses as c on c.id = i.fk_course 
+                                      INNER JOIN pwcnm_second_locations as l on l.id = i.fk_location 
+                                      WHERE i.studentId = ? and i.fk_process= ? and i.studentId= ?', [$request->carne, $max, $request->carne]);
 
-        foreach ($answer as $item) {
-            $temp = pwcnm_approval::where('fk_inscription', '=', $item->id)->get();
-            $temp = $temp[0]->stade;
-            $item->state = $temp;
 
-        }
-        dd($answer);
-
-        return view('externalRequest.studentRequest', compact('answer'));
+        return view('externalRequest.studentRequest', compact('answer')) ;
     }
 }
