@@ -117,4 +117,6 @@ return [
     'acceptAdmin'=> 'Accepted by Natural Sciences',
     'denyLocation'=> 'Denied by External University Location',
     'acceptLocation'=> 'Accepted by External University Location',
+    'plan'=>'Career Program',
+    'file'=>'File',
 ];

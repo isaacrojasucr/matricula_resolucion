@@ -117,4 +117,6 @@ return [
     'acceptAdmin'=> 'Aceptado por Ciencias Naturales',
     'denyLocation'=> 'Denegado por Sede Externa',
     'acceptLocation'=> 'Aceptado por Sede Externa',
+    'plan'=>'Plan de estudios',
+    'file'=>'Archivo',
 ];
