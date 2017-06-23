@@ -22,6 +22,7 @@ class UserController extends Controller
                 ->orWhere('lastname', 'LIKE', "%$keyword%")
                 ->orWhere('email', 'LIKE', "%$keyword%")
                 ->orWhere('role', 'LIKE', "%$keyword%")
+                ->orWhere('phone', 'LIKE', "%$keyword%")
                 ->paginate($perPage);
         } else {
             $user = user::paginate($perPage);
@@ -52,7 +53,8 @@ class UserController extends Controller
         $user->lastname = $Request->lastname;
         $user->password = Hash::make($Request->password);
         $user->email = $Request->email;
-        $user->role = 1;
+        $user->phone = $Request->phone;
+        $user->role = 2;
         $user->save();
 
         return redirect('admin/usuarios');
@@ -74,7 +76,7 @@ class UserController extends Controller
         $user->lastname = $Request->lastname;
         $user->password = Hash::make($Request->password);
         $user->email = $Request->email;
-        $user->role = 1;
+        $user->phone = $Request->phone;
 
         $user->update();
 
