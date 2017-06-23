@@ -34,46 +34,49 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/Secciones', 'SectionController@index');
 
-    //Temporal
     Route::get('/CarrerasAdmin', 'CareerController@indexAdmin');
+
     Route::get('/SeccionesAdmin', 'SectionController@indexAdmin');
 
+    Route::post('send', 'emailController@send');
+
+    Route::resource('correos', 'emailController');
+
+    Route::resource('matricula','inscriptionController');
+
     Route::get('/SeccionesAdmin/Agregar', 'SectionController@addSection');
+
+    Route::get('correo/correo', 'emailController@email');
+
+    Route::resource('admin/usuarios', 'UserController');
 
     Route::resource('admin/carreras', 'Carrers\\carrerController');
 
     Route::resource('admin/cursos', 'Courses\\courseController');
 
-    Route::resource('admin/usuarios', 'UserController');
-    
-    Route::get('/download/{file}' , 'Courses\\courseController@downloadFile');
+    Route::resource('proceso/coordinador','managerCheckController');
+
+    Route::resource('admin/matricula', 'AdminInscriptionController');
+
+    Route::resource('consulta/estudiante', 'studentRequestController');
 
     Route::resource('admin/procesos', 'RegistrationProcesses\\pwcnm_registration_processController');
 
     Route::resource('admin/sedes', 'SecondLocations\\pwcnm_second_locationController');
 
-    Route::resource('matricula','inscriptionController');
-
-    Route::post('matricula/save',['as'=>'matricula/save', 'uses'=>'inscriptionController@store']);
+    Route::get('/download/{file}' , 'Courses\\courseController@downloadFile');
 
     Route::get('matricula/carrera/{id}' , 'inscriptionController@creation');
 
-    Route::resource('proceso/coordinador','managerCheckController');
-
     Route::get('general/correos/{email}','emailController@opening');
 
-    Route::resource('correos', 'emailController');
-
-    Route::post('send', 'emailController@send');
-
-    Route::get('correo/correo', 'emailController@email');
-        
-    Route::resource('admin/matricula', 'AdminInscriptionController');
+    Route::post('consultas/pregunta',['as'=>'consultas/pregunta', 'uses'=>'studentRequestController@consult']);
 
     Route::get('admin/matricula/aceptar/{id}','AdminInscriptionController@approveStudent');
 
     Route::get('proceso/coordinador/aceptar/{id}','managerCheckController@approveStudent');
 
-    Route::resource('consulta/estudiante', 'studentRequestController');
+    Route::post('matricula/save',['as'=>'matricula/save', 'uses'=>'inscriptionController@store']);
+
 
 });

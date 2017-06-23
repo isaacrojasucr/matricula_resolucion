@@ -103,4 +103,11 @@ return [
     'actualPetitions' => 'Current petitions',
     'process' => 'Processes',
     'reports' => 'Reports',
+    'consult' => 'Consult',
+    'admin' => 'Administrator',
+    'consultAnswer' => 'Consult Answer',
+    'badNews' => 'There is no inscription request linked to this student ID. Please try another one.',
+    'close' => 'Close',
+    'state' => 'State',
+    'goodNews' => 'Inscription requested by ',
 ];

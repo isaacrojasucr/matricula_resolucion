@@ -103,4 +103,11 @@ return [
     'actualPetitions' => 'Solicitudes Actuales',
     'process' => 'Procesos',
     'reports' => 'Reportes',
-    ];
+    'consult' => 'Consultar',
+    'admin' => 'Administrador',
+    'consultAnswer' => 'Respuesta de la consulta',
+    'badNews' => 'No existen solicitudes de matrícula asociadas a este carné de estudiante. Intenta con otro.',
+    'close' => 'Cerrar',
+    'state' => 'Estado',
+    'goodNews' => 'Matrículas por inclusión solicitadas por  ',
+];
