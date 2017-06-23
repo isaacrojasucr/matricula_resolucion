@@ -4,6 +4,9 @@
 <div class="container" id="content">
     <div class="row">
         <div class="col-md-12">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addSection" id="buttonTable">
+                Agregar
+            </button>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -26,17 +29,14 @@
                             <td>{{$section->email}}</td>
                             <td>{{$section->phone}}</td>
                             <td>
-                                <a title=@lang('form.edit') class="btn btn-info" href="#" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                <a title=@lang('form.delete') class="btn btn-danger" href="#" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                <a title=@lang('form.edit') class="btn btn-info" href="{{ url('/SeccionesAdmin/Editar/' . $section->ID_SECCION) }}" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                <a title=@lang('form.delete') class="btn btn-danger" href="{{ url('/SeccionesAdmin/Eliminar/' . $section->ID_SECCION) }}" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
             </div>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addSection">
-                Agregar
-            </button>
         </div>
     </div>
 </div>
@@ -56,16 +56,12 @@
                         <input name="name" type="text" class="form-control" id="name" placeholder="Nombre">
                     </div>
                     <div class="form-group">
-                        <label for="inCharge">Encargado</label>
-                        <input name="inCharge" type="text" class="form-control" id="inCharge" placeholder="Encargado">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correo</label>
-                        <input name="email" type="email" class="form-control" id="email" placeholder="Correo">
-                    </div>
-                    <div class="form-group">
-                        <label for="number">Número</label>
-                        <input name="number" type="number" class="form-control" id="number" placeholder="Número">
+                        <label for="name">Encargado(a)</label>
+                        <select name="inCharge" class="form-control">
+                            @foreach ($listUser as $user)
+                                <option value="{{$user->id}}">{{$user->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-success">Agregar</button>
                 </form>
