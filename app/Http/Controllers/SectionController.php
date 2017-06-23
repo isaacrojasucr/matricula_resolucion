@@ -8,38 +8,12 @@ use App\Section;
 class SectionController extends Controller
 {
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    /**public function __construct()
-    {
-        $this->middleware('auth');
-    }*/
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    /*public function index()
-    {
-        return view('home');
-    }*/
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
     public function index(Section $section)
     {
 
         $listSection = $section->getListSection();
 
-        return view('section', compact('listSection'));
+        return view('section', compact('listSection', 'managers'));
     }
 
     public function indexAdmin(Section $section)
@@ -47,7 +21,7 @@ class SectionController extends Controller
 
         $listSection = $section->getListSection();
 
-        return view('sectionAdmin', compact('listSection'));
+        return view('sectionAdmin', compact('listSection', ''));
     }
 
     public function addSection(Request $request, Section $section)

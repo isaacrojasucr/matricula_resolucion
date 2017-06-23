@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\DB;
 class Section extends Model
 {
     public function getListSection() {
-    	return DB::select('select NOMBRE, ENCARGADO, CONTACTO, NUMERO from PWCNM_SECCION');
+    	//return DB::select('select NOMBRE, ENCARGADO, CONTACTO, NUMERO from PWCNM_SECCION');
+        return DB::select('select s.NOMBRE, u.name, u.email, u.phone from PWCNM_SECCION as s INNER JOIN users as u ON s.ID_CONTACTO = u.id');
     }
 
     public function insertSection($name, $inCharge, $email, $number)

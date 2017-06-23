@@ -22,12 +22,12 @@
                         <tr>
                             <th>{{$contador++}}</th>
                             <td>{{$section->NOMBRE}}</td>
-                            <td>{{$section->ENCARGADO}}</td> 
-                            <td>{{$section->CONTACTO}}</td>
-                            <td>{{$section->NUMERO}}</td>
+                            <td>{{$section->name}}</td> 
+                            <td>{{$section->email}}</td>
+                            <td>{{$section->phone}}</td>
                             <td>
-                                <a class="btn btn-info" href="#" role="button">Editar</a>
-                                <a class="btn btn-danger" href="#" role="button">Eliminar</a>
+                                <a title=@lang('form.edit') class="btn btn-info" href="#" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                <a title=@lang('form.delete') class="btn btn-danger" href="#" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                             </td>
                         </tr>
                         @endforeach

@@ -9,9 +9,9 @@
             @foreach ($listSection as $section)
 
             <h2>{{$section->NOMBRE}}</h2>
-            <p>Encargado(a): {{$section->ENCARGADO}}</p>
-            <p>Contacto: {{$section->CONTACTO}}</p>
-            <p>Número: {{$section->NUMERO}}</p>
+            <p>Encargado(a): {{$section->name}}</p>
+            <p>Contacto: {{$section->email}}</p>
+            <p>Número: {{$section->phone}}</p>
 
             @endforeach
         </div>
