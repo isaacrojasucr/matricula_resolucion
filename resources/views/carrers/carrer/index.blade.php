@@ -74,7 +74,7 @@
                                         <td>{{$carrer[$i]->initial}}</td>
                                         <td>{{$carrer[$i]->name}}</td>
                                         <td>{{$carrer[$i]->page}}</td>
-                                        <td>{{array_get($managers,$i)}}</td>
+                                        <td>{{array_get($managerss,$i)}}</td>
                                         <td>
                                             <a href="{{ url('/admin/carreras/' . $carrer[$i]->id . '/edit') }}" title="@lang('form.edit')"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></a>
                                             {!! Form::open([
