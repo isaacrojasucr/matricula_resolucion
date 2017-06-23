@@ -74,7 +74,7 @@
             <div class="row">
 
                 <div class="col-md-2 col-md-offset-5">
-                    <a href="{{ url('/consulta/estudiante') }}" title=@lang('form.newQuestionTool')>
+                    <a href="{{ url('/consulta/estudiante') }}" title=@lang('form.newQuestion')>
                         <button class="btn btn-primary">@lang('form.newQuestion')</button>
                     </a>
                 </div>

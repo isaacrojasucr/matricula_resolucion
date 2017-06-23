@@ -46,17 +46,15 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/SeccionesAdmin/Agregar', 'SectionController@addSection');
 
-<<<<<<< HEAD
     Route::get('SeccionesAdmin/Eliminar/{id}', 'SectionController@deleteSection');
 
     Route::get('SeccionesAdmin/Editar/{id}', 'SectionController@editSectionView');
 
     Route::get('SeccionesAdmin/Editar/{id}/Edit', 'SectionController@editSection');
-=======
+
     Route::get('correo/correo', 'emailController@email');
 
     Route::resource('admin/usuarios', 'UserController');
->>>>>>> 39220fdcd578ff99bcd731f5bd32e1a6ee768947
 
     Route::resource('admin/carreras', 'Carrers\\carrerController');
 

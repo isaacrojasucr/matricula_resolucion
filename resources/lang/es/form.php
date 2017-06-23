@@ -119,4 +119,5 @@ return [
     'acceptLocation'=> 'Aceptado por Sede Externa',
     'plan'=>'Plan de estudios',
     'file'=>'Archivo',
+    'newQuestion' => 'Nueva Consulta',
 ];

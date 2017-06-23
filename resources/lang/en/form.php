@@ -119,4 +119,5 @@ return [
     'acceptLocation'=> 'Accepted by External University Location',
     'plan'=>'Career Program',
     'file'=>'File',
+    'newQuestion' => 'New Consult',
 ];
