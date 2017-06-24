@@ -120,4 +120,11 @@ return [
     'plan'=>'Plan de estudios',
     'file'=>'Archivo',
     'newQuestion' => 'Nueva Consulta',
+    'acceptbydeparment'=> 'Aprobar por el departamento',
+    'acceptbylocation'=> 'Aprobar por la sede',
+    'avgAndReq' => 'Ver ponderado y requerimientos',
+    'req' => 'Requisitos',
+    'clApp' => 'Ciclo de aprobacion',
+    'noReq' => 'No se agregaron requisitos',
+
 ];

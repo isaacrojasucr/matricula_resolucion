@@ -31,9 +31,19 @@ class emailController extends Controller
 
         $approval = pwcnm_approval::where('fk_inscription', '=',$Request->id)->get();
 
+        $manager = app()->make('auth');
+        $role = $manager->user()->role;
+
         $approval = $approval[0];
 
-        $approval->stade = 1;
+        if ($approval->stade = 0){
+            $approval->stade = 1;
+        }else if ($approval->stade = 2){
+            $approval->stade = 3;
+        }else if ($approval-> stade = 4) {
+            $approval->stade = 5;
+        }
+
         $approval->comments = $Request->emailContent;
         $approval->update();
 
@@ -51,8 +61,7 @@ class emailController extends Controller
 
         $this->send();
 
-        $manager = app()->make('auth');
-        $role = $manager->user()->role;
+
 
         if ($role==2){
             return redirect('proceso/coordinador');

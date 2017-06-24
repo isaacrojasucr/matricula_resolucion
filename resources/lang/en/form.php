@@ -120,4 +120,9 @@ return [
     'plan'=>'Career Program',
     'file'=>'File',
     'newQuestion' => 'New Consult',
+    'acceptbydeparment'=> 'Approve by deparment',
+    'avgAndReq' => 'See weighted average and requirements',
+    'req' => 'Requirements',
+    'clApp' => 'approvation cycle',
+    'noReq' => 'No requirements added'
 ];

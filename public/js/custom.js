@@ -59,7 +59,7 @@ function genera_req() {
     var id = document.getElementsByName("subid")[0].value;
     var name = document.getElementsByName("subname")[0].value;
     var result = document.getElementsByName("result")[0].value;
-    var cycle = document.getElementsByName("carrer")[0].value;
+    var cycle = document.getElementsByName("cycle")[0].value;
 
 
     celda1.innerHTML = id;

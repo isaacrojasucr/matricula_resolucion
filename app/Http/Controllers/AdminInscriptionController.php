@@ -25,58 +25,49 @@ class AdminInscriptionController extends Controller
 
         $processId = $this->lastProcess();
 
-        $tempPetitions = pwcnm_inscriptionRequest::where('fk_process', '=', $processId)->get();
-
-        $inscriptionApp = array();
+        $inscriptionApp = \DB::select('SELECT i.id, i.studentId as carne, c.name as career, cc.name as course, i.group, l.name as location, 
+                                      i.weightedAverage as average, i.phone, i.email ,a.stade as state from pwcnm_inscription_requests as i 
+                                      INNER JOIN pwcnm_approvals as a ON a.fk_inscription = i.id 
+                                      INNER JOIN pwcnm_second_locations as l ON l.id = i.fk_location 
+                                      INNER JOIN pwcnm_registration_processes as p ON p.id = i.fk_process 
+                                      INNER JOIN carrers as c ON c.id = i.fk_career 
+                                      INNER JOIN courses as cc ON cc.id = i.fk_course 
+                                      WHERE p.id = ? and (a.stade = 2 or a.stade = 4 or a.stade = 6)
+                                      ORDER BY a.stade ASC', [$processId]);
         //---------------------------------------------
         
-        $inscriptionRej = array();
+        $inscriptionRej = \DB::select('SELECT i.id, i.studentId as carne, c.name as career, cc.name as course, i.group, l.name as location, 
+                                      i.weightedAverage as average, i.phone, i.email,a.stade as state from pwcnm_inscription_requests as i 
+                                      INNER JOIN pwcnm_approvals as a ON a.fk_inscription = i.id 
+                                      INNER JOIN pwcnm_second_locations as l ON l.id = i.fk_location 
+                                      INNER JOIN pwcnm_registration_processes as p ON p.id = i.fk_process 
+                                      INNER JOIN carrers as c ON c.id = i.fk_career 
+                                      INNER JOIN courses as cc ON cc.id = i.fk_course 
+                                      WHERE p.id = ? and (a.stade = 1 or a.stade = 3 or a.stade = 5)
+                                      ORDER BY a.stade ASC', [$processId]);
         //---------------------------------------------
         
-        $inscriptionPen = array();
+        $inscriptionPen = \DB::select('SELECT i.id, i.studentId as carne, c.name as career, cc.name as course, i.group, l.name as location, 
+                                        i.weightedAverage as average, i.phone, i.email, a.stade from pwcnm_inscription_requests as i 
+                                        INNER JOIN pwcnm_approvals as a ON a.fk_inscription = i.id 
+                                        INNER JOIN pwcnm_second_locations as l ON l.id = i.fk_location 
+                                        INNER JOIN pwcnm_registration_processes as p ON p.id = i.fk_process 
+                                        INNER JOIN carrers as c ON c.id = i.fk_career 
+                                        INNER JOIN courses as cc ON cc.id = i.fk_course 
+                                        WHERE p.id = 1 and (a.stade = 0)', [$processId]);
         //----------------------------------------------
 
-        foreach ($tempPetitions as $item) {
-            $state = pwcnm_approval::where('fk_inscription', '=', $item->id)->get();
-            $state = $state[0]->stade;
-            
-            if ($state == 2 or $state == 4 or $state == 6 ) {
-                $career =  carrer::findOrFail($item->fk_career)->name;
-                $item->fk_career = $career;
+        foreach ($inscriptionApp as $item){
+            if($item->state != 6){
+                $requirements = \DB::select('select r.course, r.grade, r.cycle 
+                                        from pwcnm_requirements as r 
+                                        where r.fk_inscription = ?',[$item->id]);
+                $item->req = $requirements;
 
-                $course = course::findOrFail($item->fk_course)->name;
-                $item->fk_course = $course;
-                
-                $location = pwcnm_second_location::findOrFail($item->fk_location)->name;
-                $item->fk_location = $location;
-
-                $inscriptionApp = array_add($inscriptionApp, count($inscriptionApp), $item);
-
-            }elseif ($state == 1 or $state == 3 or $state == 5){
-                $career =  carrer::findOrFail($item->fk_career)->name;
-                $item->fk_career = $career;
-
-                $course = course::findOrFail($item->fk_course)->name;
-                $item->fk_course = $course;
-
-                $location = pwcnm_second_location::findOrFail($item->fk_location)->name;
-                $item->fk_location = $location;
-
-                $inscriptionRej = array_add($inscriptionRej, count($inscriptionRej), $item);
-
-            }elseif ($state == 0){
-                $career =  carrer::findOrFail($item->fk_career)->name;
-                $item->fk_career = $career;
-
-                $course = course::findOrFail($item->fk_course)->name;
-                $item->fk_course = $course;
-
-                $location = pwcnm_second_location::findOrFail($item->fk_location)->name;
-                $item->fk_location = $location;
-
-                $inscriptionPen = array_add($inscriptionPen, count($inscriptionPen), $item);
             }
+
         }
+
 
 
 
@@ -87,12 +78,26 @@ class AdminInscriptionController extends Controller
 
 
 
+    /**
+     * change the state of the inscription in the table of approvals
+     *identified by the id od the inscription
+     *
+     * @param  integer $id
+     *
+     */
     public function approveStudent($id) {
         $approval = pwcnm_approval::where('fk_inscription', '=',$id)->get();
 
         $approval = $approval[0];
+        if ($approval->stade == 0){
+            $approval->stade = 4;
+        }elseif ($approval->stade == 2){
+            $approval->stade = 4;
+        }elseif ($approval->stade == 4){
+            $approval->stade = 6;
+        }
 
-        $approval->stade = 4;
+        
 
         $approval->update();
 
@@ -102,7 +107,10 @@ class AdminInscriptionController extends Controller
 
 
 
-
+    /**
+     * return the id of the actual process.
+     *
+     */
     private function lastProcess()
     {
         $id = pwcnm_registration_process::max('id');

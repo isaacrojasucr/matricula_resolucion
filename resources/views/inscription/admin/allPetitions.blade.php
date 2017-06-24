@@ -39,29 +39,136 @@
                                         @foreach($inscriptionApp as $item)
 
                                             <tr>
-                                                <td>{{$item->studentId}}</td>
-                                                <td>{{$item->fk_career}}</td>
-                                                <td>{{$item->fk_course}}</td>
+                                                <td>{{$item->carne}}</td>
+                                                <td>{{$item->career}}</td>
+                                                <td>{{$item->course}}</td>
                                                 <td>{{$item->group}}</td>
-                                                <td>{{$item->fk_location}}</td>
-                                                <td>{{$item->weightedAverage}}</td>
+                                                <td>{{$item->location}}</td>
+                                                <td>{{$item->average}}</td>
                                                 <td>{{$item->phone}}</td>
                                                 <td>{{$item->email}}</td>
                                                 <td>
-                                                    <a href="{{ url('/admin/matricula/aceptar/'.$item->id)}}"
-                                                       class="btn btn-sm btn-success" title=@lang('form.accept')>
-                                                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                                                    </a>
+                                                    @if($item->state == 2)
+                                                        <a href="{{ url('/admin/matricula/aceptar/'.$item->id)}}"
+                                                           class="btn btn-sm btn-success" data-toggle="tooltip"
+                                                           data-placement="bottom"
+                                                           data-toggle="tooltip"
+                                                           title="@lang('form.acceptbydeparment')">
+                                                            <span class="glyphicon glyphicon-ok"
+                                                                  aria-hidden="true"></span>
+                                                        </a>
+                                                        <a href="{{ url('/general/correos/'.$item->id) }}"
+                                                           class="btn btn-sm btn-danger"
+                                                           data-toggle="tooltip"
+                                                           data-placement="bottom"
+                                                           title="@lang('form.deny')"> <span
+                                                                    class="glyphicon glyphicon-remove"
+                                                                    aria-hidden="true"></span>
+                                                        </a>
 
-                                                    <a href="{{ url('/general/correos/'.$item->id) }}"
-                                                       class="btn btn-sm btn-danger" title=@lang('form.deny')> <span
-                                                                class="glyphicon glyphicon-remove"
-                                                                aria-hidden="true"></span>
-                                                    </a>
-                                                    <a class="btn btn-sm btn-warning" title=@lang('form.edit')> <span
-                                                                class="glyphicon glyphicon-pencil"
-                                                                aria-hidden="true"></span>
-                                                    </a>
+
+                                                        <button type="button" class="btn btn-sm btn-warning"
+                                                                title="@lang('form.avgAndReq')"
+                                                                data-placement="left" data-toggle="modal"
+                                                                data-target="#myModal{{$item->id}}">
+                                                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                                                        </button>
+
+                                                        <!-- Modal -->
+                                                        <div class="modal fade" id="myModal{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="addSectionLabel">
+                                                            <div class="modal-dialog" role="document">
+
+                                                                <!-- Modal content-->
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h4 class="modal-title">@lang('form.avgAndReq')</h4>
+                                                                    </div>
+                                                                    <div class="modal-body bg-modal">
+                                                                        <label>@lang('form.average')</label>: {{$item->average}}
+
+                                                                        </br>
+                                                                        <label>@lang('form.req')</label>
+                                                                        </br>
+                                                                        @if(count($item->req) != 0)
+                                                                            @foreach($item->req as $req)
+                                                                                {{$req->course}} / @lang('form.result'): {{$req->grade}} / @lang('form.clApp'): {{$req->cycle}}</br>
+                                                                            @endforeach
+
+                                                                        @else
+                                                                            @lang('form.noReq')
+                                                                        @endif
+
+
+                                                                    </div>
+                                                                    <div class="modal-footer bg-modal">
+                                                                        <button type="button" class="btn btn-default" data-dismiss="modal">@lang('form.close')</button>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    @elseif($item->state == 4)
+                                                        <a href="{{ url('/admin/matricula/aceptar/'.$item->id)}}"
+                                                           class="btn btn-sm btn-info" data-toggle="tooltip"
+                                                           data-placement="bottom"
+                                                           title="@lang('form.acceptbylocation')">
+                                                            <span class="glyphicon glyphicon-ok"
+                                                                  aria-hidden="true"></span>
+                                                        </a>
+                                                        <a href="{{ url('/general/correos/'.$item->id) }}"
+                                                           class="btn btn-sm btn-danger"
+                                                           data-toggle="tooltip"
+                                                           data-placement="bottom"
+                                                           title="@lang('form.deny')">
+                                                            <span class="glyphicon glyphicon-remove"
+                                                                  aria-hidden="true"></span>
+                                                        </a>
+
+
+                                                        <button type="button" class="btn btn-sm btn-warning"
+                                                                title="@lang('form.avgAndReq')"
+                                                                data-placement="left" data-toggle="modal"
+                                                                data-target="#myModal{{$item->id}}">
+                                                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                                                        </button>
+
+                                                        <!-- Modal -->
+                                                        <div class="modal fade" id="myModal{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="addSectionLabel">
+                                                            <div class="modal-dialog" role="document">
+
+                                                                <!-- Modal content-->
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h4 class="modal-title">@lang('form.avgAndReq')</h4>
+                                                                    </div>
+                                                                    <div class="modal-body bg-modal">
+                                                                        <label>@lang('form.average')</label>: {{$item->average}}
+
+                                                                        </br>
+                                                                        <label>@lang('form.req')</label>
+                                                                        </br>
+                                                                        @if(count($item->req) != 0)
+                                                                            @foreach($item->req as $req)
+                                                                                {{$req->course}} / @lang('form.result'): {{$req->grade}} / @lang('form.clApp'): {{$req->cycle}}</br>
+                                                                            @endforeach
+
+                                                                        @else
+                                                                            @lang('form.noReq')
+                                                                        @endif
+
+
+                                                                    </div>
+                                                                    <div class="modal-footer bg-modal">
+                                                                        <button type="button" class="btn btn-default" data-dismiss="modal">@lang('form.close')</button>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    @else
+
+                                                    @endif
+
 
                                                 </td>
                                             </tr>
@@ -94,13 +201,14 @@
                                         <tbody>
                                         @foreach($inscriptionRej as $item)
 
+
                                             <tr>
-                                                <td>{{$item->studentId}}</td>
-                                                <td>{{$item->fk_career}}</td>
-                                                <td>{{$item->fk_course}}</td>
+                                                <td>{{$item->carne}}</td>
+                                                <td>{{$item->career}}</td>
+                                                <td>{{$item->course}}</td>
                                                 <td>{{$item->group}}</td>
-                                                <td>{{$item->fk_location}}</td>
-                                                <td>{{$item->weightedAverage}}</td>
+                                                <td>{{$item->location}}</td>
+                                                <td>{{$item->average}}</td>
                                                 <td>{{$item->phone}}</td>
                                                 <td>{{$item->email}}</td>
                                             </tr>
@@ -133,12 +241,12 @@
                                         @foreach($inscriptionPen as $item)
 
                                             <tr>
-                                                <td>{{$item->studentId}}</td>
-                                                <td>{{$item->fk_career}}</td>
-                                                <td>{{$item->fk_course}}</td>
+                                                <td>{{$item->carne}}</td>
+                                                <td>{{$item->career}}</td>
+                                                <td>{{$item->course}}</td>
                                                 <td>{{$item->group}}</td>
-                                                <td>{{$item->fk_location}}</td>
-                                                <td>{{$item->weightedAverage}}</td>
+                                                <td>{{$item->location}}</td>
+                                                <td>{{$item->average}}</td>
                                                 <td>{{$item->phone}}</td>
                                                 <td>{{$item->email}}</td>
                                                 <td>
@@ -147,9 +255,10 @@
                                                         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                                                     </a>
 
-                                                    <a class="btn btn-sm btn-danger" title=@lang('form.deny')>
-                                                        <span class="glyphicon glyphicon-remove"
-                                                              aria-hidden="true"></span>
+                                                    <a href="{{ url('/general/correos/'.$item->id) }}"
+                                                       class="btn btn-sm btn-danger" title=@lang('form.deny')> <span
+                                                                class="glyphicon glyphicon-remove"
+                                                                aria-hidden="true"></span>
                                                     </a>
 
                                                 </td>
@@ -169,5 +278,11 @@
         </div>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 
 @endsection  
