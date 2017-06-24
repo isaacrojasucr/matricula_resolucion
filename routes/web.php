@@ -26,6 +26,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         return view('aboutUs');
     });
 
+    Route::get('/matricula/reporte', function(){
+        return view('inscription.student.show');
+    });
+
     Auth::routes();
 
     Route::get('/inicio', 'HomeController@index')->name('home');

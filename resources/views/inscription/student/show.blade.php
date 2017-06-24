@@ -23,7 +23,7 @@
                                         @lang('form.carne')
                                     </label>
                                     <label class="form-control">
-                                        {{$personal[0]}}
+                                        {{session()->get('personal')[0]}}
                                     </label>
                                 </div>
                             </div>
@@ -34,7 +34,7 @@
                                         @lang('form.name')
                                     </label>
                                     <label class="form-control">
-                                        {{$personal[1]}}
+                                        {{session()->get('personal')[1]}}
                                     </label>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                                         @lang('form.phone')
                                     </label>
                                     <label class="form-control">
-                                        {{$personal[2]}}
+                                        {{session()->get('personal')[2]}}
                                     </label>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                                         @lang('form.email')
                                     </label>
                                     <label class="form-control">
-                                        {{$personal[3]}}
+                                        {{session()->get('personal')[3]}}
                                     </label>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                                     @lang('form.average')
                                 </label>
                                 <label class="form-control" style="width: 50%;">
-                                    {{$personal[4]}}
+                                    {{session()->get('personal')[4]}}
                                 </label>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                                     @lang('form.carrer')
                                 </label>
                                 <label class="form-control">
-                                    {{$career}}
+                                    {{session()->get('career')}}
                                 </label>
                             </div>
                             <div class="well" style="background-color: white">
@@ -94,7 +94,7 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($inscript as $item)
+                                        @foreach(session()->get('inscript') as $item)
                                             <tr>
                                                 <th>{{$item[1]}}</th>
                                                 <th>{{$item[2]}}</th>

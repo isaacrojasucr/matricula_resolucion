@@ -63,7 +63,7 @@ return [
     'timesAttended' => 'Times Attended',
     'group' => 'Group',
     'observation' => 'Observations',
-    'declaration' => 'Affidavit',
+    'declaration' => 'sworn declaration',
     'headDeclaration' => 'If the requested course (s) has requirements, please complete the following sworn declaration',
     'warning' => 'For purposes of inscription I declare under oath that I attended the following subjects that I indicated below and obtained the following results.',
     'subjectid'=>'subject initial',
@@ -129,4 +129,6 @@ return [
     'petitionInfo' => 'Request Information',
     'promotionalConsult' => 'You can check the state of the diferent process requested just by inserting your stundent ID in the consultation page.',
     'downloadPDF' => 'Download PDF File',
+    'leftInfo' => 'you have to complete the courses form information',
+    'verifyReq'=> 'are you sure that the inscription didn\'t need requirements',
 ];

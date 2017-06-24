@@ -87,13 +87,7 @@ class inscriptionController extends Controller
         $average = $request->weightedAverage;
         $id = $request->id;
         
-       
 
-        if ($request->observation == null) {
-            $observation = "";
-        } else {
-            $observation = $request->observation;
-        }
 
 
         $courseTable = $request->t1;
@@ -131,11 +125,12 @@ class inscriptionController extends Controller
 
             $inscription = new pwcnm_inscriptionRequest();
 
+
             $inscription->studentId = $studentId;
             $inscription->studentName = $studentName;
             $inscription->phone = $phone;
             $inscription->email = $email;
-            $inscription->observations = $observation;
+            $inscription->observations = $item[4];
             $inscription->weightedAverage = $average;
             $inscription->fk_process = $process;
             $inscription->fk_career = $id;
@@ -179,8 +174,11 @@ class inscriptionController extends Controller
 
         }
 
+        session()->put('career',$career);
+        session()->put('personal', $personal);
+        session()->put('inscript', $inscript);
 
-        return view('inscription.student.show', compact('career', 'personal','inscript'));
+        return redirect('/matricula/reporte');
     }
 
     /**

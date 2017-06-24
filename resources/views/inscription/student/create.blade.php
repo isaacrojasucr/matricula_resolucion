@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                {!! Form::open(['route' => 'matricula/save', 'method' => 'post','onsubmit' => 'return valform("'.trans('form.textleft').'")']) !!}
+                {!! Form::open(['route' => 'matricula/save', 'method' => 'post','onsubmit' => 'return valform("'.trans('form.textleft').'","'.trans('form.verifyReq').'")']) !!}
 
                 <div class="form-group" style="height: 79px;">
                     <div class="col-md-6">
@@ -147,7 +147,7 @@
 
                         <div class="col-md-6">
                             <button type="button" class="btn btn-info col-md-12"
-                                    onclick="genera_tabla()"> @lang('form.add')
+                                    onclick="genera_tabla('{{trans('form.leftInfo')}}')"> @lang('form.add')
                             </button>
                         </div>
 

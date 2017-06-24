@@ -130,4 +130,6 @@ return [
     'petitionInfo' => 'Información de la solicitud',
     'promotionalConsult' => 'Puedes revisar el estado de los distintos procesos solicitados en cualquier momento, solamente ingresando tu carné en la página de consultas.',
     'downloadPDF' => 'Descargar Archivo PDF',
+    'leftInfo' => 'Tiene que completar la información de los cursos',
+    'verifyReq'=> 'Esta seguro que la matricula no posee requisitos',
 ];

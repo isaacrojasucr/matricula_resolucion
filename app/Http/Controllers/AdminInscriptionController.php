@@ -168,7 +168,15 @@ class AdminInscriptionController extends Controller
      */
     public function update($id, Request $request)
     {
-        return redirect('/');
+
+        $inscription = pwcnm_inscriptionRequest::findOrFail($id);
+
+        $inscription->group = $request->group;
+        $inscription->weightedAverage = $request->weightedAverage;
+
+        $inscription->update();
+
+        return redirect('/admin/matricula');
     }
 
     /**
