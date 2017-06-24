@@ -22,13 +22,13 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         return view('welcome');
     });
 
+    Route::get('/Acerca', function () {
+        return view('aboutUs');
+    });
+
     Auth::routes();
 
     Route::get('/inicio', 'HomeController@index')->name('home');
-
-    Route::get('/Acerca', function () {
-    return view('aboutUs');
-    });
 
     Route::get('/Carreras', 'CareerController@index');
 

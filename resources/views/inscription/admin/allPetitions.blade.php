@@ -67,9 +67,10 @@
                                                         </a>
 
 
-                                                        <button type="button" class="btn btn-sm btn-warning"
+                                                        <button type="button" class="btn btn-sm btn-primary"
                                                                 title="@lang('form.avgAndReq')"
-                                                                data-placement="left" data-toggle="modal"
+
+                                                                data-toggle="modal"
                                                                 data-target="#myModal{{$item->id}}">
                                                             <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
                                                         </button>
@@ -100,7 +101,17 @@
 
 
                                                                     </div>
-                                                                    <div class="modal-footer bg-modal">
+                                                                    <div class="modal-footer ">
+                                                                        <a class="btn btn-warning"
+                                                                           data-toggle="tooltip"
+                                                                           data-placement="bottom"
+                                                                           title="@lang('form.edit')"
+                                                                           href="{{url('/admin/matricula/'.$item->id.'/edit')}}">
+
+                                                                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+
+                                                                        </a>
+
                                                                         <button type="button" class="btn btn-default" data-dismiss="modal">@lang('form.close')</button>
                                                                     </div>
                                                                 </div>
@@ -125,9 +136,11 @@
                                                         </a>
 
 
-                                                        <button type="button" class="btn btn-sm btn-warning"
+
+
+                                                        <button type="button" class="btn btn-sm btn-primary"
                                                                 title="@lang('form.avgAndReq')"
-                                                                data-placement="left" data-toggle="modal"
+                                                                data-toggle="modal"
                                                                 data-target="#myModal{{$item->id}}">
                                                             <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
                                                         </button>
@@ -159,6 +172,16 @@
 
                                                                     </div>
                                                                     <div class="modal-footer bg-modal">
+                                                                        <a class="btn btn-warning"
+                                                                           data-toggle="tooltip"
+                                                                           data-placement="bottom"
+                                                                           title="@lang('form.edit')"
+                                                                           href="{{url('/admin/matricula/'.$item->id.'/edit')}}">
+
+                                                                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+
+                                                                        </a>
+
                                                                         <button type="button" class="btn btn-default" data-dismiss="modal">@lang('form.close')</button>
                                                                     </div>
                                                                 </div>

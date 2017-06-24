@@ -136,30 +136,7 @@ class AdminInscriptionController extends Controller
         return $diferencia;
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function store(Request $request)
-    {
-        return redirect('/');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\View\View
-     */
-    public function show($id)
-    {
-        return view('');
-    }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -169,7 +146,16 @@ class AdminInscriptionController extends Controller
      */
     public function edit($id)
     {
-        return view('');
+
+        $petition = pwcnm_inscriptionRequest::findOrFail($id);
+
+        $location = pwcnm_second_location::findOrFail($petition->fk_location)->name;
+
+        $course = course::findOrFail($petition->fk_course)->name;
+
+        $career = carrer::findOrFail($petition->fk_career)->name    ;
+
+        return view('inscription.admin.editPetition', compact('petition', 'location', 'career', 'course'));
     }
 
     /**
