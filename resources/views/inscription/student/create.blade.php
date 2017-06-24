@@ -158,7 +158,7 @@
 
                     <div class="form-group">
                         <div class="well" style="background-color: white">
-                            <table class="table table-hover" id="tabla" name="tabla">
+                            <table class="table table-hover table-responsive" id="tabla" name="tabla">
                                 <thead>
                                 <tr>
                                     <th style="width: 20%">@lang('form.location')</th>
@@ -201,7 +201,7 @@
 
                     <div class="form-group">
                         <div class="well" style="background-color: white">
-                            <table class="table table-hover" id="tabla2" name="tabla2">
+                            <table class="table table-hover table-responsive" id="tabla2" name="tabla2">
                                 <thead>
                                 <tr>
                                     <th>@lang('form.subjectid')</th>
@@ -219,7 +219,7 @@
                                     </th>
                                     <th>
                                         <button type="button" class="btn btn-info col-md-12 "
-                                                onclick="genera_req()"> @lang('form.add')
+                                                onclick="genera_req('{{trans('form.leftInfo')}}')"> @lang('form.add')
                                         </button>
                                     </th>
                                 </tr>

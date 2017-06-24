@@ -1,4 +1,6 @@
-
+//add rows to table of the requested courses
+//construct the hidden input that store the data
+//param info (message)
 function genera_tabla(info) {
 
 
@@ -62,48 +64,58 @@ function genera_tabla(info) {
 
 }
 
-function genera_req() {
-    var tabla = document.getElementById("tabla2");
+//add rows to the table of requirements
+//construct the hidden input that save the data
+function genera_req(text) {
 
-    var fila = tabla.insertRow(2);
-    var celda1 = fila.insertCell(0);
-    var celda2 =  fila.insertCell(1);
-    var celda3 =  fila.insertCell(2);
-    var celda4 =  fila.insertCell(3);
 
     var id = document.getElementsByName("subid")[0].value;
     var name = document.getElementsByName("subname")[0].value;
     var result = document.getElementsByName("result")[0].value;
     var cycle = document.getElementsByName("cycle")[0].value;
 
+    if(id !== "" && name !== "" && result !== "" && cycle !== "" ){
+        var tabla = document.getElementById("tabla2");
 
-    celda1.innerHTML = id;
-    celda2.innerHTML = name;
-    celda3.innerHTML = result;
-    celda4.innerHTML = cycle;
+        var fila = tabla.insertRow(2);
+        var celda1 = fila.insertCell(0);
+        var celda2 =  fila.insertCell(1);
+        var celda3 =  fila.insertCell(2);
+        var celda4 =  fila.insertCell(3);
+        
+        celda1.innerHTML = id;
+        celda2.innerHTML = name;
+        celda3.innerHTML = result;
+        celda4.innerHTML = cycle;
 
-    var row = id + "-" + name + "_" + result + "_" + cycle ;
+        var row = id + "-" + name + "_" + result + "_" + cycle ;
 
-    var row2 = "?" + id + "-" + name + "_" + result + "_" + cycle ;
+        var row2 = "?" + id + "-" + name + "_" + result + "_" + cycle ;
 
-    var data = document.getElementById("t2").value;
+        var data = document.getElementById("t2").value;
 
-    if(data === ""){
-        document.getElementById("t2").value = row;
+        if(data === ""){
+            document.getElementById("t2").value = row;
 
+        }else{
+            document.getElementById("t2").value = data + row2;
+
+
+        }
+
+        document.getElementsByName("subid")[0].value = "";
+        document.getElementsByName("subname")[0].value ="";
+        document.getElementsByName("result")[0].value = "";
+        document.getElementsByName("cycle")[0].value =""; 
     }else{
-        document.getElementById("t2").value = data + row2;
-
-
+        alert(''+text);
     }
 
-    document.getElementsByName("subid")[0].value = "";
-    document.getElementsByName("subname")[0].value ="";
-    document.getElementsByName("result")[0].value = "";
-    document.getElementsByName("cycle")[0].value ="";
+    
 
 }
 
+//do the validations of the form
 function valform (text, txt1) {
     var courses = document.getElementById("t1").value;
 
@@ -124,6 +136,7 @@ function valform (text, txt1) {
     return true;
 }
 
+//change de tabs of the bootstrap tabs container
 jQuery(document).ready(function ($) {
     $('#tabs').tab();
 });
