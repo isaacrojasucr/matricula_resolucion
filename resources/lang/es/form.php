@@ -72,9 +72,9 @@ return [
     'cycleAP' => 'Ciclo de aprobación',
     'textleft' => 'No has agregado ningun curso',
     'noProcess' => 'En la fecha actual no se pueden tramitar matriculas por resolución',
-    'infoInserted' => 'Esta es la información que usted ha insertado',
-    'personalData' => 'INFORMACIÓN PERSONAL',
-    'inscriptionData' => 'INFORMACIÓN DE MATRÍCULA',
+    'infoInserted' => 'Esta es la Información que Usted ha Insertado',
+    'personalData' => 'Información Personal',
+    'inscriptionData' => 'Información de Matrícula',
     'accept' => 'Aceptar',
     'deny' => 'Denegar',
     'infoManagerCheck1' => 'Presionando la opción ',
@@ -126,5 +126,8 @@ return [
     'req' => 'Requisitos',
     'clApp' => 'Ciclo de aprobacion',
     'noReq' => 'No se agregaron requisitos',
-
+    'observation1' => 'Observación',
+    'petitionInfo' => 'Información de la solicitud',
+    'promotionalConsult' => 'Puedes revisar el estado de los distintos procesos solicitados en cualquier momento, solamente ingresando tu carné en la página de consultas.',
+    'downloadPDF' => 'Descargar Archivo PDF',
 ];

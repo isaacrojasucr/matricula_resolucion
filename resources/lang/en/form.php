@@ -71,9 +71,9 @@ return [
     'cycleAP'=>'Approval Cycle ',
     'textleft' => 'you don´t add any course',
     'noProcess' =>'At the present date, no enrollment can be processed by resolution',
-    'infoInserted' => 'this is the info that you inserted',
-    'personalData' => 'PERSONAL DATA',
-    'inscriptionData'=> 'INSCRIPTION DATA ',
+    'infoInserted' => 'This is the Information that you Inserted',
+    'personalData' => 'Personal Information',
+    'inscriptionData'=> 'Inscription Information',
     'accept' => 'Acccept',
     'deny' => 'Deny',
     'infoManagerCheck1' => 'By pressing the option ',
@@ -124,5 +124,9 @@ return [
     'avgAndReq' => 'See weighted average and requirements',
     'req' => 'Requirements',
     'clApp' => 'approvation cycle',
-    'noReq' => 'No requirements added'
+    'noReq' => 'No requirements added',
+    'observation1' => 'Observation',
+    'petitionInfo' => 'Request Information',
+    'promotionalConsult' => 'You can check the state of the diferent process requested just by inserting your stundent ID in the consultation page.',
+    'downloadPDF' => 'Download PDF File',
 ];
