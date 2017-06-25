@@ -56,8 +56,6 @@
                                     <th>@lang('form.role')</th>
                                     <th>@lang('form.phone')</th>
                                     <th>@lang('form.act')</th>
-
-
                                 </tr>
                                 </thead>
                                 <tbody>

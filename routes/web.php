@@ -68,6 +68,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::resource('admin/matricula', 'AdminInscriptionController');
 
+    Route::resource('admin/antiguas', 'OldpetitionsController');
+
     Route::resource('consulta/estudiante', 'studentRequestController');
 
     Route::resource('admin/procesos', 'RegistrationProcesses\\pwcnm_registration_processController');

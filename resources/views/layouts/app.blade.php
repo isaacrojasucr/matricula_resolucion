@@ -89,6 +89,11 @@
                                                 </a>
                                             </li>
                                             <li>
+                                                <a href="{{ url('/admin/antiguas') }}">
+                                                    @lang('form.oldPetitions')
+                                                </a>
+                                            </li>
+                                            <li>
                                                 <a href="{{ url('/admin/procesos') }}">
                                                     @lang('form.process')
                                                 </a>

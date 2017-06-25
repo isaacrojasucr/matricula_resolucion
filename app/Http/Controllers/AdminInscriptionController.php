@@ -76,8 +76,6 @@ class AdminInscriptionController extends Controller
         return view('inscription.admin.allPetitions', compact('inscriptionApp','inscriptionRej', 'inscriptionPen'));
     }
 
-
-
     /**
      * change the state of the inscription in the table of approvals
      *identified by the id od the inscription
@@ -104,9 +102,7 @@ class AdminInscriptionController extends Controller
         return redirect('admin/matricula');
 
     }
-
-
-
+    
     /**
      * return the id of the actual process.
      *

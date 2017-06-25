@@ -5,12 +5,34 @@
         <div class="row">
 
             <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-default">
+                <div class="panel panel-primary">
                     <div class="panel-heading">@lang('form.courses')</div>
                     <div class="panel-body">
-                        <a href="{{ url('/admin/cursos/create') }}" class="btn btn-success btn-sm" title=@lang('form.add')>
-                            <i class="fa fa-plus" aria-hidden="true"></i> @lang('form.add')
-                        </a>
+                        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal">@lang('form.add')</button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="addSectionLabel">
+                            <div class="modal-dialog" role="document">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">@lang('form.add')</h4>
+                                    </div>
+                                    <div class="modal-body bg-modal">
+                                        {!! Form::open(['url' => '/admin/cursos', 'class' => 'form-horizontal', 'files' => true]) !!}
+
+                                        @include ('course.course.form')
+
+                                        {!! Form::close() !!}
+                                    </div>
+                                    <div class="modal-footer bg-modal">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">@lang('form.close')</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
 
                         {!! Form::open(['method' => 'GET', 'url' => '/admin/cursos', 'class' => 'navbar-form navbar-right', 'role' => 'search'])  !!}
                         <div class="input-group">
@@ -45,10 +67,9 @@
                                         <td>{{ $course[$i]->name }}</td>
                                         <td>{{ $course[$i]->cycle }}</td>
                                         <td>{{ $course[$i]->period }}</td>
-                                        <td>{{ $carrers[$i] }}</td>
+                                        <td>{{ $carrerss[$i] }}</td>
                                         <td>
-                                            <a href="{{ url('/admin/cursos/' . $course[$i]->id) }}" title= @lang('form.view') ><button class="btn btn-info btn-xs"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button></a>
-                                            <a href="{{ url('/admin/cursos/' . $course[$i]->id . '/edit') }}" title=@lang('form.edit')><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></a>
+                                           <a href="{{ url('/admin/cursos/' . $course[$i]->id . '/edit') }}" title=@lang('form.edit')><button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></a>
                                             {!! Form::open([
                                                 'method'=>'DELETE',
                                                 'url' => ['/admin/cursos', $course[$i]->id],

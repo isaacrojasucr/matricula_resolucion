@@ -40,7 +40,7 @@ class courseController extends Controller
         }
 
 
-        $carrers = array();
+        $carrerss = array();
 
         $i = 0;
 
@@ -48,15 +48,22 @@ class courseController extends Controller
 
             $temp = carrer::find(''.$item->carrer);
 
-            $carrers =  array_add($carrers, $i, $temp->name);
+            $carrerss =  array_add($carrerss, $i, $temp->name);
 
             $i++;
         }
 
+        $items = carrer::all();
 
+        $carrers =  array();
 
+        foreach ($items as $item){
 
-        return view('course.course.index', compact('course','carrers'));
+            $carrers =  array_add($carrers, $item->id, $item->name);
+
+        }
+
+        return view('course.course.index', compact('course','carrerss', 'carrers'));
     }
 
     public function downloadFile($file){
@@ -177,8 +184,6 @@ class courseController extends Controller
 
             $course->plan = $request->file('plan_file')->store('');
             
-        }else{
-            $course->plan =  '';
         }
 
         $course->update();

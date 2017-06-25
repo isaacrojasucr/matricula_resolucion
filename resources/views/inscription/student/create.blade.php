@@ -158,20 +158,22 @@
 
                     <div class="form-group">
                         <div class="well" style="background-color: white">
-                            <table class="table table-hover table-responsive" id="tabla" name="tabla">
-                                <thead>
-                                <tr>
-                                    <th style="width: 20%">@lang('form.location')</th>
-                                    <th style="width: 20%">@lang('form.courses')</th>
-                                    <th style="width: 20%">@lang('form.group')</th>
-                                    <th style="width: 20%">@lang('form.timesAttended')</th>
-                                    <th style="width: 20%">@lang('form.observation1')</th>
-                                </tr>
-                                </thead>
-                                <tbody>
+                            <div class="table-responsive">
+                                <table class="table table-hover table-striped" id="tabla" name="tabla">
+                                    <thead>
+                                    <tr>
+                                        <th style="width: 20%">@lang('form.location')</th>
+                                        <th style="width: 20%">@lang('form.courses')</th>
+                                        <th style="width: 20%">@lang('form.group')</th>
+                                        <th style="width: 20%">@lang('form.timesAttended')</th>
+                                        <th style="width: 20%">@lang('form.observation1')</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
 
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 
@@ -201,30 +203,32 @@
 
                     <div class="form-group">
                         <div class="well" style="background-color: white">
-                            <table class="table table-hover table-responsive" id="tabla2" name="tabla2">
-                                <thead>
-                                <tr>
-                                    <th>@lang('form.subjectid')</th>
-                                    <th>@lang('form.name')</th>
-                                    <th>@lang('form.result')</th>
-                                    <th>@lang('form.cycleAP')</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th>{!! Form::text('subid', null, ['class' => 'form-control' ]) !!}</th>
-                                    <th>{!! Form::text('subname', null, ['class' => 'form-control' ]) !!}</th>
-                                    <th>{!! Form::number('result', null, ['class' => 'form-control','step'=>'any' ]) !!}</th>
-                                    <th>{!! Form::number('cycle', null, ['class' => 'form-control col-md-3' ]) !!}
-                                    </th>
-                                    <th>
-                                        <button type="button" class="btn btn-info col-md-12 "
-                                                onclick="genera_req('{{trans('form.leftInfo')}}')"> @lang('form.add')
-                                        </button>
-                                    </th>
-                                </tr>
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table table-hover table-striped" id="tabla2" name="tabla2">
+                                    <thead>
+                                    <tr>
+                                        <th>@lang('form.subjectid')</th>
+                                        <th>@lang('form.name')</th>
+                                        <th>@lang('form.result')</th>
+                                        <th>@lang('form.cycleAP')</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th>{!! Form::text('subid', null, ['class' => 'form-control' ]) !!}</th>
+                                        <th>{!! Form::text('subname', null, ['class' => 'form-control' ]) !!}</th>
+                                        <th>{!! Form::number('result', null, ['class' => 'form-control','step'=>'any' ]) !!}</th>
+                                        <th>{!! Form::number('cycle', null, ['class' => 'form-control col-md-3' ]) !!}
+                                        </th>
+                                        <th>
+                                            <button type="button" class="btn btn-info col-md-12 "
+                                                    onclick="genera_req('{{trans('form.leftInfo')}}')"> @lang('form.add')
+                                            </button>
+                                        </th>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

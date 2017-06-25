@@ -134,9 +134,7 @@ class pwcnm_registration_processController extends Controller
     {
         pwcnm_registration_process::destroy($id);
 
-        Session::flash('flash_message', 'pwcnm_registration_process deleted!');
-
-        return redirect('registrationProcess/pwcnm_registration_process');
+        return redirect('admin/procesos');
     }
 
     function dias_restantes($fecha_final) {

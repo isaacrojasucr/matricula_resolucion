@@ -85,24 +85,26 @@
                             </div>
                             <div class="well" style="background-color: white">
                                 <div class="form-group">
-                                    <table class="table table-hover" id="tabla" name="tabla">
-                                        <thead>
-                                        <tr>
-                                            <th style="width: 50%">@lang('form.courses')</th>
-                                            <th style="width: 25%">@lang('form.group')</th>
-                                            <th style="width: 25%">@lang('form.location')</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        @foreach(session()->get('inscript') as $item)
+                                    <div class="table-responsive">
+                                        <table class="table table-hover" id="tabla" name="tabla">
+                                            <thead>
                                             <tr>
-                                                <th>{{$item[1]}}</th>
-                                                <th>{{$item[2]}}</th>
-                                                <th>{{$item[0]}}</th>
+                                                <th style="width: 50%">@lang('form.courses')</th>
+                                                <th style="width: 25%">@lang('form.group')</th>
+                                                <th style="width: 25%">@lang('form.location')</th>
                                             </tr>
-                                        @endforeach
-                                        </tbody>
-                                    </table>
+                                            </thead>
+                                            <tbody>
+                                            @foreach(session()->get('inscript') as $item)
+                                                <tr>
+                                                    <th>{{$item[1]}}</th>
+                                                    <th>{{$item[2]}}</th>
+                                                    <th>{{$item[0]}}</th>
+                                                </tr>
+                                            @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
 

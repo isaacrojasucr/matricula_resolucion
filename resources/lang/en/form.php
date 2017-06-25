@@ -131,4 +131,12 @@ return [
     'downloadPDF' => 'Download PDF File',
     'leftInfo' => 'you have to complete the courses form information',
     'verifyReq'=> 'are you sure that the inscription didn\'t need requirements',
+    'editCourse' => 'Editing course ',
+    'oldPetitions' => 'Solicitudes antiguas',
+    'searchOld'=>'Search old inscriptions',
+    'idFormat' => 'BXXXXX',
+    'insertID' => 'Insert the student id to consult',
+    'comments' => 'Comments',
+    '404' => 'Pagina no encontrada',
+    '500' => 'Error interno de servidor',
 ];

@@ -5,7 +5,7 @@
         <div class="row">
 
             <div class="col-md-9 col-md-offset-1">
-                <div class="panel panel-default">
+                <div class="panel panel-primary">
                     <div class="panel-heading">@lang('form.editCourse') {{ $course->name}}</div>
                     <div class="panel-body">
 
@@ -15,9 +15,6 @@
                                 @lang('form.back')
                             </button>
                         </a>
-
-
-                        @include('users.user.create')
                         <br />
                         <br />
 
@@ -36,7 +33,7 @@
                             'files' => true
                         ]) !!}
 
-                        @include ('course.course.form', ['submitButtonText' => 'Update'])
+                        @include ('course.course.form', ['submitButtonText' => ''.trans('form.update')])
 
                         {!! Form::close() !!}
 
