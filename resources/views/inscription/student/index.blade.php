@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container" id="content">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
@@ -19,10 +20,10 @@
                                         <button class="btn btn-default dropdown-toggle" type="button"
                                                 data-toggle="dropdown">@lang('form.careersdep')
                                             <span class="caret"></span></button>
-                                        <ul class="dropdown-menu">
+                                        <ul class="dropdown-menu" style="background-color: white;">
                                             @foreach($careers as $item)
                                                 <li>
-                                                    <a href="{{url('/matricula/carrera/'.$item->id)}}">{{$item->name}}</a>
+                                                    <a href="{{url('/matricula/carrera/'.$item->id)}}" style="background-color: white">{{$item->name}}</a>
                                                 </li>
                                             @endforeach
                                         </ul>
