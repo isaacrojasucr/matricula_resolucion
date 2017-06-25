@@ -111,7 +111,7 @@
                         </div>
                         <hr style="width:100%;">
                         <div class="center">
-                            <button class="btn btn-primary">@lang('form.downloadPDF') </button>
+                            <a href="{{url('/matricula/reporte/estudiante')}}" class="btn btn-primary">Exportar comprobante</a>
                         </div>
 
                         <hr style="width:100%;">

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use PDF;
 use App\pwcnm_inscriptionRequest;
 use App\carrer;
 use App\course;
@@ -193,6 +193,15 @@ class inscriptionController extends Controller
         $inscription = pwcnm_inscriptionRequest::findOrFail($id);
 
         return view('inscription.student.show', compact('$inscription'));
+    }
+
+    /**
+     *Export a PDF report to the student
+      */
+    public function pdf(){
+
+        $pdf = PDF::loadView('inscription.student.report');
+        return $pdf->download('matricula.pdf');
     }
 
     /**

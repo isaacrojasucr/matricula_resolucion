@@ -80,6 +80,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('matricula/carrera/{id}' , 'inscriptionController@creation');
 
+    Route::get('matricula/reporte/estudiante','inscriptionController@pdf');
+
     Route::get('general/correos/{email}','emailController@opening');
 
     Route::post('consultas/pregunta',['as'=>'consultas/pregunta', 'uses'=>'studentRequestController@consult']);
