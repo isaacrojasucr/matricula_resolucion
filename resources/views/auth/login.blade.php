@@ -1,20 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" id="content">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <div class="panel panel-default">
+            <div class="panel panel-primary center">
                 <div class="panel-heading">
                     @lang('resolucion.login')
                 </div>
                 <div class="panel-body">
-                    <div class="img-user" style="text-align: center;margin-top: 2%;
-	                                                         margin-bottom: 2%;
+
+                    <div class="img-user" style="text-align: center;margin-top: 1%;
+	                                                         margin-bottom: 1%;
 	                                                         height: 30%;
 	                                                         width:30%;
 	                                                         margin: 0 auto;">
-                        <img src="http://3.bp.blogspot.com/-qDc5kIFIhb8/UoJEpGN9DmI/AAAAAAABl1s/BfP6FcBY1R8/s1600/BlueHead.jpg" class="img-responsive img-circle">
+                        <img src="/img/loginIcono.png" class="img-responsive img-circle">
                     </div>
                     <hr style="width:100%;">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
@@ -49,7 +50,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-3">
-                                <button type="submit" class="btn btn-default btn-color col-md-12">
+                                <button type="submit" class="btn btn-primary  col-md-12">
                                     @lang('resolucion.login')
                                 </button>
                             </div>
