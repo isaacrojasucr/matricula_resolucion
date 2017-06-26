@@ -12,7 +12,7 @@
 </div>
 <div class="form-group {{ $errors->has('page') ? 'has-error' : ''}}">
     <div class="col-md-8 col-md-offset-2">
-        {!! Form::text('page', null, ['class' => 'form-control center', 'required' => 'required', 'placeholder'=>''.trans('form.page')]) !!}
+        {!! Form::text('page', null, ['class' => 'form-control center', 'placeholder'=>''.trans('form.page')]) !!}
         {!! $errors->first('page', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
