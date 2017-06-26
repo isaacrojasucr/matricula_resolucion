@@ -79,6 +79,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::resource('admin/sedes', 'SecondLocations\\pwcnm_second_locationController');
 
     Route::get('reportes/facio', 'reportsController@centralLocation');
+    
+    Route::get('pdf/sedes/{id}', 'reportsController@pdf');
 
     Route::get('/download/{file}' , 'Courses\\courseController@downloadFile');
 
