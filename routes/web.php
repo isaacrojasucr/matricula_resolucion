@@ -67,6 +67,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::resource('proceso/coordinador','managerCheckController');
 
     Route::resource('admin/matricula', 'AdminInscriptionController');
+    
+    Route::resource('admin/reportes', 'reportsController');
 
     Route::resource('admin/antiguas', 'OldpetitionsController');
 
@@ -76,9 +78,17 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::resource('admin/sedes', 'SecondLocations\\pwcnm_second_locationController');
 
+    Route::get('reportes/facio', 'reportsController@centralLocation');
+    
+    Route::get('pdf/sedes/{id}', 'reportsController@pdf');
+
     Route::get('/download/{file}' , 'Courses\\courseController@downloadFile');
 
     Route::get('matricula/carrera/{id}' , 'inscriptionController@creation');
+
+    Route::get('admin/reportes/sede/{id}', 'reportsController@location');
+
+    Route::get('admin/reportes/sede/{id}', 'reportsController@location');
 
     Route::get('matricula/reporte/estudiante','inscriptionController@pdf');
 

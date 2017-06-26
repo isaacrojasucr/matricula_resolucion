@@ -99,7 +99,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="{{ url('/') }}">
+                                                <a href="{{ url('/admin/reportes') }}">
                                                     @lang('form.reports')
                                                 </a>
                                             </li>

@@ -85,8 +85,16 @@ class carrerController extends Controller
         
         $career->initial = $request->initial;
         $career->name = $request->name;
-        $career->page = $request->page;
+
         $career->manager = $request->manager;
+
+        if (!empty($request->page)){
+
+            $career->page = $request->page;
+
+        }else{
+            $career->page =  'No posee';
+        }
 
         if (!empty($request->file('plan_file'))){
 
