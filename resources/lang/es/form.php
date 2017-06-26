@@ -50,6 +50,8 @@ return [
     'editLocation' => 'Editando Sede',
     'location' => 'Sede',
     'locations' => 'Sedes',
+    'selectLocation' => 'Seleccione una sede',
+    'locationReport' => 'A continuación se le muestran las sedes, seleccione una para generar el reporte correspondiente',
     'selectCareer' => 'Seleccione una carrera para iniciar su matrícula por resolución',
     'careersdep' => 'Carreras del departamento',
     'average' => 'Promedio ponderado',
@@ -140,4 +142,5 @@ return [
     'comments' => 'Comentarios',
     '404' => 'Pagina no encontrada',
     '500' => 'Error interno de servidor',
+    'school' => 'Escuela',
 ];

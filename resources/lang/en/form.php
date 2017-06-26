@@ -133,10 +133,13 @@ return [
     'verifyReq'=> 'are you sure that the inscription didn\'t need requirements',
     'editCourse' => 'Editing course ',
     'oldPetitions' => 'Solicitudes antiguas',
+    'selectLocation' => 'Choose the second location',
+    'locationReport' => 'Below are shown the second location, select one to generate the corresponding report',
     'searchOld'=>'Search old inscriptions',
     'idFormat' => 'BXXXXX',
     'insertID' => 'Insert the student id to consult',
     'comments' => 'Comments',
     '404' => 'Pagina no encontrada',
     '500' => 'Error interno de servidor',
+    'school' => 'School',
 ];
