@@ -29,8 +29,8 @@
                             <td>{{$section->email}}</td>
                             <td>{{$section->phone}}</td>
                             <td>
-                                <a title=@lang('form.edit') class="btn btn-info" href="{{ url('/SeccionesAdmin/Editar/' . $section->ID_SECCION) }}" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                <a title=@lang('form.delete') class="btn btn-danger" href="{{ url('/SeccionesAdmin/Eliminar/' . $section->ID_SECCION) }}" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                <a title=@lang('form.edit') class="btn btn-primary btn-xs" href="{{ url('/SeccionesAdmin/Editar/' . $section->ID_SECCION) }}" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                <a title=@lang('form.delete') class="btn btn-danger btn-xs" href="{{ url('/SeccionesAdmin/Eliminar/' . $section->ID_SECCION) }}" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                             </td>
                         </tr>
                         @endforeach

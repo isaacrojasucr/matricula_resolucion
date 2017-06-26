@@ -8,10 +8,10 @@
             
             @foreach ($listCareer as $career)
 
-            <h2>{{$career->NOMBRE}}</h2>
-            <p>Encargado(a): {{$career->ENCARGADO}}</p>
-            <p>Contacto: {{$career->CONTACTO}}</p>
-            <p>Número: {{$career->NUMERO}}</p>
+            <h2>{{$career->name}}</h2>
+            <p>Encargado(a): {{$career->encargado . ' ' . $career->lastname}}</p>
+            <p>Contacto: {{$career->email}}</p>
+            <p>Número: {{$career->phone}}</p>
 
             @endforeach
         </div>
