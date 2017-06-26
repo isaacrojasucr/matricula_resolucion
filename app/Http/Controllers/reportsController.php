@@ -96,8 +96,8 @@ class reportsController extends Controller
 
             }
         }
-        
-        $pdf = PDF::loadView('');
+
+        return view('inscription.admin.reports');
     }
 
     public function location($id)

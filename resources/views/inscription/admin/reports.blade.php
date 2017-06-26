@@ -17,14 +17,10 @@
 </style>
 <body>
 
-<div class="container" id="content">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="form-group center">
 
                 @for($i = 0; $i < count($central); $i++)
 
-                    <div class="well center" style="background: white">
+                    <div style="background: white; border: solid; text-align: center;">
                         @if($id == 1)
                             <label>@lang('form.school')= "{{$careers[$i]->schools}}"</label>
                         @else
@@ -61,17 +57,12 @@
 
                     </div>
 
+
+                    </br>
                     </br>
 
                 @endfor
 
-                <div class="center">
-                    <a class="btn btn-success col-md-6 col-md-offset-3" href="{{url('/pdf/sedes/'.$id)}}"> Exportar PDF</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 </body>
 </html>
