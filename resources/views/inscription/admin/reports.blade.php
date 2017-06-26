@@ -20,16 +20,15 @@
 
                 @for($i = 0; $i < count($central); $i++)
 
-                    <div style="background: white; border: solid; text-align: center;">
+                    <div style="text-align: center;">
                         @if($id == 1)
                             <label>@lang('form.school')= "{{$careers[$i]->schools}}"</label>
                         @else
                             <label>@lang('form.carrer')= "{{$careers[$i]}}"</label>
                         @endif
                         <hr style="width:100%;">
-                        </br>
-
-                            <table >
+                    </div>
+                            <table style="width: 730px;">
                                 <thead>
                                 <tr style="font-weight: bold">
                                     <td>@lang('form.carne')</td>
@@ -53,7 +52,6 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                        </div>
 
                     </div>
 

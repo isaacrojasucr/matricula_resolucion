@@ -30,6 +30,8 @@ class reportsController extends Controller
     {
         $careers = null;
         $central = array();
+
+        $name = pwcnm_second_location::findOrFail($id)->name;
         if ($id == 1){
             $process = $this->lastProcess();
 
@@ -97,7 +99,9 @@ class reportsController extends Controller
             }
         }
 
-        return view('inscription.admin.reports');
+        $pdf = PDF::loadView('inscription.admin.reports',['careers'=>$careers,'id'=> $id, 'central' => $central]);
+
+        return $pdf->download($name.'.pdf');
     }
 
     public function location($id)
