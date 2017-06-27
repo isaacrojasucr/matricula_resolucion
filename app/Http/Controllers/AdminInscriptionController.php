@@ -25,6 +25,7 @@ class AdminInscriptionController extends Controller
 
         $processId = $this->lastProcess();
 
+
         $inscriptionApp = \DB::select('SELECT i.id, i.studentId as carne, c.name as career, cc.name as course, i.group, l.name as location, 
                                       i.weightedAverage as average, i.phone, i.email ,a.stade as state from pwcnm_inscription_requests as i 
                                       INNER JOIN pwcnm_approvals as a ON a.fk_inscription = i.id 
@@ -35,7 +36,7 @@ class AdminInscriptionController extends Controller
                                       WHERE p.id = ? and (a.stade = 2 or a.stade = 4 or a.stade = 6)
                                       ORDER BY a.stade ASC', [$processId]);
         //---------------------------------------------
-        
+
         $inscriptionRej = \DB::select('SELECT i.id, i.studentId as carne, c.name as career, cc.name as course, i.group, l.name as location, 
                                       i.weightedAverage as average, i.phone, i.email,a.stade as state from pwcnm_inscription_requests as i 
                                       INNER JOIN pwcnm_approvals as a ON a.fk_inscription = i.id 
@@ -54,7 +55,7 @@ class AdminInscriptionController extends Controller
                                         INNER JOIN pwcnm_registration_processes as p ON p.id = i.fk_process 
                                         INNER JOIN carrers as c ON c.id = i.fk_career 
                                         INNER JOIN courses as cc ON cc.id = i.fk_course 
-                                        WHERE p.id = 1 and (a.stade = 0)', [$processId]);
+                                        WHERE p.id = ? and (a.stade = 0)', [$processId]);
         //----------------------------------------------
 
         foreach ($inscriptionApp as $item){
@@ -72,17 +73,10 @@ class AdminInscriptionController extends Controller
 
 
 
-
         return view('inscription.admin.allPetitions', compact('inscriptionApp','inscriptionRej', 'inscriptionPen'));
     }
 
-    /**
-     * change the state of the inscription in the table of approvals
-     *identified by the id od the inscription
-     *
-     * @param  integer $id
-     *
-     */
+
     public function approveStudent($id) {
         $approval = pwcnm_approval::where('fk_inscription', '=',$id)->get();
 
