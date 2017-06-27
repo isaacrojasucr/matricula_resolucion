@@ -28,7 +28,7 @@
 }
 
 #navMenu {
-	padding: 0px;
+	background-color: #005da4;
 }
 
 #flags {
@@ -37,8 +37,8 @@
 
 .navbar {
 	border: none;
-	border-bottom: 1px solid #005da4;
 	background-color: #005da4;
+	border-bottom: 1px solid #005da4;
 	border-radius: 0;
 }
 

@@ -197,7 +197,7 @@ class carrerController extends Controller
         return redirect('admin/carreras');
     }
 
-    public function indexPage(career $career)
+    public function indexPage(carrer $career)
     {
         $listCareer = $career->getListCareer();
 

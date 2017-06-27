@@ -34,7 +34,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/inicio', 'HomeController@index')->name('home');
 
-    Route::get('/Carreras', 'CareerController@index');
+    Route::get('/Carreras', 'Carrers\\carrerController@indexPage');
 
     Route::get('/Secciones', 'SectionController@index');
 
@@ -42,13 +42,21 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/SeccionesAdmin', 'SectionController@indexAdmin');
 
+    Route::get('/ServiciosAdmin', 'ServiceController@indexAdmin');
+
     Route::post('send', 'emailController@send');
 
     Route::resource('correos', 'emailController');
 
     Route::resource('matricula','inscriptionController');
 
+    Route::get('/Servicios/Profesores', 'ServiceController@indexTeacher');
+
+    Route::get('/Servicios/Estudiantes', 'ServiceController@indexStudent');
+
     Route::get('/SeccionesAdmin/Agregar', 'SectionController@addSection');
+
+    Route::get('/ServiciosAdmin/Agregar', 'ServiceController@addService');
 
     Route::get('SeccionesAdmin/Eliminar/{id}', 'SectionController@deleteSection');
 
