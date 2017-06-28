@@ -8,7 +8,7 @@
             
             @foreach ($listService as $service)
 
-            <form action="{{ url('/ServiciosAdmin/Editar/' . $service->ID_SERVICIO . '/Edit') }}" method="GET">
+            <form action="{{ url('/Servicios/Admin/Editar/' . $service->ID_SERVICIO . '/Edit') }}" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="name">Nombre</label>
                     <input value="{{ $service->NOMBRE }}" name="name" type="text" class="form-control" id="name">
@@ -30,9 +30,12 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="file">Archivo</label>
-                    <input name="file" type="file" class="form-control" id="file">
+                    <label for="file">Nuevo Archivo</label>
+                    <input name="file" type="file" class="form-control" id="file" aria-describedby="helpFile">
+                    <span id="helpFile" class="help-block">Este campo es solo para subir un archivo nuevo. En caso contrario no utilizar.</span>
                 </div>
+                <input type="hidden" name="_method" value="PUT">
+                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                 <button type="submit" class="btn btn-success">Editar</button>
             </form>
 

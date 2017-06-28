@@ -35,8 +35,8 @@
                             </td>
                             <td>{{$service->ARCHIVO}}</td>
                             <td>
-                                <a title=@lang('form.edit') class="btn btn-primary btn-xs" href="{{ url('/SeccionesAdmin/Editar/' . $service->ID_SERVICIO) }}" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                <a title=@lang('form.delete') class="btn btn-danger btn-xs" href="{{ url('/SeccionesAdmin/Eliminar/' . $service->ID_SERVICIO) }}" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                <a title=@lang('form.edit') class="btn btn-primary btn-xs" href="{{ url('/Servicios/Admin/Editar/' . $service->ID_SERVICIO) }}" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                <a title=@lang('form.delete') class="btn btn-danger btn-xs" href="{{ url('/Servicios/Admin/Eliminar/' . $service->ID_SERVICIO) }}" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                             </td>
                         </tr>
                         @endforeach
@@ -56,7 +56,7 @@
                 <h4 class="modal-title" id="addSectionLabel">Agregar Servicio</h4>
             </div>
             <div class="modal-body">
-                <form action="{{ url('/ServiciosAdmin/Agregar') }}" method="GET">
+                <form action="{{ url('/Servicios/Admin/Agregar') }}" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="name">Nombre</label>
                         <input name="name" type="text" class="form-control" id="name" placeholder="Nombre">
@@ -76,6 +76,7 @@
                         <label for="file">Archivo</label>
                         <input name="file" type="file" class="form-control" id="file">
                     </div>
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <button type="submit" class="btn btn-success">Agregar</button>
                 </form>
             </div>

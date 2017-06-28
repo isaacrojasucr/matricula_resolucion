@@ -2,7 +2,7 @@
 
 @section('content')
 
-<p>{{ $id }}</p>
+<p>{{ $val }}</p>
 
 
 @endsection

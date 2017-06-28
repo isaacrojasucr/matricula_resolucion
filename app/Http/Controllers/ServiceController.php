@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Service;
 
 class ServiceController extends Controller
@@ -38,34 +39,41 @@ class ServiceController extends Controller
     /* Se agrega un servicio nuevo, se guarda el archivo en el servidor y se redirige a la vista de ServiciosAdmin */
     public function addService(Request $request, Service $service)
     {
-        $service->insertService($request->name, $request->desc, $request->rol, $request->file);
+        $fileName = '';
 
-        //agregar al servidor el archivo..
+        if (!empty($request->file('file'))){
+            $fileName = $request->file('file')->store('');
+        }
 
-        return redirect('ServiciosAdmin');
+        $service->insertService($request->name, $request->desc, $request->rol, $fileName);
+
+        return redirect('Servicios/Admin');
     }
 
     /* Se llama al modelo y se le evía el ID para ser eliminado en la Base de Datos */
     public function deleteService(Service $service, $id)
     {
         $service->deleteService($id);
-        return redirect('ServiciosAdmin');
+        return redirect('Servicios/Admin');
     }
 
-
-/*
-    public function editSectionView(Section $section, User $user, $id)
+    public function editServiceView(Service $service, $id)
     {
-        $listSection = $section->getSection($id);
-        $listUser = $user->getUsersIDName();
+        $listService = $service->getService($id);
 
-        return view('sectionEdit', compact('listSection', 'listUser')); 
+        return view('serviceEdit', compact('listService')); 
     }
 
-    public function editSection(Request $request, Section $section, $id)
+    public function editService(Request $request, Service $service, $id)
     {
-        $section->editSection($request->name, $request->inCharge, $id);
+        $fileName = '';
 
-        return redirect('SeccionesAdmin');
-    }*/
+        if (!empty($request->file('file'))) {
+            $fileName = $request->file('file')->store('');
+        }
+
+        $service->editService($request->name, $request->desc, $request->rol, $fileName, $id);
+
+        return redirect('Servicios/Admin');
+    }
 }
