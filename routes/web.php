@@ -44,6 +44,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/Servicios/Admin', 'ServiceController@indexAdmin');
 
+    Route::get('/Eventos/Admin', 'EventController@indexAdmin');
+
     /* Cambiar esta madre*/
     Route::get('/Test', function () {
         return view('test');
@@ -59,13 +61,21 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/Servicios/Estudiantes', 'ServiceController@indexStudent');
 
+    Route::get('/Eventos/Profesores', 'EventController@indexTeacher');
+
+    Route::get('/Eventos/Estudiantes', 'EventController@indexStudent');
+
     Route::get('/SeccionesAdmin/Agregar', 'SectionController@addSection');
 
     Route::post('/Servicios/Admin/Agregar', 'ServiceController@addService');
 
+    Route::post('/Eventos/Admin/Agregar', 'EventController@addEvent');
+
     Route::get('SeccionesAdmin/Eliminar/{id}', 'SectionController@deleteSection');
 
     Route::get('Servicios/Admin/Eliminar/{id}', 'ServiceController@deleteService');
+
+    Route::get('Eventos/Admin/Eliminar/{id}', 'EventController@deleteEvent');
 
     Route::get('SeccionesAdmin/Editar/{id}', 'SectionController@editSectionView');
 
@@ -74,6 +84,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('Servicios/Admin/Editar/{id}', 'ServiceController@editServiceView');
 
     Route::put('Servicios/Admin/Editar/{id}/Edit', 'ServiceController@editService');
+
+    Route::get('Eventos/Admin/Editar/{id}', 'EventController@editEventView');
+
+    Route::put('Eventos/Admin/Editar/{id}/Edit', 'EventController@editEvent');
 
     Route::get('correo/correo', 'emailController@email');
 

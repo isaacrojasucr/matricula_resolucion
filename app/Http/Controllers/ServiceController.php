@@ -12,7 +12,6 @@ class ServiceController extends Controller
     /* Llama la vista de los Servicios para el administrador */
     public function indexAdmin(Service $service)
     {
-
         $listService = $service->getListService();
 
         return view('serviceAdmin', compact('listService'));
@@ -47,6 +46,8 @@ class ServiceController extends Controller
 
         $service->insertService($request->name, $request->desc, $request->rol, $fileName);
 
+        session()->flash('message', 'Realizado correctamente!');
+
         return redirect('Servicios/Admin');
     }
 
@@ -54,9 +55,13 @@ class ServiceController extends Controller
     public function deleteService(Service $service, $id)
     {
         $service->deleteService($id);
+
+        session()->flash('message', 'Realizado correctamente!');
+
         return redirect('Servicios/Admin');
     }
 
+    /* Returna del modelo un servicio y llama la vista */
     public function editServiceView(Service $service, $id)
     {
         $listService = $service->getService($id);
@@ -64,6 +69,7 @@ class ServiceController extends Controller
         return view('serviceEdit', compact('listService')); 
     }
 
+    /* Se recibe el servicio actualizado y se redirige a la vista de Servicios/Admin */
     public function editService(Request $request, Service $service, $id)
     {
         $fileName = '';
@@ -73,6 +79,8 @@ class ServiceController extends Controller
         }
 
         $service->editService($request->name, $request->desc, $request->rol, $fileName, $id);
+
+        session()->flash('message', 'Realizado correctamente!');
 
         return redirect('Servicios/Admin');
     }
