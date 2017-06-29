@@ -27,8 +27,12 @@
 	height: 100%;
 }
 
-#navMenu {
+#navbar {
 	background-color: #005da4;
+}
+
+.navbar-default .container-fluid, #navMenu {
+	padding: 0;
 }
 
 #flags {
@@ -40,6 +44,10 @@
 	background-color: #005da4;
 	border-bottom: 1px solid #005da4;
 	border-radius: 0;
+}
+
+.navbar-header button {
+	margin-right: 20px;
 }
 
 .navbar-default .navbar-nav > li > a, 
@@ -89,6 +97,16 @@
 
 .navbar-default .navbar-nav .open .dropdown-menu>li>a {
 	color: white;
+}
+
+@media only screen and (max-width: 767px) {
+    #navContent ul li {
+		margin-left: 10px;
+	}
+
+	#userLiMenu {
+		border-top: 1px solid #ffffff;
+	}
 }
 
 /*
