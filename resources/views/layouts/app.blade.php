@@ -70,7 +70,7 @@
                                                     class="caret"></span></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="{{ url('/Secciones') }}">@lang('form.sections')</a></li>
-                                            <li><a href="{{ url('/SeccionesAdmin') }}">@lang('form.sectionsAdmin')</a></li>
+                                            <li><a href="{{ url('/Secciones/Admin') }}">@lang('form.sectionsAdmin')</a></li>
                                         </ul>
                                     </li>
                                     </li>
