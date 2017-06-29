@@ -17,9 +17,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link href="{{ asset('css/aditional.css') }}" rel="stylesheet">
     <script type="text/javascript" src="{{asset('js/custom.js')}}"></script>
+    <script src="{{asset('js/Chart.js')}}" ></script>
     <link href="{{ asset('css/templateStyles.css') }}" rel="stylesheet">
 </head>
-<body>
+<body >
 <div id="app">
     <div class="container-fluid" id="topNav">
         <div class="row">
