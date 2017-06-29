@@ -147,4 +147,7 @@ return [
     'sections' => 'Sections',
     'sectionsAdmin' => 'Section\'s administration ',
     'careerAdmin' => 'Career\'s administration',
+    'resolution' => 'Resolution\'s inscription',
+    'results' => 'Consult inscription',
+    'requestInscription' => 'Request course',
 ];

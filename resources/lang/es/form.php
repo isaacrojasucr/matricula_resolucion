@@ -148,4 +148,8 @@ return [
     'sections' => 'Secciones',
     'sectionsAdmin' => 'Administración de Secciones',
     'careerAdmin' => 'Administración de carreres',
+    'resolution' => 'Matricula por resolución',
+    'results' => 'Consultar matricula',
+    'requestInscription' => 'Solicitar curso',
+    
 ];
