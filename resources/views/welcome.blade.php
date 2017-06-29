@@ -2,9 +2,14 @@
 
 @section('content')
     <div class="container" id="content">
+    	<div class="row">
+    		<div class="col-md-12">
+    			<h1 class="text-center">Bienvenido(a) a la Página del Departamento de Ciencias Naturales</h1>
+    		</div>
+    	</div>
         <div class="row">
-            <div class="col-md-12">
-            	<h1>Próximos Eventos</h1>
+            <div class="col-md-8">
+            	<h2>Próximos Eventos</h2>
             	@foreach ($listEvents as $event)
 	            <div class="panel panel-primary">
 	                <div class="panel-heading"> {{$event->NOMBRE}} </div>
@@ -19,6 +24,9 @@
 	            </div>
 	            @endforeach
             </div>
+			<div class="col-md-4">
+				<h3 class="text-center">Aquí va algo</h3>
+			</div>
         </div>
     </div>
 @endsection
