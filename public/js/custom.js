@@ -146,14 +146,14 @@ function first(left, spent) {
     var pieData = [
         {
             value: spent,
-            color: "#0b82e7",
-            highlight: "#0c62ab",
+            color: "#08088A",
+            highlight: "#5882FA",
             label: "Dias consumidos"
         },
         {
             value: left,
-            color: "#e3e860",
-            highlight: "#a9ad47",
+            color: "#088A08",
+            highlight: "#01DF01",
             label: "Dias restantes"
         }
     ];
@@ -166,64 +166,64 @@ function second(ii,ie,em,ecn,rn,rh,lq,ef,te,tt) {
     var pieData = [
         {
             value: tt,
-            color:"#0b82e7",
-            highlight: "#0c62ab",
+            color:"#848484",
+            highlight: "#424242",
             label: "Procesadas"
         },
         {
             value: ii,
-            color: "#F7FE2E",
-            highlight: "#D7DF01",
+            color: "#FF0000",
+            highlight: "#B40404",
             label: "Ingeniería Industrial"
         },
         {
             value: ie,
-            color: "#eb5d82",
-            highlight: "#b74865",
+            color: "#FF8000",
+            highlight: "#B45F04",
             label: "Informática Empresarial"
         },
         {
             value: em,
-            color: "#5ae85a",
-            highlight: "#42a642",
+            color: "#FFFF00",
+            highlight: "#AEB404",
             label: "Enseñanza de las Matemáticas"
         },
         {
             value: rn,
-            color: "#e965db",
-            highlight: "#a6429b",
+            color: "#80FF00",
+            highlight: "#5FB404",
             label: "Gestion de los Recursos Naturales"
         }
         ,
         {
             value: ecn,
-            color: "#848484",
-            highlight: "#6E6E6E",
+            color: "#00FFBF",
+            highlight: "#04B486",
             label: "Enseñanza de las Ciencias Naturales"
         }
         ,
         {
             value: lq,
-            color: "#58D3F7",
-            highlight: "#01A9DB",
+            color: "#00BFFF",
+            highlight: "#0489B1",
             label: "Laboratorista Químico"
         },
         {
             value: ef,
-            color: "#FAAC58",
-            highlight: "#DF7401",
+            color: "#0000FF",
+            highlight: "#0404B4",
             label: "Enfermeria"
         },
         {
             value: rh,
-            color: "#AC58FA",
-            highlight: "#BF00FF",
+            color: "#8000FF",
+            highlight: "#5F04B4",
             label: "Gestion Integral del Recurso Hídrico"
         },
         {
             value: te,
-            color: "#BFFF00",
-            highlight: "#A5DF00",
+            color: "#FF00FF",
+            highlight: "#B404AE",
             label: "Turismo Ecológico"
         }
     ];
