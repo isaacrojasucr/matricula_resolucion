@@ -33,7 +33,10 @@ class HomeController extends Controller
                                 order by id desc
                                 LIMIT 1');
 
+
+
         $process = $process[0];
+
 
         $tt = \DB::select('SELECT COUNT(i.id) as ready
                             FROM pwcnm_inscription_requests as i

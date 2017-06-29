@@ -3,7 +3,7 @@
 @section('content')
 
     <input id ="rest" type="hidden" value="{{$process->rest}}">
-    <input id ="spent" type="hidden" value="{{$tt->ready}}">
+    <input id ="spent" type="hidden" value="{{$process->spent}}">
     <input id ="tt" type="hidden" value="{{$tt->ready}}">
     <input id ="ii" type="hidden" value="{{$ii->ready}}">
     <input id ="ie" type="hidden" value="{{$ie->ready}}">
