@@ -155,5 +155,5 @@ return [
     'actualProcessState' => 'Estado Actual del Proceso',
     'periodQuestion' => 'Periodo Actual',
     'managerSum' => 'Resumen de Actividad de Coordinadores',
-
+    'analiced' => 'Analizadas por coordinadores',
 ];

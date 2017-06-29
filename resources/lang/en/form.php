@@ -154,5 +154,5 @@ return [
     'actualProcessState' => 'Actual Process State',
     'periodQuestion' => 'Actual Period',
     'managerSum' => 'Manager Activity Summary',
-
+    'analiced' => 'Analiced by Managers',
 ];
