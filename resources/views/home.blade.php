@@ -52,16 +52,13 @@
                         </div>
                         <div class="col-md-6">
                             <div class="col-md-12">
-                                <h4>@lang('form.actualProcessState'):</h4>
-                                <hr style="width:100%;">
-                                <h5></h5>
                                 <hr style="width:100%;">
                                 <h4>@lang('form.periodQuestion'):</h4>
                                 <hr style="width:100%;">
-                                <h5></h5>
+                                <h5>{{$process->inicial}} // {{$process->final}}</h5>
                                 <hr style="width:100%;">
-                                <h6><span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: red"></span>&nbsp;@lang('form.spendedDays')</h6>
-                                <h6><span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: red"></span>&nbsp;@lang('form.DaysLeft')</h6>
+                                <h6><span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: #08088A"></span>&nbsp;@lang('form.spendedDays')</h6>
+                                <h6><span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: #088A08"></span>&nbsp;@lang('form.DaysLeft')</h6>
                                 <hr style="width:100%;">
                             </div>
                         </div>
@@ -78,17 +75,20 @@
                                 <canvas id="chart-area" width="300" height="300"></canvas>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <h6> <span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: red"></span>&nbsp; @lang('form.informatica')</h6>
-                            <h6> <span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: red"></span>&nbsp; @lang('form.ingenieria')</h6>
-                            <h6> <span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: red"></span>&nbsp; @lang('form.recursos')</h6>
-                            <h6> <span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: red"></span>&nbsp; @lang('form.spendedDays')</h6>
-                            <h6> <span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: red"></span>&nbsp; @lang('form.spendedDays')</h6>
-                            <h6> <span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: red"></span>&nbsp; @lang('form.spendedDays')</h6>
-                            <h6> <span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: red"></span>&nbsp; @lang('form.spendedDays')</h6>
-                            <h6> <span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: red"></span>&nbsp; @lang('form.spendedDays')</h6>
-                            <h6> <span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: red"></span>&nbsp; @lang('form.spendedDays')</h6>
+                        <div class="col-md-6" style="text-align: left">
 
+                            <h6> <span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: #FF0000"></span>&nbsp;II = Ingeniería Industrial</h6>
+                            <h6> <span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: #FF8000"></span>&nbsp;IE = Informática Empresarial</h6>
+                            <h6> <span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: #FFFF00"></span>&nbsp;EM = Enseñanza de las Matemáticas</h6>
+                            <h6> <span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: #5FB404"></span>&nbsp;RN = Gestión de los Recursos Naturales</h6>
+                            <h6> <span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: #00FFBF"></span>&nbsp;CN = Enseñanza de las Ciencias Naturales</h6>
+                            <h6> <span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: #00BFFF"></span>&nbsp;LQ = Laboratorista Químico</h6>
+                            <h6> <span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: #0000FF"></span>&nbsp;EN = Enfermería</h6>
+                            <h6> <span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: #8000FF"></span>&nbsp;RH = Gestión Integral del Recurso Hídrico</h6>
+                            <h6> <span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: #FF00FF"></span>&nbsp;TE = Turistmo Ecológico</h6>
+
+                            <h6> <span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: #848484"></span>&nbsp;Procesadas por Coordinadores</h6>
+                            <h6>Representación gráfica de las solicitudes pendientes de revisar por parte de los coordinadores en el periodo actual.</h6>
                         </div>
                     </div>
                 </div>

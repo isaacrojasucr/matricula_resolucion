@@ -159,4 +159,6 @@ return [
     'nextEvents' => 'Next Events',
     'description' => 'Description',
     'date' => 'Date',
+    'spendedDays' => 'Spended Days',
+    'DaysLeft' => 'Days Left',
 ];
