@@ -19,7 +19,7 @@
 	                    	$fecha_inicio = explode("-", $event->FECHA_INICIO);
 	                    	$fecha_final = explode("-", $event->FECHA_FINAL);
 	                    ?>
-	                    <p><strong>@lang('form.date'): </strong> {{ $fecha_inicio[2] . '-' . $fecha_inicio[1] . '-' . $fecha_inicio[0] . ' al ' . $fecha_final[2] . '-' . $fecha_final[1] . '-' . $fecha_final[0] }}
+	                    <p><strong>@lang('form.date'): </strong> {{ $fecha_inicio[2] . '-' . $fecha_inicio[1] . '-' . $fecha_inicio[0] }} @lang('events.to') {{ $fecha_final[2] . '-' . $fecha_final[1] . '-' . $fecha_final[0] }}
 	                </div>
 	            </div>
 	            @endforeach

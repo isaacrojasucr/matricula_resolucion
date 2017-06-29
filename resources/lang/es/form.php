@@ -162,4 +162,9 @@ return [
     'date' => 'Fecha',
     'spendedDays' => 'Días Utilizados',
     'DaysLeft' => 'Días Restantes',
+    'to' => 'al',
+    'eventsTitle' => 'Eventos del Departamento de Ciencias Naturales para',
+    'teachers' => 'Profesores',
+    'students' => 'Estudiantes',
+    'addressedTo' => 'Dirigido a',
 ];

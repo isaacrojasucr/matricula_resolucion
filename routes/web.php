@@ -46,7 +46,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/Servicios/Admin', 'ServiceController@indexAdmin');
 
-    Route::get('/Eventos/Admin', 'EventController@indexAdmin');
+    Route::get('/admin/eventos', 'Events\\EventAdminController@indexAdmin');
 
     /* Cambiar esta madre*/
     Route::get('/Test', function () {
@@ -63,21 +63,21 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/Servicios/Estudiantes', 'ServiceController@indexStudent');
 
-    Route::get('/Eventos/Profesores', 'EventController@indexTeacher');
+    Route::get('/eventos/profesores', 'Events\\EventController@indexTeacher');
 
-    Route::get('/Eventos/Estudiantes', 'EventController@indexStudent');
+    Route::get('/eventos/estudiantes', 'Events\\EventController@indexStudent');
 
     Route::get('/SeccionesAdmin/Agregar', 'SectionController@addSection');
 
     Route::post('/Servicios/Admin/Agregar', 'ServiceController@addService');
 
-    Route::post('/Eventos/Admin/Agregar', 'EventController@addEvent');
+    Route::post('/admin/eventos/agregar', 'Events\\EventAdminController@addEvent');
 
     Route::get('SeccionesAdmin/Eliminar/{id}', 'SectionController@deleteSection');
 
     Route::get('Servicios/Admin/Eliminar/{id}', 'ServiceController@deleteService');
 
-    Route::get('Eventos/Admin/Eliminar/{id}', 'EventController@deleteEvent');
+    Route::get('/admin/eventos/eliminar/{id}', 'Events\\EventAdminController@deleteEvent');
 
     Route::get('SeccionesAdmin/Editar/{id}', 'SectionController@editSectionView');
 
@@ -87,9 +87,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::put('Servicios/Admin/Editar/{id}/Edit', 'ServiceController@editService');
 
-    Route::get('Eventos/Admin/Editar/{id}', 'EventController@editEventView');
+    Route::get('/admin/eventos/editar/{id}', 'Events\\EventAdminController@editEventView');
 
-    Route::put('Eventos/Admin/Editar/{id}/Edit', 'EventController@editEvent');
+    Route::put('/admin/eventos/editar/{id}/edit', 'Events\\EventAdminController@editEvent');
 
     Route::get('correo/correo', 'emailController@email');
 

@@ -1,37 +1,24 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Events;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Event;
 
-class EventController extends Controller
+class EventAdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /* Llama la vista de los Eventos para el administrador */
     public function indexAdmin(Event $event)
     {
         $listEvents = $event->getListEvents();
 
-        return view('eventAdmin', compact('listEvents'));
-    }
-
-    /* Llama al modelo y recupera los eventos con rol de profesor para mostrarlos en la vista */
-    public function indexTeacher(Event $event)
-    {
-        $rol = "0";
-        $listEvents = $event->getListEventByRol($rol);
-
-        return view('event', compact('listEvents', 'rol'));
-    }
-
-    /* Llama al modelo y recupera los eventos con rol de estudiante para mostrarlos en la vista */
-    public function indexStudent(Event $event)
-    {
-        $rol = "1";
-        $listEvents = $event->getListEventByRol($rol);
-
-        return view('event', compact('listEvents', 'rol'));
+        return view('events.eventAdmin', compact('listEvents'));
     }
 
     /* Se agrega un evento nuevo, se guarda el archivo en el servidor y se redirige a la vista de EventosAdmin */
@@ -41,7 +28,7 @@ class EventController extends Controller
 
         session()->flash('message', 'Realizado correctamente!');
 
-        return redirect('Eventos/Admin');
+        return redirect('admin/eventos');
     }
 
     /* Se llama al modelo y se le evía el ID para ser eliminado en la Base de Datos */
@@ -51,7 +38,7 @@ class EventController extends Controller
 
         session()->flash('message', 'Realizado correctamente!');
 
-        return redirect('Eventos/Admin');
+        return redirect('admin/eventos');
     }
 
     /* Returna del modelo un evento y llama la vista */
@@ -59,7 +46,7 @@ class EventController extends Controller
     {
         $listEvents = $event->getEvent($id);
 
-        return view('eventEdit', compact('listEvents')); 
+        return view('events.eventEdit', compact('listEvents')); 
     }
 
     /* Se recibe el evento actualizado y se redirige a la vista de Eventos/Admin */
@@ -69,7 +56,7 @@ class EventController extends Controller
 
         session()->flash('message', 'Realizado correctamente!');
 
-        return redirect('Eventos/Admin');
+        return redirect('admin/eventos');
     }
 
 

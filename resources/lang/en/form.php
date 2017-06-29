@@ -41,7 +41,7 @@ return [
     'editProcess'=> 'Process Edition',
     'process' => 'Process',
     'year' => 'Year',
-    'iniDate' => 'Initial date',
+    'iniDate' => 'Initial Date',
     'finalDate' => 'Final Date',
     'remDays' => 'Remaining days',
     'ended' => 'Ended',
@@ -161,4 +161,9 @@ return [
     'date' => 'Date',
     'spendedDays' => 'Spended Days',
     'DaysLeft' => 'Days Left',
+    'to' => 'to',
+    'eventsTitle' => 'Ciencias Naturales Department\'s events for',
+    'teachers' => 'Teachers',
+    'students' => 'Students',
+    'addressedTo' => 'Addressed To',
 ];
