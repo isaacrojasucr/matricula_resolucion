@@ -142,7 +142,7 @@ return [
     '404' => 'Pagina no encontrada',
     '500' => 'Error interno de servidor',
     'school' => 'School',
-    'start' => 'Start',
+    'start' => 'Index',
     'about' => 'About us',
     'sections' => 'Sections',
     'sectionsAdmin' => 'Section\'s administration ',
@@ -155,4 +155,8 @@ return [
     'periodQuestion' => 'Actual Period',
     'managerSum' => 'Manager Activity Summary',
     'analiced' => 'Analiced by Managers',
+    'welcome' => 'Welcome to Ciencias Naturales\'s web page',
+    'nextEvents' => 'Next Events',
+    'description' => 'Description',
+    'date' => 'Date',
 ];

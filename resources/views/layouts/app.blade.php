@@ -28,16 +28,6 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img class="img-responsive" alt="Responsive image" src="{{ asset('media/firma-ucr.svg') }}">
                 </a>
-                <ul class="list-inline text-right" id="flags">
-                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                        <li>
-                            <a rel="alternate" hreflang="{{ $localeCode }}"
-                               href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                <img src="{{ $properties['native'] }}">
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
             </div>
         </div>
     </div>

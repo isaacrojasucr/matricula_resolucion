@@ -156,4 +156,8 @@ return [
     'periodQuestion' => 'Periodo Actual',
     'managerSum' => 'Resumen de Actividad de Coordinadores',
     'analiced' => 'Analizadas por coordinadores',
+    'welcome' => 'Bienvenido(a) a la Página del Departamento de Ciencias Naturales',
+    'nextEvents' => 'Próximos Eventos',
+    'description' => 'Descripción',
+    'date' => 'Fecha',
 ];
