@@ -17,9 +17,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link href="{{ asset('css/aditional.css') }}" rel="stylesheet">
     <script type="text/javascript" src="{{asset('js/custom.js')}}"></script>
+    <script src="{{asset('js/Chart.js')}}" ></script>
     <link href="{{ asset('css/templateStyles.css') }}" rel="stylesheet">
 </head>
-<body>
+<body >
 <div id="app">
     <div class="container-fluid" id="topNav">
         <div class="row">
@@ -59,6 +60,19 @@
                         <div class="collapse navbar-collapse" id="navContent">
                             <ul class="nav navbar-nav navbar-right">
                                 @if (Auth::guest())
+                                    <li><a href="{{ url('/inicio') }}">@lang('form.start')</a></li>
+                                    <li><a href="{{ url('/Acerca') }}">@lang('form.about')<span class="sr-only"></span></a>
+                                    <li><a href="{{ url('/Secciones') }}">@lang('form.sections')</a></li>
+                                    <li><a href="{{ url('/Carreras') }}">@lang('form.careers')</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                           aria-haspopup="true" aria-expanded="false">@lang('form.resolution')<span
+                                                    class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="{{ url('/matricula') }}">@lang('form.requestInscription')</a></li>
+                                            <li><a href="{{ url('/consulta/estudiante') }}">@lang('form.results')</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="{{ route('login') }}">{{trans('resolucion.login')}}</a></li>
                                 @else
                                     <li><a href="{{ url('/inicio') }}">@lang('form.start')</a></li>

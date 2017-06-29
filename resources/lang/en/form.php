@@ -147,4 +147,12 @@ return [
     'sections' => 'Sections',
     'sectionsAdmin' => 'Section\'s administration ',
     'careerAdmin' => 'Career\'s administration',
+    'resolution' => 'Resolution\'s inscription',
+    'results' => 'Consult inscription',
+    'requestInscription' => 'Request course',
+    'processInfo' => 'Process Information',
+    'actualProcessState' => 'Actual Process State',
+    'periodQuestion' => 'Actual Period',
+    'managerSum' => 'Manager Activity Summary',
+
 ];
