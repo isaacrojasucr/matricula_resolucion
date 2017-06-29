@@ -116,6 +116,14 @@
 	margin-bottom: 1em;
 }
 
+.panel-content {
+	padding: 10px 15px;
+}
+
+#events {
+	margin-top: 2em;
+}
+
 /*
 |--------------------------------------------------------------------------
 | Footer Styles

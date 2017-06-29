@@ -14,8 +14,8 @@
                     <input value="{{ $event->NOMBRE }}" name="name" type="text" class="form-control" id="name">
                 </div>
                 <div class="form-group">
-                        <label for="desc">Descripción</label>
-                        <input value="{{ $event->DESCRIPCION }}" name="desc" type="text" class="form-control" id="desc">
+                    <label for="desc">Descripción</label>
+                    <textarea value="{{ $event->DESCRIPCION }}" name="desc" class="form-control" rows="3" placeholder="Descripción"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="rol">Dirigido a</label>

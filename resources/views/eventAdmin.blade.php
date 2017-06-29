@@ -82,7 +82,7 @@
                     </div>
                     <div class="form-group">
                         <label for="desc">Descripción</label>
-                        <input name="desc" type="text" class="form-control" id="desc" placeholder="Descripción">
+                        <textarea name="desc" class="form-control" rows="3" placeholder="Descripción"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="rol">Dirigido a</label>

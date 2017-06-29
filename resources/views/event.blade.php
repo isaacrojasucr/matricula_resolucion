@@ -11,14 +11,19 @@
                 Estudiantes
             @endif
             </h1>
-            
+        </div>
+    </div>
+    <div class="row" id="events">
+        <div class="col-md-12">
             @foreach ($listEvents as $event)
-
-            <h2>{{$event->NOMBRE}}</h2>
-            <p>Descripción: {{$event->DESCRIPCION}}</p>
-            <p>Fecha Inicio: {{$event->FECHA_INICIO}}</p>
-            <p>Fecha Final: {{$event->FECHA_FINAL}}</p>
-
+            <div class="panel panel-primary">
+                <div class="panel-heading"> {{$event->NOMBRE}} </div>
+                <div class="panel-content">
+                    <p><strong>Descripción:</strong> {{$event->DESCRIPCION}}</p>
+                    <p><strong>Fecha Inicio:</strong> {{$event->FECHA_INICIO}}
+                    <p><strong>Fecha Final:</strong> {{$event->FECHA_FINAL}}
+                </div>
+            </div>
             @endforeach
         </div>
     </div>
