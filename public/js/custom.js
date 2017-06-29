@@ -148,13 +148,13 @@ function first(left, spent) {
             value: spent,
             color: "#08088A",
             highlight: "#5882FA",
-            label: "Dias consumidos"
+            label: "Dias Utilizados"
         },
         {
             value: left,
             color: "#088A08",
             highlight: "#01DF01",
-            label: "Dias restantes"
+            label: "Dias Restantes"
         }
     ];
     var ctx2 = document.getElementById("chart-area2").getContext("2d");
@@ -174,57 +174,57 @@ function second(ii,ie,em,ecn,rn,rh,lq,ef,te,tt) {
             value: ii,
             color: "#FF0000",
             highlight: "#B40404",
-            label: "Ingeniería Industrial"
+            label: "II"
         },
         {
             value: ie,
             color: "#FF8000",
             highlight: "#B45F04",
-            label: "Informática Empresarial"
+            label: "IE"
         },
         {
             value: em,
             color: "#FFFF00",
             highlight: "#AEB404",
-            label: "Enseñanza de las Matemáticas"
+            label: "EM"
         },
         {
             value: rn,
             color: "#80FF00",
             highlight: "#5FB404",
-            label: "Gestion de los Recursos Naturales"
+            label: "RN"
         }
         ,
         {
             value: ecn,
             color: "#00FFBF",
             highlight: "#04B486",
-            label: "Enseñanza de las Ciencias Naturales"
+            label: "CN"
         }
         ,
         {
             value: lq,
             color: "#00BFFF",
             highlight: "#0489B1",
-            label: "Laboratorista Químico"
+            label: "LQ"
         },
         {
             value: ef,
             color: "#0000FF",
             highlight: "#0404B4",
-            label: "Enfermeria"
+            label: "EN"
         },
         {
             value: rh,
             color: "#8000FF",
             highlight: "#5F04B4",
-            label: "Gestion Integral del Recurso Hídrico"
+            label: "RH"
         },
         {
             value: te,
             color: "#FF00FF",
             highlight: "#B404AE",
-            label: "Turismo Ecológico"
+            label: "TE"
         }
     ];
 

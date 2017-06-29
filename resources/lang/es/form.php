@@ -160,4 +160,6 @@ return [
     'nextEvents' => 'Próximos Eventos',
     'description' => 'Descripción',
     'date' => 'Fecha',
+    'spendedDays' => 'Días Utilizados',
+    'DaysLeft' => 'Días Restantes',
 ];
