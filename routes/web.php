@@ -22,6 +22,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         return view('welcome');
     });
 
+    Route::get('/home', function(){
+        return redirect('/inicio');
+    });
+
     Route::get('/Acerca', function () {
         return view('aboutUs');
     });

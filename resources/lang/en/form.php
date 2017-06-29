@@ -142,4 +142,9 @@ return [
     '404' => 'Pagina no encontrada',
     '500' => 'Error interno de servidor',
     'school' => 'School',
+    'start' => 'Start',
+    'about' => 'About us',
+    'sections' => 'Sections',
+    'sectionsAdmin' => 'Section\'s administration ',
+    'careerAdmin' => 'Career\'s administration',
 ];

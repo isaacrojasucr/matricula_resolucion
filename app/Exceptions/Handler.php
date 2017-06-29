@@ -5,6 +5,8 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use App\Http\Requests;
+use Session;
 
 class Handler extends ExceptionHandler
 {
@@ -55,7 +57,7 @@ class Handler extends ExceptionHandler
                     return response()->view('errors.500',[],500);
                     break;
                 default:
-                    return $this->renderHttpException($exception);
+                    return response()->view('errors.500',[],500);
                     break;
             }
         }

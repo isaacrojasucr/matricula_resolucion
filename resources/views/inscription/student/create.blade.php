@@ -196,6 +196,10 @@
                             <div class="col-md-12 center">
                                 {!! Form::label('', ''.trans('form.warning')) !!}
                             </div>
+                            <div class="col-md-12 center">
+                                {!! Form::label('', ''.trans('form.warning')) !!}
+                            </div>
+
                         </div>
                     </div>
                     </br>
