@@ -27,7 +27,6 @@
                                             <td>@lang('form.average')</td>
                                             <td>@lang('form.course')</td>
                                             <td>@lang('form.group')</td>
-                                            <td>@lang('form.timesAttended')</td>
                                         </tr>
                                     </thead>
                                     <tbody>
