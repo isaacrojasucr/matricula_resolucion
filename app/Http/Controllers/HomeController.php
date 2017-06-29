@@ -33,20 +33,28 @@ class HomeController extends Controller
                                 order by id desc
                                 LIMIT 1');
 
+        $process = $process[0];
+
         $tt = \DB::select('SELECT COUNT(i.id) as ready
                             FROM pwcnm_inscription_requests as i
                             INNER JOIN pwcnm_approvals as a on a.fk_inscription = i.id
                             where a.stade > 0');
+
+        $tt = $tt[0];
 
         $ii = \DB::select('SELECT COUNT(i.id) as ready
                             FROM pwcnm_inscription_requests as i
                             INNER JOIN pwcnm_approvals as a on a.fk_inscription = i.id
                             where a.stade = 0 and i.fk_career = 6;');
 
+        $ii = $ii[0];
+
         $ie = \DB::select('SELECT COUNT(i.id) as ready
                             FROM pwcnm_inscription_requests as i
                             INNER JOIN pwcnm_approvals as a on a.fk_inscription = i.id
                             where a.stade = 0 and i.fk_career = 1;');
+
+        $ie = $ie[0];
 
         $ef = \DB::select('SELECT COUNT(i.id) as ready
                             FROM pwcnm_inscription_requests as i
@@ -58,31 +66,44 @@ class HomeController extends Controller
                             INNER JOIN pwcnm_approvals as a on a.fk_inscription = i.id
                             where a.stade = 0 and i.fk_career = 9;');
 
+        $rn = $rn[0];
+
+        $ef = $ef[0];
+
         $ri = \DB::select('SELECT COUNT(i.id) as ready
                             FROM pwcnm_inscription_requests as i
                             INNER JOIN pwcnm_approvals as a on a.fk_inscription = i.id
                             where a.stade = 0 and i.fk_career = 10;');
+
+        $ri =$ri[0];
 
         $ecn = \DB::select('SELECT COUNT(i.id) as ready
                             FROM pwcnm_inscription_requests as i
                             INNER JOIN pwcnm_approvals as a on a.fk_inscription = i.id
                             where a.stade = 0 and i.fk_career = 11;');
 
+        $ecn =$ecn[0];
+
         $te = \DB::select('SELECT COUNT(i.id) as ready
                             FROM pwcnm_inscription_requests as i
                             INNER JOIN pwcnm_approvals as a on a.fk_inscription = i.id
                             where a.stade = 0 and i.fk_career = 8;');
+
+        $te = $te[0];
 
         $lq = \DB::select('SELECT COUNT(i.id) as ready
                             FROM pwcnm_inscription_requests as i
                             INNER JOIN pwcnm_approvals as a on a.fk_inscription = i.id
                             where a.stade = 0 and i.fk_career = 6;');
 
+        $lq = $lq[0];
+
         $em = \DB::select('SELECT COUNT(i.id) as ready
                             FROM pwcnm_inscription_requests as i
                             INNER JOIN pwcnm_approvals as a on a.fk_inscription = i.id
                             where a.stade = 0 and i.fk_career = 2;');
 
+        $em = $em[0];
 
         return view('home', compact('process','tt','ii','ie','ecn','em','te','lq','rn','ri','ef'));
     }
