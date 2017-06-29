@@ -60,6 +60,9 @@
                             <ul class="nav navbar-nav navbar-right">
                                 @if (Auth::guest())
                                     <li><a href="{{ route('login') }}">{{trans('resolucion.login')}}</a></li>
+                                    <li><a href="{{ url('/Acerca') }}">@lang('form.about')<span class="sr-only"></span></a>
+                                    <li><a href="{{ url('/Secciones') }}">@lang('form.sections')</a></li>
+                                    <li><a href="{{ url('/Carreras') }}">@lang('form.careers')</a></li>
                                 @else
                                     <li><a href="{{ url('/inicio') }}">@lang('form.start')</a></li>
                                     <li><a href="{{ url('/Acerca') }}">@lang('form.about')<span class="sr-only"></span></a>
