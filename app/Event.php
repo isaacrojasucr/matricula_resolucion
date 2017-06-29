@@ -36,4 +36,9 @@ class Event extends Model
     {
         DB::update('update PWCNM_EVENTO set NOMBRE = ?, DESCRIPCION = ?, ROL = ?, FECHA_INICIO = ?, FECHA_FINAL = ? where ID_EVENTO = ?', [$name, $desc, $rol, $start_date, $end_date, $id]);
     }
+
+    public function get3ListEvents()
+    {
+        return DB::select('select NOMBRE, DESCRIPCION, ROL, FECHA_INICIO, FECHA_FINAL from PWCNM_EVENTO ORDER BY FECHA_FINAL ASC LIMIT 3');
+    }
 }
