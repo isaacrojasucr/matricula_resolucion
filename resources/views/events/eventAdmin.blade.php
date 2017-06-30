@@ -56,8 +56,12 @@
                                             @lang('form.students')
                                         @endif
                                     </td>
-                                    <td>{{$event->FECHA_INICIO}}</td>
-                                    <td>{{$event->FECHA_FINAL}}</td>
+                                    <?php 
+                                        $fecha_inicio = explode("-", $event->FECHA_INICIO);
+                                        $fecha_final = explode("-", $event->FECHA_FINAL);
+                                    ?>
+                                    <td>{{ $fecha_inicio[2] . '-' . $fecha_inicio[1] . '-' . $fecha_inicio[0] . ' ' }}</td>
+                                    <td>{{ $fecha_final[2] . '-' . $fecha_final[1] . '-' . $fecha_final[0] }}</td>
                                     <td>
                                         <a title=@lang('form.edit') class="btn btn-primary btn-xs" href="{{ url('/admin/eventos/editar/' . $event->ID_EVENTO) }}" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                                         <a title=@lang('form.delete') class="btn btn-danger btn-xs" href="{{ url('admin/eventos/eliminar/' . $event->ID_EVENTO) }}" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>

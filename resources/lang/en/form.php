@@ -155,8 +155,6 @@ return [
     'periodQuestion' => 'Actual Period',
     'managerSum' => 'Manager Activity Summary',
     'analiced' => 'Analiced by Managers',
-    'welcome' => 'Welcome to Ciencias Naturales\'s web page',
-    'nextEvents' => 'Next Events',
     'description' => 'Description',
     'date' => 'Date',
     'spendedDays' => 'Spended Days',

@@ -180,7 +180,7 @@
     <div class="container-fluid" id="footer">
         <div class="row">
             <div class="col-md-12" id="legalRights">
-                <p>© 2017 Universidad de Costa Rica - Tel. 2511-0000. Última actualización: junio de 2017.</p>
+                <p>© 2017 Universidad de Costa Rica. Última actualización: junio de 2017.</p>
             </div>
         </div>
     </div>
