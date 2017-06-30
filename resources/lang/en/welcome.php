@@ -10,4 +10,7 @@ return [
     'locationDesc' => 'Next to the photocopier (set 2 of classrooms)',
     'telephone' => 'Telephone',
     'email' => 'Email',
+    'addressedTo' => 'Addressed To',
+    'teachers' => 'Teachers',
+    'students' => 'Students',
 ];

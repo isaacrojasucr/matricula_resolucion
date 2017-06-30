@@ -10,4 +10,7 @@ return [
     'locationDesc' => 'Contiguo a la fotocopiadora (conjunto 2 de aulas)',
     'telephone' => 'Teléfono',
     'email' => 'Correo',
+    'addressedTo' => 'Dirigido a',
+    'teachers' => 'Profesores',
+    'students' => 'Estudiantes',
 ];

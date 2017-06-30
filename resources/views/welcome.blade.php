@@ -13,7 +13,16 @@
             	<h2 class="text-center">@lang('welcome.nextEvents')</h2>
             	@foreach ($listEvents as $event)
 	            <div class="panel panel-primary">
-	                <div class="panel-heading"> {{$event->NOMBRE}} </div>
+	                <div class="panel-heading">
+	                	<h3 class="panel-title">
+		                	{{$event->NOMBRE . ' - '}} @lang('welcome.addressedTo') {{' '}}
+		                	@if ($event->ROL == '0')
+		                		@lang('welcome.teachers')
+		                	@else
+		                		@lang('welcome.students')
+		                	@endif
+	                	</h3>
+	                </div>
 	                <div class="panel-content">
 	                    <p><strong>@lang('form.description'):</strong> {{$event->DESCRIPCION}}</p>
 	                    <?php 
