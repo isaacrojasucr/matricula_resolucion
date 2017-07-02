@@ -164,4 +164,5 @@ return [
     'teachers' => 'Teachers',
     'students' => 'Students',
     'addressedTo' => 'Addressed To',
+    'requeriments' => 'If any of the clases your are requesting for have requeriments, please fill the next Sworn Declaration'
 ];
