@@ -18,9 +18,10 @@ class CreateCarrersTable extends Migration
             $table->string('name');
             $table->string('page');
             $table->string('plan');
-            $table->integer('manager');
-            $table->foreign('manager')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('manager')->unsigned();
             $table->timestamps();
+
+            $table->foreign('manager')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

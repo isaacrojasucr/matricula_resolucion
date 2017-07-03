@@ -18,9 +18,11 @@ class CreatePwcnmRequirementsTable extends Migration
             $table->string('course');
             $table->double('grade');
             $table->integer('cycle');
-            $table->integer('fk_inscription');
-            $table->foreign('fk_inscription')->references('id')->on('pwcnm_inscription_requests')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('fk_inscription')->unsigned();
             $table->timestamps();
+
+            $table->foreign('fk_inscription')->references('id')->on('pwcnm_inscription_requests')->onDelete('cascade')->onUpdate('cascade');
+
         });
     }
 

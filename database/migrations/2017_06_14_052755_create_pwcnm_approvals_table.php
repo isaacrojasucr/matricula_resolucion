@@ -17,11 +17,12 @@ class CreatePwcnmApprovalsTable extends Migration
             $table->increments('id');
             $table->integer('stade');
             $table->string('comments');
-            $table->integer('fk_user');
-            $table->foreign('fk_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('fk_inscription');
-            $table->foreign('fk_inscription')->references('id')->on('pwcnm_inscription_requests')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('fk_user')->unsigned();
+            $table->integer('fk_inscription')->unsigned();
             $table->timestamps();
+            
+            $table->foreign('fk_inscription')->references('id')->on('pwcnm_inscription_requests')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('fk_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

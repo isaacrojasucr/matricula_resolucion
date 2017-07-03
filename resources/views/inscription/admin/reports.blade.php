@@ -46,7 +46,6 @@
                                         <td>{{$item->average}}</td>
                                         <td>{{$item->course}}</td>
                                         <td>{{$item->group}}</td>
-                                        <td>{{$item->times}}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

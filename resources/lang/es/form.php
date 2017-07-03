@@ -165,4 +165,5 @@ return [
     'teachers' => 'Profesores',
     'students' => 'Estudiantes',
     'addressedTo' => 'Dirigido a',
+    'requeriments' => 'Si el o los cursos solicitados por poseen requerimientos complete la siguiente declaracón jurada',
 ];

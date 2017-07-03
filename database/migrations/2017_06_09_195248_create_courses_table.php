@@ -19,9 +19,11 @@ class CreateCoursesTable extends Migration
             $table->integer('period');
             $table->integer('cycle');
             $table->string('plan');
-            $table->integer('carrer');
-            $table->foreign('carrer')->references('id')->on('carrers')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('carrer')->unsigned();
             $table->timestamps();
+
+            $table->foreign('carrer')->references('id')->on('carrers')->onDelete('cascade')->onUpdate('cascade');
+            
         });
     }
 

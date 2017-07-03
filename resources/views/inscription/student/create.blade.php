@@ -185,10 +185,16 @@
                 <div class="well">
                     <div class="form-group">
                         <div class="col-md-12">
-                            <div class="col-md-12 center" style="font-size: large; height: 85px;">
+                            <div class="col-md-12 center">
+                                {!! Form::label('', ''.trans('form.requeriments')) !!}
+                            </div>
+                            </br>
+                            </br>
+                            </br>
+
+                            <div class="col-md-12 center" style="font-size: large; height: 60px;">
                                 {!! Form::label('', ''.trans('form.declaration')) !!}
                             </div>
-
                             <div class="col-md-12 center">
                                 {!! Form::label('', ''.trans('form.headDeclaration')) !!}
 
@@ -196,9 +202,7 @@
                             <div class="col-md-12 center">
                                 {!! Form::label('', ''.trans('form.warning')) !!}
                             </div>
-                            <div class="col-md-12 center">
-                                {!! Form::label('', ''.trans('form.warning')) !!}
-                            </div>
+
 
                         </div>
                     </div>
