@@ -29,8 +29,8 @@
                             <td>{{$section->email}}</td>
                             <td>{{$section->phone}}</td>
                             <td>
-                                <a title=@lang('form.edit') class="btn btn-primary btn-xs" href="{{ url('/SeccionesAdmin/Editar/' . $section->ID_SECCION) }}" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                <a title=@lang('form.delete') class="btn btn-danger btn-xs" href="{{ url('/SeccionesAdmin/Eliminar/' . $section->ID_SECCION) }}" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                <a title=@lang('form.edit') class="btn btn-primary btn-xs" href="{{ url('/admin/secciones/editar/' . $section->ID_SECCION) }}" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                <a title=@lang('form.delete') class="btn btn-danger btn-xs" href="{{ url('/admin/secciones/eliminar/' . $section->ID_SECCION) }}" role="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
                             </td>
                         </tr>
                         @endforeach
@@ -50,7 +50,7 @@
                 <h4 class="modal-title" id="addSectionLabel">Agregar Sección</h4>
             </div>
             <div class="modal-body">
-                <form action="{{ url('/SeccionesAdmin/Agregar') }}" method="GET">
+                <form action="{{ url('/admin/secciones/agregar') }}" method="GET">
                     <div class="form-group">
                         <label for="name">Nombre</label>
                         <input name="name" type="text" class="form-control" id="name" placeholder="Nombre">

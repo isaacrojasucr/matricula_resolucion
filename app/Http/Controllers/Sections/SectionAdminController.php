@@ -1,20 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Sections;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Section;
 use App\User;
 
-class SectionController extends Controller
+class SectionAdminController extends Controller
 {
-
-    /* LLama la vista de las Secciones para el público */
-    public function index(Section $section)
+    public function __construct()
     {
-        $listSection = $section->getListSection();
-
-        return view('section', compact('listSection'));
+        $this->middleware('auth');
     }
 
     /* Llama la vista de las Secciones para el administrador */
@@ -24,7 +21,7 @@ class SectionController extends Controller
         $listSection = $section->getListSection();
         $listUser = $user->getUsersIDName();
 
-        return view('sectionAdmin', compact('listSection', 'listUser'));
+        return view('sections.sectionAdmin', compact('listSection', 'listUser'));
     }
 
     /* Agrega una nueva sección */
@@ -48,7 +45,7 @@ class SectionController extends Controller
         $listSection = $section->getSection($id);
         $listUser = $user->getUsersIDName();
 
-        return view('sectionEdit', compact('listSection', 'listUser')); 
+        return view('sections.sectionEdit', compact('listSection', 'listUser')); 
     }
 
     public function editSection(Request $request, Section $section, $id)

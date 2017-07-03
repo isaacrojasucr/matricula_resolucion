@@ -8,7 +8,7 @@
             
             @foreach ($listSection as $section)
 
-            <form action="{{ url('/SeccionesAdmin/Editar/' . $section->ID_SECCION . '/Edit') }}" method="GET">
+            <form action="{{ url('/admin/secciones/editar/' . $section->ID_SECCION . '/edit') }}" method="GET">
                 <div class="form-group">
                     <label for="name">Nombre</label>
                     <input value="{{ $section->NOMBRE }}" name="name" type="text" class="form-control" id="name" placeholder="Nombre">
