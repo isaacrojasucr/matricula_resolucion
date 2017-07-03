@@ -49,7 +49,18 @@
                     <ul class="nav navbar-nav navbar-right">
                         @if (Auth::guest())
                             <li><a href="{{ url('/') }}">@lang('form.start')</a></li>
-                            <li><a href="{{ url('/Acerca') }}">@lang('form.about')<span class="sr-only"></span></a>
+                            <li><a href="{{ url('/acerca') }}">@lang('form.about')<span class="sr-only"></span></a>
+                            <li><a href="{{ url('/secciones') }}">@lang('sections.sections')</a></li>
+                            <li><a href="{{ url('/Carreras') }}">@lang('form.careers')</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true" aria-expanded="false">@lang('form.services')<span
+                                            class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ url('/Servicios/Profesores') }}">@lang('events.teachers')</a></li>
+                                    <li><a href="{{ url('/Servicios/Estudiantes') }}">@lang('events.students')</a></li>
+                                </ul>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                    aria-haspopup="true" aria-expanded="false">@lang('events.events')<span
@@ -59,8 +70,6 @@
                                     <li><a href="{{ url('/eventos/estudiantes') }}">@lang('events.students')</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{{ url('/secciones') }}">@lang('sections.sections')</a></li>
-                            <li><a href="{{ url('/Carreras') }}">@lang('form.careers')</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                    aria-haspopup="true" aria-expanded="false">@lang('form.resolution')<span
@@ -72,97 +81,129 @@
                             </li>
                             <li><a href="{{ route('login') }}">{{trans('resolucion.login')}}</a></li>
                         @else
-                            <li><a href="{{ url('/inicio') }}">@lang('form.start')</a></li>
-                            <li><a href="{{ url('/Acerca') }}">@lang('form.about')<span class="sr-only"></span></a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                   aria-haspopup="true" aria-expanded="false">@lang('events.events')<span
-                                            class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{ url('/eventos/profesores') }}">@lang('events.teachers')</a></li>
-                                    <li><a href="{{ url('/eventos/estudiantes') }}">@lang('events.students')</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="{{ url('/secciones') }}">@lang('sections.sections')</a></li>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                   aria-haspopup="true" aria-expanded="false">@lang('form.careers') <span
-                                            class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{ url('/Carreras') }}">@lang('form.careers')</a></li>
-                                    <li><a href="{{ url('/CarrerasAdmin') }}">@lang('form.careerAdmin')</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                   aria-haspopup="true" aria-expanded="false">@lang('form.inscription') <span
-                                            class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ url('/matricula') }}">
-                                            @lang('form.studentSection')
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('/admin/matricula') }}">
-                                            @lang('form.actualPetitions')
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('/admin/antiguas') }}">
-                                            @lang('form.oldPetitions')
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('/admin/procesos') }}">
-                                            @lang('form.process')
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('/admin/reportes') }}">
-                                            @lang('form.reports')
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                   aria-haspopup="true" aria-expanded="false">@lang('form.maintenance') <span
-                                            class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ url('/admin/sedes') }}">
-                                            @lang('form.locations')
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('/admin/carreras') }}">
-                                            @lang('form.careers')
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('/admin/secciones') }}">
-                                            @lang('sections.sections')
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('/admin/cursos') }}">
-                                            @lang('form.courses')
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('/admin/usuarios') }}">
-                                            @lang('form.users')
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ url('/admin/eventos') }}">
-                                            @lang('events.events')
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
+                            @if(Auth::user()->role == "1")
+                                <li><a href="{{ url('/inicio') }}">@lang('form.start')</a></li>
+                                <li><a href="{{ url('/acerca') }}">@lang('form.about')<span class="sr-only"></span></a></li>
+                                <li><a href="{{ url('/secciones') }}">@lang('sections.sections')</a></li>
+                                <li><a href="{{ url('/Carreras') }}">@lang('form.careers')</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-haspopup="true" aria-expanded="false">@lang('form.services')<span
+                                                class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ url('/Servicios/Profesores') }}">@lang('events.teachers')</a></li>
+                                        <li><a href="{{ url('/Servicios/Estudiantes') }}">@lang('events.students')</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-haspopup="true" aria-expanded="false">@lang('events.events')<span
+                                                class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ url('/eventos/profesores') }}">@lang('events.teachers')</a></li>
+                                        <li><a href="{{ url('/eventos/estudiantes') }}">@lang('events.students')</a></li>
+                                    </ul>
+                                </li>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-haspopup="true" aria-expanded="false">@lang('form.inscription') <span
+                                                class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{{ url('/matricula') }}">
+                                                @lang('form.studentSection')
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('/admin/matricula') }}">
+                                                @lang('form.actualPetitions')
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('/admin/antiguas') }}">
+                                                @lang('form.oldPetitions')
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('/admin/procesos') }}">
+                                                @lang('form.process')
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('/admin/reportes') }}">
+                                                @lang('form.reports')
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-haspopup="true" aria-expanded="false">@lang('form.maintenance') <span
+                                                class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="{{ url('/admin/sedes') }}">
+                                                @lang('form.locations')
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('/admin/carreras') }}">
+                                                @lang('form.careers')
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('/admin/secciones') }}">
+                                                @lang('sections.sections')
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('/admin/cursos') }}">
+                                                @lang('form.courses')
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('/admin/usuarios') }}">
+                                                @lang('form.users')
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('/admin/eventos') }}">
+                                                @lang('events.events')
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('/Servicios/Admin') }}">
+                                                @lang('form.services')
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            @else
+                                <li><a href="{{ url('/') }}">@lang('form.start')</a></li>
+                                <li><a href="{{ url('/acerca') }}">@lang('form.about')<span class="sr-only"></span></a>
+                                <li><a href="{{ url('/secciones') }}">@lang('sections.sections')</a></li>
+                                <li><a href="{{ url('/Carreras') }}">@lang('form.careers')</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-haspopup="true" aria-expanded="false">@lang('form.services')<span
+                                                class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ url('/Servicios/Profesores') }}">@lang('events.teachers')</a></li>
+                                        <li><a href="{{ url('/Servicios/Estudiantes') }}">@lang('events.students')</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-haspopup="true" aria-expanded="false">@lang('events.events')<span
+                                                class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ url('/eventos/profesores') }}">@lang('events.teachers')</a></li>
+                                        <li><a href="{{ url('/eventos/estudiantes') }}">@lang('events.students')</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="{{ url('/proceso/coordinador') }}">@lang('form.petitions')<span class="sr-only"></span></a></li>
+                            @endif
                             <li class="dropdown" id="userLiMenu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                    aria-expanded="false">

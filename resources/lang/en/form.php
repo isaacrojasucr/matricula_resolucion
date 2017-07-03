@@ -132,7 +132,7 @@ return [
     'leftInfo' => 'you have to complete the courses form information',
     'verifyReq'=> 'are you sure that the inscription didn\'t need requirements',
     'editCourse' => 'Editing course ',
-    'oldPetitions' => 'Solicitudes antiguas',
+    'oldPetitions' => 'Old Petitions',
     'selectLocation' => 'Choose the second location',
     'locationReport' => 'Below are shown the second location, select one to generate the corresponding report',
     'searchOld'=>'Search old inscriptions',
@@ -164,5 +164,7 @@ return [
     'teachers' => 'Teachers',
     'students' => 'Students',
     'addressedTo' => 'Addressed To',
-    'requeriments' => 'If any of the clases your are requesting for have requeriments, please fill the next Sworn Declaration'
+    'requeriments' => 'If any of the clases your are requesting for have requeriments, please fill the next Sworn Declaration',
+    'petitions' => 'Incoming Petitions',
+    'services' => 'Services',
 ];

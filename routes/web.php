@@ -20,7 +20,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         return redirect('/inicio');
     });
 
-    Route::get('/Acerca', function () {
+    Route::get('/acerca', function () {
         return view('aboutUs');
     });
 
