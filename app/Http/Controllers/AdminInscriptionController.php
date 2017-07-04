@@ -11,6 +11,9 @@ use App\pwcnm_second_location;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\Array_;
+use Illuminate\Contracts\Session\Session;
+use Mail;
+use App\Mail\SendMail;
 
 class AdminInscriptionController extends Controller
 {
@@ -86,14 +89,43 @@ class AdminInscriptionController extends Controller
         }elseif ($approval->stade == 2){
             $approval->stade = 4;
         }elseif ($approval->stade == 4){
-            $approval->stade = 6;
-        }
+            
+            $data = \DB::select('SELECT cc.name as course, i.group, l.name as location, i.email  
+                                      from pwcnm_inscription_requests as i 
+                                      INNER JOIN pwcnm_approvals as a ON a.fk_inscription = i.id 
+                                      INNER JOIN pwcnm_second_locations as l ON l.id = i.fk_location 
+                                      INNER JOIN pwcnm_registration_processes as p ON p.id = i.fk_process 
+                                      INNER JOIN carrers as c ON c.id = i.fk_career 
+                                      INNER JOIN courses as cc ON cc.id = i.fk_course 
+                                      WHERE i.id = ?', [$approval->fk_inscription]);
 
-        
+
+            $approval->comments = 'El curso ha sido aceptado por la sede solicitada.';
+           
+
+            session()->put('extra_message', 'El curso solicitado por matricula por resolución: '.$data[0]->course.', ha sido aprobado. En el grupo: '. $data[0]->group. '. Por favor presentarse lo mas pronto posible en la oficina del departamento de Ciencias Naturales para poder proseguir con la siguiente parte del proceso. La matrícula NO ESTARÁ COMPLETA hasta que se presente en la misma.');
+
+            session()->put('content_actual','Sede de aceptación: '. $data[0]->location);
+            session()->put('receiver_actual', $data[0]->email);
+            session()->put('subject_actual', 'Sistema de matricula por resolución - Aprobación');
+
+            $this->send();
+
+            $approval->stade = 6;
+
+        }
+       
 
         $approval->update();
 
         return redirect('admin/matricula');
+
+    }
+
+    public function send() {
+
+
+        Mail::send(new sendMail());
 
     }
     

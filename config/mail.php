@@ -57,7 +57,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Sistema de Matrícula por Inclusión'),
+        'name' => env('MAIL_FROM_NAME', 'Sistema de Matrícula por Resolución'),
     ],
 
     /*
