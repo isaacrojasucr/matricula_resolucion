@@ -61,7 +61,8 @@ class Handler extends ExceptionHandler
                     break;
             }
         }
-        return parent::render($request, $exception);
+        return response()->view('errors.allErrors',[],404);
+        //return parent::render($request, $exception);
     }
 
     /**
