@@ -142,7 +142,7 @@ jQuery(document).ready(function ($) {
     $('#tabs').tab();
 });
 
-function first(left, spent) {
+function first(spent, left) {
     var pieData = [
         {
             value: spent,
@@ -189,14 +189,14 @@ function second(ii,ie,em,ecn,rn,rh,lq,ef,te,tt) {
             label: "EM"
         },
         {
-            value: rn,
+            value: ecn,
             color: "#80FF00",
             highlight: "#5FB404",
             label: "RN"
         }
         ,
         {
-            value: ecn,
+            value: rn,
             color: "#00FFBF",
             highlight: "#04B486",
             label: "CN"
