@@ -169,4 +169,5 @@ return [
     'petitions' => 'Solicitudes Entrantes',
     'services' => 'Servicios',
     'allErrors' => 'Ha ocurrido algo inesperado. Por favor vuelve a intentarlo más tarde.',
+    'approveby' => 'Aprobado por la sede'
 ];

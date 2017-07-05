@@ -168,4 +168,5 @@ return [
     'petitions' => 'Incoming Petitions',
     'services' => 'Services',
     'allErrors' => 'Something happened. Please try again later.',
+    'approveby' => 'Approve by second location'
 ];

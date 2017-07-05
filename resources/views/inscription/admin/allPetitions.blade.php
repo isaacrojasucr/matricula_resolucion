@@ -49,7 +49,12 @@
                                                 <td>{{$item->phone}}</td>
                                                 <td>{{$item->email}}</td>
                                                 <td>
-                                                    @if($item->state == 2)
+                                                    @if($item->state == 6)
+                                                        <a href="#" class="btn btn-sm btn-default">
+                                                            @lang('form.approveby')
+                                                        </a>
+
+                                                    @elseif($item->state == 2)
                                                         <a href="{{ url('/admin/matricula/aceptar/'.$item->id)}}"
                                                            class="btn btn-sm btn-success" data-toggle="tooltip"
                                                            data-placement="bottom"
