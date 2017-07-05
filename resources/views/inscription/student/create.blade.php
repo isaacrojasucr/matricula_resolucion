@@ -15,7 +15,7 @@
                             {!! Form::label('',''.trans('form.average') ) !!}
                         </div>
                         <div class="col-md-6">
-                            {!! Form::number('weightedAverage', null, ['class' => 'form-control' , 'required' => 'required', 'step'=>'any']) !!}
+                            {!! Form::number('weightedAverage', null, ['class' => 'form-control' , 'required' => 'required', 'step'=>'0.01', 'min'=>'0', 'pattern'=>'[0-9]+([\\.,][0-9]+)?']) !!}
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                                 {!! Form::label('', ''.trans('form.group')) !!}
                             </div>
                             <div class="col-md-9" style="padding: 0px">
-                                {!! Form::number('group', null, ['class' => 'form-control', 'placeholder'=>'#' ]) !!}
+                                {!! Form::number('group', null, ['class' => 'form-control', 'placeholder'=>'#','step'=>'0.01', 'min'=>'0', 'pattern'=>'[0-9]+([0-9]+)?' ]) !!}
                             </div>
                         </div>
 
@@ -125,7 +125,7 @@
                                 {!! Form::label('', ''.trans('form.timesAttended')) !!}
                             </div>
                             <div class="col-md-9" style="padding: 0px">
-                                {!! Form::number('timesAttended', null, ['class' => 'form-control', 'placeholder'=>'#' ]) !!}
+                                {!! Form::number('timesAttended', null, ['class' => 'form-control', 'placeholder'=>'#','step'=>'0.01', 'min'=>'0', 'pattern'=>'[0-9]+([0-9]+)?' ]) !!}
                             </div>
                         </div>
 
@@ -225,7 +225,7 @@
                                     <tr>
                                         <th>{!! Form::text('subid', null, ['class' => 'form-control' ]) !!}</th>
                                         <th>{!! Form::text('subname', null, ['class' => 'form-control' ]) !!}</th>
-                                        <th>{!! Form::number('result', null, ['class' => 'form-control','step'=>'any' ]) !!}</th>
+                                        <th>{!! Form::number('result', null, ['class' => 'form-control','required' => 'required', 'step'=>'0.01', 'min'=>'0', 'pattern'=>'[0-9]+([\\.,][0-9]+)?']) !!}</th>
                                         <th>{!! Form::number('cycle', null, ['class' => 'form-control col-md-3' ]) !!}
                                         </th>
                                         <th>

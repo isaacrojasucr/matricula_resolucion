@@ -33,10 +33,10 @@ function genera_tabla(info) {
         var celda4 =  fila.insertCell(3);
         var celda5 =  fila.insertCell(4);
 
-        celda1.innerHTML = text;
-        celda2.innerHTML = group;
+        celda1.innerHTML = textlocation;
+        celda2.innerHTML = text;
         celda3.innerHTML = ta;
-        celda4.innerHTML = textlocation;
+        celda4.innerHTML = group;
         celda5.innerHTML = obs;
 
         var row = id + "_" + ta + "_" + group + "_" + idlocation+ "_" + obs;

@@ -17,7 +17,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/', 'WelcomeController@welcome');
 
     Route::get('/home', function(){
-        return redirect('/inicio');
+        if(Auth::user()->role == 1){
+            return redirect('/inicio');
+        }elseif (Auth::user()->role == 2){
+            return redirect('/proceso/coordinador');
+        }
+
     });
 
     Route::get('/acerca', function () {
@@ -30,7 +35,14 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Auth::routes();
 
-    Route::get('/inicio', 'HomeController@index')->name('home');
+    Route::get('/inicio' , function(){
+        if(Auth::user()->role == 1){
+            return redirect('/inicio');
+        }elseif (Auth::user()->role == 2){
+            return redirect('/proceso/coordinador');
+        }
+
+    });
 
     Route::get('/Carreras', 'Carrers\\carrerController@indexPage');
 

@@ -48,20 +48,17 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group center">
                             <div class="col-md-6 col-md-offset-3">
                                 <button type="submit" class="btn btn-primary  col-md-12">
                                     @lang('resolucion.login')
                                 </button>
                             </div>
 
-                            <div class="col-md-8 col-md-offset-3">
-                                    <label>
+                            <div class="col-md-8 col-md-offset-3 ">
+                                    <label style="float:left">
                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> @lang('login.remember')
                                     </label>
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    @lang('login.forgot')
-                                </a>
                             </div>
                         </div>
                     </form>
