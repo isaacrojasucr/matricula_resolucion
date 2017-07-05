@@ -167,4 +167,5 @@ return [
     'requeriments' => 'If any of the clases your are requesting for have requeriments, please fill the next Sworn Declaration',
     'petitions' => 'Incoming Petitions',
     'services' => 'Services',
+    'allErrors' => 'Something happened. Please try again later.',
 ];

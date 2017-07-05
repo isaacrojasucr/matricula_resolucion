@@ -168,4 +168,5 @@ return [
     'requeriments' => 'Si el o los cursos solicitados por poseen requerimientos complete la siguiente declaracón jurada',
     'petitions' => 'Solicitudes Entrantes',
     'services' => 'Servicios',
+    'allErrors' => 'Ha ocurrido algo inesperado. Por favor vuelve a intentarlo más tarde.',
 ];
