@@ -26,6 +26,13 @@ class HomeController extends Controller
     public function index()
     {
 
+        $manager = app()->make('auth');
+        $role = $manager->user()->role;
+
+        if($role== 2){
+            return redirect('/proceso/coordinador');
+        }
+
         $process = \DB::select('SELECT InitialDate as inicial, FinalDate as final, 
                                 IF(DATEDIFF(FinalDate, CURDATE()) < 0, 0, DATEDIFF(FinalDate, CURDATE())) as rest,
                                 DATEDIFF(CURDATE(), InitialDate ) as spent

@@ -13,6 +13,15 @@ class reportsController extends Controller
 {
     //
 
+    public function validation (){
+        $manager = app()->make('auth');
+        $role = $manager->user()->role;
+
+        if ($role == 2){
+            abort(403);
+        }
+    }
+    
     public function __construct()
     {
         $this->middleware('auth');
@@ -20,6 +29,8 @@ class reportsController extends Controller
 
     public function index(Request $request)
     {
+        $this->validation();
+        
         $locations = pwcnm_second_location::all();
 
         return view('inscription.admin.locationSelect', compact('locations'));
@@ -28,6 +39,8 @@ class reportsController extends Controller
 
     public function pdf($id)
     {
+        $this->validation();
+        
         $careers = null;
         $central = array();
 
@@ -107,6 +120,8 @@ class reportsController extends Controller
     public function location($id)
     {
 
+        $this->validation();
+        
         $process = $this->lastProcess();
 
         $careers = $this->careers($id);
@@ -147,6 +162,8 @@ class reportsController extends Controller
     
     public function careers($id)
     {
+        $this->validation();
+        
         $careers = \DB::select('SELECT i.fk_career as career from pwcnm_inscription_requests as i
                                 where i.fk_location = ?
                                 group by career;', [$id]);
@@ -157,6 +174,8 @@ class reportsController extends Controller
     public function centralLocation()
     {
 
+        $this->validation();
+        
         $process = $this->lastProcess();
 
         $schools = \DB::select('SELECT SUBSTRING(c.initial,1,2) as schools from courses as c
@@ -199,6 +218,8 @@ class reportsController extends Controller
 
     private function lastProcess()
     {
+        $this->validation();
+        
         $id = pwcnm_registration_process::max('id');
 
         $id = pwcnm_registration_process::findOrFail($id)->id;

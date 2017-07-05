@@ -16,6 +16,16 @@ class pwcnm_registration_processController extends Controller
     {
         $this->middleware('auth');
     }
+
+
+    public function validation (){
+        $manager = app()->make('auth');
+        $role = $manager->user()->role;
+
+        if ($role == 2){
+            abort(403);
+        }
+    }
     
     /**
      * Display a listing of the resource.
@@ -24,6 +34,8 @@ class pwcnm_registration_processController extends Controller
      */
     public function index(Request $request)
     {
+        $this->validation();
+
         $keyword = $request->get('search');
         $perPage = 25;
 
@@ -53,6 +65,7 @@ class pwcnm_registration_processController extends Controller
      */
     public function create()
     {
+        $this->validation();
         return view('registrationProcess.pwcnm_registration_process.create');
     }
 
@@ -65,7 +78,7 @@ class pwcnm_registration_processController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $this->validation();
         $requestData = $request->all();
         
         pwcnm_registration_process::create($requestData);
@@ -83,6 +96,7 @@ class pwcnm_registration_processController extends Controller
      */
     public function show($id)
     {
+        $this->validation();
         $pwcnm_registration_process = pwcnm_registration_process::findOrFail($id);
 
         return view('registrationProcess.pwcnm_registration_process.show', compact('pwcnm_registration_process'));
@@ -97,6 +111,7 @@ class pwcnm_registration_processController extends Controller
      */
     public function edit($id)
     {
+        $this->validation();
         $pwcnm_registration_process = pwcnm_registration_process::findOrFail($id);
 
         return view('registrationProcess.pwcnm_registration_process.edit', compact('pwcnm_registration_process'));
@@ -112,7 +127,9 @@ class pwcnm_registration_processController extends Controller
      */
     public function update($id, Request $request)
     {
-        
+
+        $this->validation();
+
         $requestData = $request->all();
         
         $pwcnm_registration_process = pwcnm_registration_process::findOrFail($id);
@@ -132,6 +149,7 @@ class pwcnm_registration_processController extends Controller
      */
     public function destroy($id)
     {
+        $this->validation();
         pwcnm_registration_process::destroy($id);
 
         return redirect('admin/procesos');

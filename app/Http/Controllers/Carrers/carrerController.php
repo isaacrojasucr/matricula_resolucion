@@ -16,6 +16,17 @@ class carrerController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+
+        
+    }
+
+    public function validation (){
+        $manager = app()->make('auth');
+        $role = $manager->user()->role;
+
+        if ($role == 2){
+            abort(403);
+        }
     }
     
     /**
@@ -25,6 +36,9 @@ class carrerController extends Controller
      */
     public function index(Request $request)
     {
+
+        $this->validation();
+        
         $keyword = $request->get('search');
         $perPage = 15;
 
@@ -80,6 +94,7 @@ class carrerController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validation();
         
         $career =  new carrer();
         
@@ -119,6 +134,8 @@ class carrerController extends Controller
      */
     public function show($id)
     {
+        $this->validation();
+        
         $carrer = carrer::findOrFail($id);
 
         $manager = user::findOrfail($carrer->manager);
@@ -135,6 +152,8 @@ class carrerController extends Controller
      */
     public function edit($id)
     {
+        $this->validation();
+        
         $carrer = carrer::findOrFail($id);
 
         $temp = User::where('role', '=', 2)->get();
@@ -160,6 +179,7 @@ class carrerController extends Controller
      */
     public function update($id, Request $request)
     {
+        $this->validation();
         
         $requestData = $request->all();
         
@@ -190,6 +210,8 @@ class carrerController extends Controller
      */
     public function destroy($id)
     {
+        $this->validation();
+        
         carrer::destroy($id);
 
         Session::flash('flash_message', 'carrer deleted!');

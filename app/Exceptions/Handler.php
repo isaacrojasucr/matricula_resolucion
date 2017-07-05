@@ -48,6 +48,10 @@ class Handler extends ExceptionHandler
     {
         if($this->isHttpException($exception)){
             switch ($exception->getStatusCode()) {
+                //ACCESO DENEGADO
+                case 403:
+                    return response()->view('errors.403', [], 403);
+                    break;
                 // PAGINA NO ENCONTRADA
                 case 404:
                     return response()->view('errors.404',[],404);

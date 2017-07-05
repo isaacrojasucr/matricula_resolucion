@@ -17,7 +17,18 @@ use App\Mail\SendMail;
 
 class AdminInscriptionController extends Controller
 {
+    
     //
+
+    public function validation (){
+        $manager = app()->make('auth');
+        $role = $manager->user()->role;
+
+        if ($role == 2){
+            abort(403);
+        }
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -26,6 +37,8 @@ class AdminInscriptionController extends Controller
     public function index(Request $request)
     {
 
+        $this->validation();
+        
         $processId = $this->lastProcess();
 
 
@@ -81,6 +94,8 @@ class AdminInscriptionController extends Controller
 
 
     public function approveStudent($id) {
+        $this->validation();
+        
         $approval = pwcnm_approval::where('fk_inscription', '=',$id)->get();
 
         $approval = $approval[0];
@@ -123,7 +138,7 @@ class AdminInscriptionController extends Controller
     }
 
     public function send() {
-
+        
 
         Mail::send(new sendMail());
 
@@ -151,6 +166,7 @@ class AdminInscriptionController extends Controller
      */
     function dias_restantes($fecha_final)
     {
+        
         $fecha_actual = date("Y-m-d");
         $s = strtotime($fecha_final) - strtotime($fecha_actual);
         $d = intval($s / 86400);
@@ -168,6 +184,7 @@ class AdminInscriptionController extends Controller
      */
     public function edit($id)
     {
+        $this->validation();
 
         $petition = pwcnm_inscriptionRequest::findOrFail($id);
 
@@ -191,6 +208,8 @@ class AdminInscriptionController extends Controller
     public function update($id, Request $request)
     {
 
+        $this->validation();
+        
         $inscription = pwcnm_inscriptionRequest::findOrFail($id);
 
         $inscription->group = $request->group;
@@ -211,6 +230,7 @@ class AdminInscriptionController extends Controller
     public function destroy($id)
     {
 
+        
         return redirect('/');
     }
 

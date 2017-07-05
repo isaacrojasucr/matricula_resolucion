@@ -17,6 +17,16 @@ class courseController extends Controller
     {
         $this->middleware('auth');
     }
+
+    public function validation (){
+        $manager = app()->make('auth');
+        $role = $manager->user()->role;
+
+        if ($role == 2){
+            abort(403);
+        }
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -24,6 +34,8 @@ class courseController extends Controller
      */
     public function index(Request $request)
     {
+        $this->validation();
+        
         $keyword = $request->get('search');
         $perPage = 15;
 
@@ -78,9 +90,12 @@ class courseController extends Controller
      */
     public function create()
     {
+        $this->validation();
+        
         $items = carrer::all();
 
         $carrers =  array();
+        
 
         foreach ($items as $item){
 
@@ -100,6 +115,8 @@ class courseController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validation();
+        
         $course = new course();
 
         $course->name = $request->name;
@@ -129,6 +146,8 @@ class courseController extends Controller
      */
     public function show($id)
     {
+        $this->validation();
+        
         $course = course::findOrFail($id);
 
         $carrer =  carrer::findOrFail($course->carrer);
@@ -145,6 +164,7 @@ class courseController extends Controller
      */
     public function edit($id)
     {
+        $this->validation();
 
         $items = carrer::all();
 
@@ -172,6 +192,8 @@ class courseController extends Controller
      */
     public function update($id, Request $request)
     {
+        $this->validation();
+        
         $course = course::findOrFail($id);
 
         $course->name = $request->name;
@@ -200,6 +222,8 @@ class courseController extends Controller
      */
     public function destroy($id)
     {
+        $this->validation();    
+        
         course::destroy($id);
 
         Session::flash('flash_message', 'course deleted!');

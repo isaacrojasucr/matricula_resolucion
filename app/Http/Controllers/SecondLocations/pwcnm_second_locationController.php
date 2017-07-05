@@ -12,6 +12,15 @@ use Session;
 class pwcnm_second_locationController extends Controller
 {
 
+    public function validation (){
+        $manager = app()->make('auth');
+        $role = $manager->user()->role;
+
+        if ($role == 2){
+            abort(403);
+        }
+    }
+    
     public function __construct()
     {
         $this->middleware('auth');
@@ -24,6 +33,8 @@ class pwcnm_second_locationController extends Controller
      */
     public function index(Request $request)
     {
+        $this->validation();
+        
         $keyword = $request->get('search');
         $perPage = 25;
 
@@ -44,6 +55,7 @@ class pwcnm_second_locationController extends Controller
      */
     public function create()
     {
+        $this->validation();
         return view('secondLocation.pwcnm_second_location.create');
     }
 
@@ -56,7 +68,7 @@ class pwcnm_second_locationController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $this->validation();
         $requestData = $request->all();
         
         pwcnm_second_location::create($requestData);
@@ -74,6 +86,7 @@ class pwcnm_second_locationController extends Controller
      */
     public function show($id)
     {
+        $this->validation();
         $pwcnm_second_location = pwcnm_second_location::findOrFail($id);
 
         return view('secondLocation.pwcnm_second_location.show', compact('pwcnm_second_location'));
@@ -88,6 +101,7 @@ class pwcnm_second_locationController extends Controller
      */
     public function edit($id)
     {
+        $this->validation();
         $pwcnm_second_location = pwcnm_second_location::findOrFail($id);
 
         return view('secondLocation.pwcnm_second_location.edit', compact('pwcnm_second_location'));
@@ -103,7 +117,7 @@ class pwcnm_second_locationController extends Controller
      */
     public function update($id, Request $request)
     {
-        
+        $this->validation();
         $requestData = $request->all();
 
 
@@ -125,6 +139,7 @@ class pwcnm_second_locationController extends Controller
      */
     public function destroy($id)
     {
+        $this->validation();
         pwcnm_second_location::destroy($id);
 
         Session::flash('flash_message', 'pwcnm_second_location deleted!');

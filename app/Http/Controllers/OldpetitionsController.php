@@ -8,6 +8,16 @@ class OldpetitionsController extends Controller
 {
     //
     //
+
+    public function validation (){
+        $manager = app()->make('auth');
+        $role = $manager->user()->role;
+
+        if ($role == 2){
+            abort(403);
+        }
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +25,7 @@ class OldpetitionsController extends Controller
      */
     public function index(Request $request)
     {
+        $this->validation();
         return view('inscription.admin.oldPetitions');
     }
 
@@ -27,6 +38,7 @@ class OldpetitionsController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validation();
         $data = \DB::select('SELECT p.anno,p.period, c.name as course, l.name as location, a.stade as state, a.comments 
                             FROM pwcnm_inscription_requests as i 
                             INNER JOIN pwcnm_registration_processes as p ON p.id = i.fk_process 
