@@ -8,7 +8,7 @@
             
             @foreach ($listService as $service)
 
-            <form action="{{ url('/Servicios/Admin/Editar/' . $service->ID_SERVICIO . '/Edit') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ url('/admin/servicios/editar/' . $service->ID_SERVICIO . '/edit') }}" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="name">Nombre</label>
                     <input value="{{ $service->NOMBRE }}" name="name" type="text" class="form-control" id="name">

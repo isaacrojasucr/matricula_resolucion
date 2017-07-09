@@ -1,38 +1,26 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Services;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use App\Service;
 
-class ServiceController extends Controller
+class ServiceAdminController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /* Llama la vista de los Servicios para el administrador */
     public function indexAdmin(Service $service)
     {
         $listService = $service->getListService();
 
-        return view('serviceAdmin', compact('listService'));
-    }
-
-    /* Llama al modelo y recupera los servicios con rol de profesor para mostrarlos en la vista */
-    public function indexTeacher(Service $service)
-    {
-        $rol = "0";
-        $listService = $service->getListServiceByRol($rol);
-
-        return view('service', compact('listService', 'rol'));
-    }
-
-    /* Llama al modelo y recupera los servicios con rol de estudiante para mostrarlos en la vista */
-    public function indexStudent(Service $service)
-    {
-        $rol = "1";
-        $listService = $service->getListServiceByRol($rol);
-
-        return view('service', compact('listService', 'rol'));
+        return view('services.serviceAdmin', compact('listService'));
     }
 
     /* Se agrega un servicio nuevo, se guarda el archivo en el servidor y se redirige a la vista de ServiciosAdmin */
@@ -48,7 +36,7 @@ class ServiceController extends Controller
 
         session()->flash('message', 'Realizado correctamente!');
 
-        return redirect('Servicios/Admin');
+        return redirect('/admin/servicios');
     }
 
     /* Se llama al modelo y se le evía el ID para ser eliminado en la Base de Datos */
@@ -58,7 +46,7 @@ class ServiceController extends Controller
 
         session()->flash('message', 'Realizado correctamente!');
 
-        return redirect('Servicios/Admin');
+        return redirect('admin/servicios');
     }
 
     /* Returna del modelo un servicio y llama la vista */
@@ -66,7 +54,7 @@ class ServiceController extends Controller
     {
         $listService = $service->getService($id);
 
-        return view('serviceEdit', compact('listService')); 
+        return view('services.serviceEdit', compact('listService')); 
     }
 
     /* Se recibe el servicio actualizado y se redirige a la vista de Servicios/Admin */
@@ -82,6 +70,6 @@ class ServiceController extends Controller
 
         session()->flash('message', 'Realizado correctamente!');
 
-        return redirect('Servicios/Admin');
+        return redirect('admin/servicios');
     }
 }

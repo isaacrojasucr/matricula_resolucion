@@ -51,14 +51,14 @@
                             <li><a href="{{ url('/') }}">@lang('form.start')</a></li>
                             <li><a href="{{ url('/acerca') }}">@lang('form.about')<span class="sr-only"></span></a>
                             <li><a href="{{ url('/secciones') }}">@lang('sections.sections')</a></li>
-                            <li><a href="{{ url('/Carreras') }}">@lang('form.careers')</a></li>
+                            <li><a href="{{ url('/carreras') }}">@lang('form.careers')</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                    aria-haspopup="true" aria-expanded="false">@lang('form.services')<span
                                             class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="{{ url('/Servicios/Profesores') }}">@lang('events.teachers')</a></li>
-                                    <li><a href="{{ url('/Servicios/Estudiantes') }}">@lang('events.students')</a></li>
+                                    <li><a href="{{ url('/servicios/profesores') }}">@lang('events.teachers')</a></li>
+                                    <li><a href="{{ url('/servicios/estudiantes') }}">@lang('events.students')</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -85,14 +85,14 @@
                                 <li><a href="{{ url('/inicio') }}">@lang('form.start')</a></li>
                                 <li><a href="{{ url('/acerca') }}">@lang('form.about')<span class="sr-only"></span></a></li>
                                 <li><a href="{{ url('/secciones') }}">@lang('sections.sections')</a></li>
-                                <li><a href="{{ url('/Carreras') }}">@lang('form.careers')</a></li>
+                                <li><a href="{{ url('/carreras') }}">@lang('form.careers')</a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                        aria-haspopup="true" aria-expanded="false">@lang('form.services')<span
                                                 class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="{{ url('/Servicios/Profesores') }}">@lang('events.teachers')</a></li>
-                                        <li><a href="{{ url('/Servicios/Estudiantes') }}">@lang('events.students')</a></li>
+                                        <li><a href="{{ url('/servicios/profesores') }}">@lang('events.teachers')</a></li>
+                                        <li><a href="{{ url('/servicios/estudiantes') }}">@lang('events.students')</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
@@ -173,7 +173,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{ url('/Servicios/Admin') }}">
+                                            <a href="{{ url('/admin/servicios') }}">
                                                 @lang('form.services')
                                             </a>
                                         </li>
@@ -183,14 +183,14 @@
                                 <li><a href="{{ url('/') }}">@lang('form.start')</a></li>
                                 <li><a href="{{ url('/acerca') }}">@lang('form.about')<span class="sr-only"></span></a>
                                 <li><a href="{{ url('/secciones') }}">@lang('sections.sections')</a></li>
-                                <li><a href="{{ url('/Carreras') }}">@lang('form.careers')</a></li>
+                                <li><a href="{{ url('/carreras') }}">@lang('form.careers')</a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                        aria-haspopup="true" aria-expanded="false">@lang('form.services')<span
                                                 class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="{{ url('/Servicios/Profesores') }}">@lang('events.teachers')</a></li>
-                                        <li><a href="{{ url('/Servicios/Estudiantes') }}">@lang('events.students')</a></li>
+                                        <li><a href="{{ url('/servicios/profesores') }}">@lang('events.teachers')</a></li>
+                                        <li><a href="{{ url('/servicios/estudiantes') }}">@lang('events.students')</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">

@@ -29,14 +29,14 @@ class SectionAdminController extends Controller
     {
         $section->insertSection($request->name, $request->inCharge);
 
-        return redirect('SeccionesAdmin');
+        return redirect('admin/secciones');
     }
 
     /* Eliminar una sección */
     public function deleteSection(Section $section, $id)
     {
         $section->deleteSection($id);
-        return redirect('SeccionesAdmin');
+        return redirect('admin/secciones');
     }
 
     /* Mostrar Vista Sección */
@@ -52,6 +52,6 @@ class SectionAdminController extends Controller
     {
         $section->editSection($request->name, $request->inCharge, $id);
 
-        return redirect('SeccionesAdmin');
+        return redirect('admin/secciones');
     }
 }
