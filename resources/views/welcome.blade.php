@@ -35,6 +35,9 @@
 	            @endforeach
             </div>
 			<div class="col-md-4" id="generalInfo">
+				<h2 class="text-center">@lang('welcome.systemButtonTitle')</h2>
+				<p class="text-center"><a href="{{ url('/matricula') }}" class="btn btn-primary btn-lg">@lang('welcome.enter')</a></p>
+				<hr>
 				<h2 class="text-center">@lang('welcome.generalInformation')</h2>
 				<div class="panel panel-primary">
 					<div class="panel-heading"></div>

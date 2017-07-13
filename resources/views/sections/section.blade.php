@@ -4,7 +4,7 @@
 <div class="container" id="content">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center">Secciones del Departamento de Ciencias Naturales</h1>
+            <h1 class="text-center">@lang('sections.sectionsTitle')</h1>
             <hr>
             <?php $contador = 1; ?>
             @foreach ($listSection as $section)
@@ -16,9 +16,9 @@
                                     <h3 class="panel-title text-center">{{$section->NOMBRE}}</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <p>Encargado(a): {{$section->name}}</p>
-                                    <p>Contacto: {{$section->email}}</p>
-                                    <p>Número: {{$section->phone}}</p>
+                                    <p><strong>@lang('careers.inCharge'):</strong> {{$section->name}}</p>
+                                    <p><strong>@lang('form.email'): {{$section->email}}</p>
+                                    <p><strong>@lang('form.phone'): {{$section->phone}}</p>
                                 </div>
                             </div>
                         </div>
@@ -35,9 +35,9 @@
                                     <h3 class="panel-title text-center">{{$section->NOMBRE}}</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <p>Encargado(a): {{$section->name}}</p>
-                                    <p>Contacto: {{$section->email}}</p>
-                                    <p>Número: {{$section->phone}}</p>
+                                    <p><strong>@lang('careers.inCharge'):</strong> {{$section->name}}</p>
+                                    <p><strong>@lang('form.email'):</strong> {{$section->email}}</p>
+                                    <p><strong>@lang('form.phone'):</strong> {{$section->phone}}</p>
                                 </div>
                             </div>
                         </div>

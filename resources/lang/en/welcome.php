@@ -13,4 +13,6 @@ return [
     'addressedTo' => 'Addressed To',
     'teachers' => 'Teachers',
     'students' => 'Students',
+    'systemButtonTitle' => 'Enter the resolution\'s inscription system',
+    'enter' => 'Enter',
 ];

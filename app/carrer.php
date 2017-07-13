@@ -29,6 +29,6 @@ class carrer extends Model
     protected $fillable = ['initial', 'name', 'page', 'plan', 'manager'];
 
     public function getListCareer() {
-        return DB::select('select c.name, u.name AS encargado, u.email, u.lastname, u.phone FROM carrers AS c INNER JOIN users AS u ON c.manager = u.id');
+        return DB::select('select c.name, c.plan, u.name AS encargado, u.email, u.lastname, u.phone FROM carrers AS c INNER JOIN users AS u ON c.manager = u.id');
     }
 }

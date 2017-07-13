@@ -13,4 +13,6 @@ return [
     'addressedTo' => 'Dirigido a',
     'teachers' => 'Profesores',
     'students' => 'Estudiantes',
+    'systemButtonTitle' => 'Ingrese al sistema de matrícula por resolución',
+    'enter' => 'Ingresar',
 ];

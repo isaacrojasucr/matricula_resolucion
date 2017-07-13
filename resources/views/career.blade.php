@@ -5,7 +5,7 @@
 <div class="container" id="content">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center">Carreras del Departamento de Ciencias Naturales</h1>
+            <h1 class="text-center">@lang('careers.careersTitle')</h1>
             <hr>
             <?php $contador = 1; ?>
             @foreach ($listCareer as $career)
@@ -17,10 +17,12 @@
                                     <h3 class="panel-title text-center">{{$career->name}}</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <p>Encargado(a): {{$career->encargado . ' ' . $career->lastname}}</p>
-                                    <p>Contacto: {{$career->email}}</p>
-                                    <p>Número: {{$career->phone}}</p>
-                                    <p>Plan de Estudios: <a href="#" class="btn btn-warning">Descargar</a></p>
+                                    <p><strong>@lang('careers.inCharge'):</strong> {{$career->encargado . ' ' . $career->lastname}}</p>
+                                    <p><strong>@lang('form.email'):</strong> {{$career->email}}</p>
+                                    <p><strong>@lang('form.phone'):</strong> {{$career->phone}}</p>
+                                    @if($career->plan != "")
+                                        <p><strong>@lang('form.plan'):</strong> <a href="{{'/download/' . $career->plan}}" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></p>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -37,10 +39,12 @@
                                     <h3 class="panel-title text-center">{{$career->name}}</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <p>Encargado(a): {{$career->encargado . ' ' . $career->lastname}}</p>
-                                    <p>Contacto: {{$career->email}}</p>
-                                    <p>Número: {{$career->phone}}</p>
-                                    <p>Plan de Estudios: <a href="#" class="btn btn-warning">Descargar</a></p>
+                                    <p><strong>@lang('careers.inCharge'):</strong> {{$career->encargado . ' ' . $career->lastname}}</p>
+                                    <p><strong>@lang('form.email'):</strong> {{$career->email}}</p>
+                                    <p><strong>@lang('form.phone'):</strong> {{$career->phone}}</p>
+                                    @if($career->plan != "")
+                                        <p><strong>@lang('form.plan'):</strong> <a href="{{'/download/' . $career->plan}}" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></p>
+                                    @endif
                                 </div>
                             </div>
                         </div>

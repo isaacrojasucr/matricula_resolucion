@@ -4,7 +4,7 @@
 <div class="container" id="content">
     <div class="row">
         <div class="col-md-12">
-            <h1>Acerca de Ciencias Naturales</h1>
+            <h1 class="text-center">Acerca de Ciencias Naturales</h1>
             <p>En el  Departamento de Ciencias Naturales se atienden las solicitudes 
             de resolución a otras sedes, trámites de inclusión de cursos, entrega de 
             copias selladas y firmadas de programas de cursos, programación de los cursos 
@@ -17,16 +17,17 @@
             de la Sede Rodrigo Facio.</p>
         </div>
     </div>
+    <hr>
     <div class="row">
         <div class="col-md-6">
-            <h2>Director del Departamento</h2>
+            <h2 class="text-center">Director del Departamento</h2>
             <h3>Nombre</h3>
             <p>M.Sc. Jonh Diego Bolaños Alfaro</p>
             <h3>Correo</h3>
             <p>john.bolanos@ucr.ac.cr</p>
         </div>
         <div class="col-md-6">
-            <h2>Secretaria del Departamento</h2>
+            <h2 class="text-center">Secretaria del Departamento</h2>
             <h3>Nombre</h3>
             <p>Licda. Johanna Moya Saborío</p>
             <h3>Correo</h3>
