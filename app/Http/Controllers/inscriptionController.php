@@ -91,8 +91,6 @@ class inscriptionController extends Controller
         $id = $request->id;
         
 
-
-
         $courseTable = $request->t1;
         $courses = array();
         $table1Array = explode('?', $courseTable);

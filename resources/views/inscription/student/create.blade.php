@@ -247,6 +247,7 @@
                 {{ Form::hidden('id', ''.$id) }}
                 <input type="hidden" id="t1" name="t1" value="">
                 <input type="hidden" id="t2" name="t2" value="">
+                <input type="hidden" id="try" value="0">
                 <div class="form-group center">
                     </br>
                     {!! Form::submit(''.trans('form.save'), ['class' => 'btn btn-success col-md-4 col-md-offset-4 ' ] ) !!}
