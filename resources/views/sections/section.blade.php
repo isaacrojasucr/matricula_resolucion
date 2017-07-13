@@ -16,7 +16,7 @@
                                     <h3 class="panel-title text-center">{{$section->NOMBRE}}</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <p>Encargado(a): {{$section->name}}</p>
+                                    <p>Encargado(a): {{$section->name." ".$section->lastname}}</p>
                                     <p>Contacto: {{$section->email}}</p>
                                     <p>Número: {{$section->phone}}</p>
                                 </div>
@@ -35,7 +35,7 @@
                                     <h3 class="panel-title text-center">{{$section->NOMBRE}}</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <p>Encargado(a): {{$section->name}}</p>
+                                    <p>Encargado(a): {{$section->name." ".$section->lastname}}</p>
                                     <p>Contacto: {{$section->email}}</p>
                                     <p>Número: {{$section->phone}}</p>
                                 </div>
