@@ -14,7 +14,7 @@
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;">
-                    NO POSEE LOS PERMISOS NECESARIOS PARA ACCEDER A ESTE SITIO
+                    NO PUEDE REALIZAR MAS DE 10 SOLICITUDES POR PROCESO DE MÁTRICULA POR RESOLUCIÓN
                 </H1>
             </div>
         </div>

@@ -81,6 +81,9 @@ class inscriptionController extends Controller
 
         $studentName = $request->studentName;
         $studentId = $request->studentId;
+
+        $studentId = strtoupper($studentId);
+
         $phone = $request->phone;
         $email = $request->email;
         $process = $request->process;
@@ -93,6 +96,20 @@ class inscriptionController extends Controller
         $courseTable = $request->t1;
         $courses = array();
         $table1Array = explode('?', $courseTable);
+
+        $petitionsLeft  = \DB::select("SELECT -(COUNT(i.studentId)-10) as petitions 
+                                       FROM pwcnm_inscription_requests as i 
+                                       WHERE i.fk_process = ? and i.studentId = ?",[$process,$studentId]);
+
+        $petitionsLeft = $petitionsLeft[0];
+
+
+        if($petitionsLeft->petitions < count($table1Array)){
+            abort(405);
+        }
+
+
+
         $i = 0;
         foreach ($table1Array as $item) {
             $temp = explode('_', $item);

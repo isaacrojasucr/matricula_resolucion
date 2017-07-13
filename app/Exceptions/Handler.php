@@ -60,6 +60,10 @@ class Handler extends ExceptionHandler
                 case '500':
                     return response()->view('errors.500',[],500);
                     break;
+                //ERROR DE INTENTOS DE MATRICULA
+                case 405:
+                    return response()->view('errors.600',[],405);
+                    break;
                 default:
                     return response()->view('errors.500',[],500);
                     break;
