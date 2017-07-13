@@ -20,18 +20,26 @@
     <hr>
     <div class="row">
         <div class="col-md-6">
-            <h2 class="text-center">Director del Departamento</h2>
-            <h3>Nombre</h3>
-            <p>M.Sc. Jonh Diego Bolaños Alfaro</p>
-            <h3>Correo</h3>
-            <p>john.bolanos@ucr.ac.cr</p>
+            @foreach ($listUsers as $user)
+                @if($user->role == 4)
+                    <h2 class="text-center">Director del Departamento</h2>
+                    <h3>Nombre</h3>
+                    <p>{{$user->name . ' ' . $user->lastname}}</p>
+                    <h3>Correo</h3>
+                    <p>{{$user->email}}</p>
+                @endif
+            @endforeach
         </div>
         <div class="col-md-6">
-            <h2 class="text-center">Secretaria del Departamento</h2>
-            <h3>Nombre</h3>
-            <p>Licda. Johanna Moya Saborío</p>
-            <h3>Correo</h3>
-            <p>secretariacienciasnaturales.so@ucr.ac.cr</p>
+            @foreach ($listUsers as $user)
+                @if($user->role == 1)
+                    <h2 class="text-center">Secretaria del Departamento</h2>
+                    <h3>Nombre</h3>
+                    <p>{{$user->name . ' ' . $user->lastname}}</p>
+                    <h3>Correo</h3>
+                    <p>secretariacienciasnaturales.so@ucr.ac.cr</p>
+                @endif
+            @endforeach
         </div>
     </div>
 </div>

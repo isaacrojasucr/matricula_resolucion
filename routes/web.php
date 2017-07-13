@@ -20,9 +20,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
         return redirect('/inicio');
     });
 
-    Route::get('/acerca', function () {
-        return view('aboutUs');
-    });
+    Route::get('/acerca', 'WelcomeController@aboutUs');
 
     Route::get('/matricula/reporte', function(){
         return view('inscription.student.show');

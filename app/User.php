@@ -32,4 +32,9 @@ class User extends Authenticatable
     {
         return DB::select('select id, name from users');
     }
+
+    public function getListUsers()
+    {
+        return DB::select('select name, lastname, email, role from users where role = 1 OR role = 4');
+    }
 }
