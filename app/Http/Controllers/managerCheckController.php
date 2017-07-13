@@ -26,6 +26,12 @@ class managerCheckController extends Controller
         $process = $process->last();
         $process = $process->id;
 
+        $avaliable = \DB::select('SELECT IF(DATE_ADD(p.FinalDate, INTERVAL 2 DAY)>CURDATE(),1,0) as avaliable  
+                                from pwcnm_registration_processes as p 
+                                where p.id = ?  ',[$process]);
+
+        $avaliable= $avaliable[0]->avaliable;
+
         $requested = pwcnm_inscriptionRequest::where('fk_process', '=', $process)->get();
         $manager = app()->make('auth');
         $manager = $manager->user()->id;
@@ -56,7 +62,7 @@ class managerCheckController extends Controller
             $courses = array_add($courses, $p, $temp);
         }
 
-        return view('inscription.manager.managerCheck', compact('petitions', 'courses'));
+        return view('inscription.manager.managerCheck', compact('petitions', 'courses', 'avaliable'));
     }
 
     /**

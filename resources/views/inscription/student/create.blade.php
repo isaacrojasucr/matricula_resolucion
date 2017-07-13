@@ -225,7 +225,7 @@
                                     <tr>
                                         <th>{!! Form::text('subid', null, ['class' => 'form-control' ]) !!}</th>
                                         <th>{!! Form::text('subname', null, ['class' => 'form-control' ]) !!}</th>
-                                        <th>{!! Form::number('result', null, ['class' => 'form-control','required' => 'required', 'step'=>'0.01', 'min'=>'0', 'pattern'=>'[0-9]+([\\.,][0-9]+)?']) !!}</th>
+                                        <th>{!! Form::number('result', null, ['class' => 'form-control', 'step'=>'0.01', 'min'=>'0', 'pattern'=>'[0-9]+([\\.,][0-9]+)?']) !!}</th>
                                         <th>{!! Form::number('cycle', null, ['class' => 'form-control col-md-3' ]) !!}
                                         </th>
                                         <th>
@@ -247,6 +247,7 @@
                 {{ Form::hidden('id', ''.$id) }}
                 <input type="hidden" id="t1" name="t1" value="">
                 <input type="hidden" id="t2" name="t2" value="">
+                <input type="hidden" id="try" value="0">
                 <div class="form-group center">
                     </br>
                     {!! Form::submit(''.trans('form.save'), ['class' => 'btn btn-success col-md-4 col-md-offset-4 ' ] ) !!}

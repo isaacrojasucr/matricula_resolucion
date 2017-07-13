@@ -17,6 +17,10 @@ function genera_tabla(info) {
     var vv = document.getElementsByName("location")[0];
     var textlocation = vv.options[vv.selectedIndex].text;
 
+    var trys = document.getElementById("try").value;
+
+    var trys = parseInt(trys);
+
     if(obs === ""){
         obs = "no observaciones";
     }
@@ -24,39 +28,58 @@ function genera_tabla(info) {
 
 
     if (group !== "" && ta !== ""){
-        var tabla = document.getElementById("tabla");
 
-        var fila = tabla.insertRow(1);
-        var celda1 = fila.insertCell(0);
-        var celda2 =  fila.insertCell(1);
-        var celda3 =  fila.insertCell(2);
-        var celda4 =  fila.insertCell(3);
-        var celda5 =  fila.insertCell(4);
 
-        celda1.innerHTML = textlocation;
-        celda2.innerHTML = text;
-        celda3.innerHTML = ta;
-        celda4.innerHTML = group;
-        celda5.innerHTML = obs;
+        if( trys === 10){
 
-        var row = id + "_" + ta + "_" + group + "_" + idlocation+ "_" + obs;
+            alert("No puede realizar mas de 10 solicitudes por proceso");
 
-        var row2 = "?" + id + "_" + ta + "_" + group + "_" + idlocation + "_" + obs;
-
-        var data = document.getElementById("t1").value;
-
-        if(data === ""){
-            document.getElementById("t1").value = row;
+            return false;
 
         }else{
-            document.getElementById("t1").value = data + row2;
 
+            var tabla = document.getElementById("tabla");
 
+            var fila = tabla.insertRow(1);
+            var celda1 = fila.insertCell(0);
+            var celda2 =  fila.insertCell(1);
+            var celda3 =  fila.insertCell(2);
+            var celda4 =  fila.insertCell(3);
+            var celda5 =  fila.insertCell(4);
+
+            celda1.innerHTML = textlocation;
+            celda2.innerHTML = text;
+            celda3.innerHTML = ta;
+            celda4.innerHTML = group;
+            celda5.innerHTML = obs;
+
+            var row = id + "_" + ta + "_" + group + "_" + idlocation+ "_" + obs;
+
+            var row2 = "?" + id + "_" + ta + "_" + group + "_" + idlocation + "_" + obs;
+
+            var data = document.getElementById("t1").value;
+
+            if(data === "" ){
+
+                document.getElementById("t1").value = row;
+
+            }else{
+                document.getElementById("t1").value = data + row2;
+
+            }
+
+            trys = trys + 1;
+
+            document.getElementById("try").value = trys;
+
+            document.getElementsByName("observation")[0].value = "";
+            document.getElementsByName("group")[0].value = "";
+            document.getElementsByName("timesAttended")[0].value = "";
         }
 
-        document.getElementsByName("observation")[0].value = "";
-        document.getElementsByName("group")[0].value = "";
-        document.getElementsByName("timesAttended")[0].value = "";
+
+
+
     }else{
         alert("" +info);
     }
