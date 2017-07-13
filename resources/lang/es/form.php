@@ -53,7 +53,7 @@ return [
     'selectLocation' => 'Seleccione una sede',
     'locationReport' => 'A continuación se le muestran las sedes, seleccione una para generar el reporte correspondiente',
     'selectCareer' => 'Seleccione una carrera para iniciar su matrícula por resolución',
-    'careersdep' => 'Carreras del departamento',
+    'careersdep' => 'Carreras del Departamento',
     'average' => 'Promedio ponderado',
     'headInscription' => 'Solicitud de cursos por resolución',
     'oficio' => 'VD-R-4468-89',
@@ -122,7 +122,7 @@ return [
     'plan'=>'Plan de estudios',
     'file'=>'Archivo',
     'newQuestion' => 'Nueva Consulta',
-    'acceptbydeparment'=> 'Aprobar por el departamento',
+    'acceptbydeparment'=> 'Aprobar por el Departamento',
     'acceptbylocation'=> 'Aprobar por la sede',
     'avgAndReq' => 'Ver ponderado y requerimientos',
     'req' => 'Requisitos',
@@ -169,5 +169,7 @@ return [
     'petitions' => 'Solicitudes Entrantes',
     'services' => 'Servicios',
     'allErrors' => 'Ha ocurrido algo inesperado. Por favor vuelve a intentarlo más tarde.',
-    'approveby' => 'Aprobado por la sede'
+    'approveby' => 'Aprobado por la sede',
+    'trStudent' => 'Si usted es un estudiante de traslado temporal y desea solicitar un curso por resolucion, se le solicita dirigirse al Departamento de Ciencias Naturales',
+    'timeManager' => 'El tiempo para atender solicitudes a expirado en caso de quedar solicitudes pendientes quedaran disposición de Departamento',
 ];

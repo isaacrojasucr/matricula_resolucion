@@ -29,6 +29,10 @@
                                         </ul>
                                     </div>
                                 </div>
+
+
+
+
                             @else
                                 <div class="center">
                                     <h2>@lang('form.noProcess')</h2>
@@ -36,6 +40,11 @@
                             @endif
                         </div>
 
+                    </div>
+                </div>
+                <div class="well">
+                    <div class="center" style="color: red">
+                        <h4>@lang('form.trStudent')</h4>
                     </div>
                 </div>
             </div>
