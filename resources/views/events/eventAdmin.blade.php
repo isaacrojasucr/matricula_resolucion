@@ -14,13 +14,13 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">@lang('events.events')</h3>
                 </div>
                 <div class="panel-body">
                     <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addEvent" id="buttonTable">
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true" title=@lang('form.add')></span>
+                        @lang('form.add')
                     </button>
                     @if ($listEvents != null)
                     <div class="table-responsive">

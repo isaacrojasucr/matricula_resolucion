@@ -5,7 +5,7 @@
         <div class="row">
 
             <div class="col-md-9 col-md-offset-1">
-                <div class="panel panel-default">
+                <div class="panel panel-primary">
                     <div class="panel-heading">@lang('form.editUser'): {{ $user-> name }}</div>
                     <div class="panel-body">
                         <a href="{{ url('/admin/usuarios') }}" title="Back">
