@@ -15,4 +15,11 @@ return [
     'students' => 'Students',
     'systemButtonTitle' => 'Enter the resolution\'s inscription system',
     'enter' => 'Enter',
+    'abouUs1' => 'The Department of Natural Sciences attends requests of resolution to other campuses, course inclusion procedures, delivery of sealed and signed copies of course syllabi and the programming of courses for its four Sections: Biology, Mathematics, Chemistry, and Physics.',
+    'abouUs2' => 'The Department has on average an academic staff of 120 professors per academic term and an approximate population of 1,500 students enrolled in different majors.',
+    'abouUs3' => 'It offers nine majors: five properly pertaining to the UCR Western Campus and four decentralized in the Rodrigo Facio University Campus.',
+    'aboutUsTitle' => 'About the Department of Natural Sciences',
+    'headDepartmentTitle' => 'Head of Department',
+    'secretaryDepartmentTitle' => 'Secretary of Department',
+    'demoVideoTitle' => 'Demo Video',
 ];

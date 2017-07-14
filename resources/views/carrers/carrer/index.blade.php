@@ -5,7 +5,7 @@
         <div class="row">
 
             <div class="col-md-0 col-md-offset-1">
-                <div class="panel panel-default">
+                <div class="panel panel-primary">
                     <div class="panel-heading">@lang('form.carrer')</div>
                     <div class="panel-body">
 

@@ -63,7 +63,7 @@
         <hr>
         <div class="row">
         	<div class="col-md-12">
-        		<h2 class="text-center">Video demostrativo</h2>
+        		<h2 class="text-center">@lang('welcome.demoVideoTitle')</h2>
         	</div>
         </div>
         <div class="row">

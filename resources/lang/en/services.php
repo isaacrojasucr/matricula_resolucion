@@ -6,4 +6,5 @@ return [
     'servicesTitle' => 'Ciencias Naturales Department\'s Services for',
     'teachers' => 'Teachers',
     'students' => 'Students',
+    'noSections' => 'There\'s not sections',
 ];

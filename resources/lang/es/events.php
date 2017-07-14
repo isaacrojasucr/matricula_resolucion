@@ -8,4 +8,5 @@ return [
     'noEvents' => 'No existen eventos',
     'addEvent' => 'Agregar Evento',
     'editEvent' => 'Editar Evento',
+    'noEvents' => 'No existen eventos',
 ];

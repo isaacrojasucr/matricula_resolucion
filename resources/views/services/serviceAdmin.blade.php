@@ -64,7 +64,6 @@
                         <strong>@lang('services.noServices')</strong>
                     </div>
                     @endif
-                    </div>
                 </div>
             </div>
         </div>
