@@ -68,6 +68,8 @@
                                         <td>
                                             @if($user[$i]->role == 1)
                                                 @lang('form.admin')
+                                            @elseif($user[$i]->role == 4 )
+                                                @lang('form.director')
                                             @else
                                                 @lang('form.manager')
                                             @endif

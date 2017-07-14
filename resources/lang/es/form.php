@@ -172,4 +172,5 @@ return [
     'approveby' => 'Aprobado por la sede',
     'trStudent' => 'Si usted es un estudiante de traslado temporal y desea solicitar un curso por resolucion, se le solicita dirigirse al Departamento de Ciencias Naturales',
     'timeManager' => 'El tiempo para atender solicitudes a expirado en caso de quedar solicitudes pendientes quedaran disposición de Departamento',
+    'director' => 'Director',
 ];

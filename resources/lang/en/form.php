@@ -171,5 +171,5 @@ return [
     'approveby' => 'Approve by second location',
     'trStudent' => 'If you are an student using the method of temporal relocation and wishes to request a class by resolution, please go to the Natural Science Department',
     'timeManager' => 'The time to attend incoming requests has expired, if there were unchecked requests, they will be under the department decisions',
-
+    'director' => 'Director',
 ];
