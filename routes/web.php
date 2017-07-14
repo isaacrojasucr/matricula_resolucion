@@ -40,11 +40,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
     Route::get('/admin/eventos', 'Events\\EventAdminController@indexAdmin');
 
-    /* Cambiar esta madre*/
-    Route::get('/Test', function () {
-        return view('test');
-    });
-
     Route::post('send', 'emailController@send');
 
     Route::resource('correos', 'emailController');

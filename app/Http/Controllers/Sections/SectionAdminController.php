@@ -29,6 +29,8 @@ class SectionAdminController extends Controller
     {
         $section->insertSection($request->name, $request->inCharge);
 
+        session()->flash('message', 'Realizado correctamente!');
+
         return redirect('admin/secciones');
     }
 
@@ -36,6 +38,9 @@ class SectionAdminController extends Controller
     public function deleteSection(Section $section, $id)
     {
         $section->deleteSection($id);
+
+        session()->flash('message', 'Realizado correctamente!');
+
         return redirect('admin/secciones');
     }
 
@@ -51,6 +56,8 @@ class SectionAdminController extends Controller
     public function editSection(Request $request, Section $section, $id)
     {
         $section->editSection($request->name, $request->inCharge, $id);
+
+        session()->flash('message', 'Realizado correctamente!');
 
         return redirect('admin/secciones');
     }
