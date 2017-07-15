@@ -5,16 +5,18 @@
         <div class="row">
 
             <div class="col-md-9">
-                <div class="panel panel-default">
+                <div class="panel panel-primary">
                     <div class="panel-heading">@lang('form.user') {{ $user->name }}</div>
                     <div class="panel-body">
 
                         <a href="{{ url('/admin/usuarios') }}" title="Back">
                             <button class="btn btn-info btn"><i class="fa fa-arrow-left" aria-hidden="true"></i>
-                                <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> @lang('form.back')
+                                <span class="glyphicon glyphicon-circle-arrow-left"
+                                      aria-hidden="true"></span> @lang('form.back')
                             </button>
                         </a>
-                        <a href="{{ url('/admin/usuarios/' . $user->id . '/edit') }}" class="btn btn-primary btn" title=@lang('form.edit') >
+                        <a href="{{ url('/admin/usuarios/' . $user->id . '/edit') }}" class="btn btn-primary btn"
+                           title=@lang('form.edit') >
                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                         </a>
                         {!! Form::open([
@@ -51,8 +53,10 @@
                                     <th> @lang('form.role')  </th>
                                     <td>@if($user->role ==1)
                                             @lang('form.admin')
+                                        @elseif($user->role ==2)
+                                            @lang('form.manager')
                                         @else
-                                            @lang('form.manager');
+                                            @lang('form.director')
                                         @endif
                                     </td>
                                 </tr>

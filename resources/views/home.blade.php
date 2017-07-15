@@ -55,7 +55,11 @@
                                 <hr style="width:100%;">
                                 <h4>@lang('form.periodQuestion'):</h4>
                                 <hr style="width:100%;">
-                                <h5>{{$process->inicial}} // {{$process->final}}</h5>
+                                <?php
+                                $fecha_inicio = explode("-", $process->inicial);
+                                $fecha_final = explode("-", $process->final);
+                                ?>
+                                <h5>{{$fecha_inicio[2] . '-' . $fecha_inicio[1] . '-' . $fecha_inicio[0] . ' ' }} // {{ $fecha_final[2] . '-' . $fecha_final[1] . '-' . $fecha_final[0] }}</h5>
                                 <hr style="width:100%;">
                                 <h6><span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: #08088A"></span>&nbsp;@lang('form.spendedDays')</h6>
                                 <h6><span class="glyphicon glyphicon-stop" aria-hidden="true" style="color: #088A08"></span>&nbsp;@lang('form.DaysLeft')</h6>
