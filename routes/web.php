@@ -104,7 +104,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     
     Route::get('pdf/sedes/{id}', 'reportsController@pdf');
 
-    Route::get('/download/{file}' , 'Courses\\courseController@downloadFile');
+    Route::get('/download/{file}' , 'WelcomeController@downloadFile');
 
     Route::get('matricula/carrera/{id}' , 'inscriptionController@creation');
 

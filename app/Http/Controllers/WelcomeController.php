@@ -20,4 +20,11 @@ class WelcomeController extends Controller
     	$listUsers = $user->getListUsers();
     	return view('aboutUs', compact('listUsers'));
     }
+
+
+    public function downloadFile($file){
+        $pathtoFile = storage_path().'\app\\'.$file;
+        return response()->download(''.$pathtoFile);
+    }
+    
 }
