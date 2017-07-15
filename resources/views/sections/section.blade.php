@@ -17,7 +17,7 @@
                                         <h3 class="panel-title text-center">{{$section->NOMBRE}}</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <p><strong>@lang('careers.inCharge'):</strong> {{$section->name}}</p>
+                                        <p><strong>@lang('careers.inCharge'):</strong> {{$section->name . ' ' . $section->lastname}}</p>
                                         <p><strong>@lang('form.email'): {{$section->email}}</p>
                                         <p><strong>@lang('form.phone'): {{$section->phone}}</p>
                                     </div>
@@ -36,7 +36,7 @@
                                         <h3 class="panel-title text-center">{{$section->NOMBRE}}</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <p><strong>@lang('careers.inCharge'):</strong> {{$section->name}}</p>
+                                        <p><strong>@lang('careers.inCharge'):</strong> {{$section->name . ' ' . $section->lastname}}</p>
                                         <p><strong>@lang('form.email'):</strong> {{$section->email}}</p>
                                         <p><strong>@lang('form.phone'):</strong> {{$section->phone}}</p>
                                     </div>
