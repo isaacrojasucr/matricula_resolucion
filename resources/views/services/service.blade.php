@@ -23,8 +23,8 @@
                                         <h3 class="panel-title text-center">{{$service->NOMBRE}}</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <p>@lang('form.description'): {{$service->DESCRIPCION}}</p>
-                                        <p>@lang('form.download'): <a href="{{'/download/' . $service->ARCHIVO}}" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></p>
+                                        <p><strong>@lang('form.description'):</strong> {{$service->DESCRIPCION}}</p>
+                                        <p><strong>@lang('form.download'):</strong> <a href="{{'/download/' . $service->ARCHIVO}}" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></p>
                                     </div>
                                 </div>
                             </div>
@@ -41,8 +41,8 @@
                                         <h3 class="panel-title text-center">{{$service->NOMBRE}}</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <p>@lang('form.description'): {{$service->DESCRIPCION}}</p>
-                                        <p>@lang('form.download'): <a href="{{'/download/' . $service->ARCHIVO}}" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></p>
+                                        <p><strong>@lang('form.description'):</strong> {{$service->DESCRIPCION}}</p>
+                                        <p><strong>@lang('form.download'):</strong> <a href="{{'/download/' . $service->ARCHIVO}}" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a></p>
                                     </div>
                                 </div>
                             </div>
