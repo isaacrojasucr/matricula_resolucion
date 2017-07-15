@@ -13,6 +13,7 @@
             </h1>
             <hr>
             @if($listService != null)
+            
                 <?php $contador = 1; ?>
                 @foreach ($listService as $service)
                     @if($contador == count($listService) && $contador%2 != 0)
