@@ -43,7 +43,7 @@ class AdminInscriptionController extends Controller
 
 
         $inscriptionApp = \DB::select('SELECT i.id, i.studentId as carne, c.name as career, cc.name as course, i.group, l.name as location, 
-                                      i.weightedAverage as average, i.phone, i.email ,a.stade as state from pwcnm_inscription_requests as i 
+                                      i.weightedAverage as average, i.phone, i.email ,a.stade as state, i.observations from pwcnm_inscription_requests as i 
                                       INNER JOIN pwcnm_approvals as a ON a.fk_inscription = i.id 
                                       INNER JOIN pwcnm_second_locations as l ON l.id = i.fk_location 
                                       INNER JOIN pwcnm_registration_processes as p ON p.id = i.fk_process 

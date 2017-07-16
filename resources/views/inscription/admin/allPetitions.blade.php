@@ -109,6 +109,7 @@
                                                                             @lang('form.noReq')
                                                                         @endif
 
+                                                                        <labe>@lang('form.comments')</labe>: {{$item->observations}}
 
                                                                     </div>
                                                                     <div class="modal-footer ">
@@ -185,6 +186,7 @@
                                                                             @lang('form.noReq')
                                                                         @endif
 
+                                                                        <labe>@lang('form.comments')</labe>: {{$item->observations}}
 
                                                                     </div>
                                                                     <div class="modal-footer bg-modal">
