@@ -1,4 +1,3 @@
-
 //add rows to table of the requested courses
 //construct the hidden input that store the data
 //param info (message)
@@ -165,6 +164,7 @@ jQuery(document).ready(function ($) {
     $('#tabs').tab();
 });
 
+//do the graphic of spent time
 function first(spent, left) {
     var pieData = [
         {
@@ -186,6 +186,8 @@ function first(spent, left) {
 }
 
 function second(ii,ie,em,ecn,rn,rh,lq,ef,te,tt) {
+
+
     var pieData = [
         {
             value: tt,
@@ -232,13 +234,13 @@ function second(ii,ie,em,ecn,rn,rh,lq,ef,te,tt) {
             label: "LQ"
         },
         {
-            value: ef,
+            value: rh,
             color: "#0000FF",
             highlight: "#0404B4",
             label: "EN"
         },
         {
-            value: rh,
+            value: ef,
             color: "#8000FF",
             highlight: "#5F04B4",
             label: "RH"

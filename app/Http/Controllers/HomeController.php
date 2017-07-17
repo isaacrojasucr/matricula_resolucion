@@ -55,9 +55,10 @@ class HomeController extends Controller
         $ii = \DB::select('SELECT COUNT(i.id) as ready
                             FROM pwcnm_inscription_requests as i
                             INNER JOIN pwcnm_approvals as a on a.fk_inscription = i.id
-                            where a.stade = 0 and i.fk_career = 6;');
+                            where a.stade = 0 and i.fk_career = 5;');
 
         $ii = $ii[0];
+        
 
         $ie = \DB::select('SELECT COUNT(i.id) as ready
                             FROM pwcnm_inscription_requests as i
