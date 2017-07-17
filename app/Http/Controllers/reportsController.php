@@ -165,7 +165,8 @@ class reportsController extends Controller
         $this->validation();
         
         $careers = \DB::select('SELECT i.fk_career as career from pwcnm_inscription_requests as i
-                                where i.fk_location = ?
+                                inner join pwcnm_approvals as a on a.fk_inscription = i.id
+                                where i.fk_location = ? and a.stade = 4
                                 group by career;', [$id]);
 
         return $careers;
@@ -180,7 +181,8 @@ class reportsController extends Controller
 
         $schools = \DB::select('SELECT SUBSTRING(c.initial,1,2) as schools from courses as c
                                 INNER JOIN pwcnm_inscription_requests as i on c.id = i.fk_career
-                                where i.fk_location = 1 and i.fk_process = ?
+                                inner join pwcnm_approvals as a on a.fk_inscription = i.id
+                                where i.fk_location = 1 and i.fk_process = ? and a.stade = 4
                                 GROUP BY schools', [$process]);
 
 

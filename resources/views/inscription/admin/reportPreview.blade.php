@@ -7,20 +7,25 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="form-group center">
 
-                    @for($i = 0; $i < count($central); $i++)
+                    @if(count($central) == 0)
+                        <h1 style="color: gray">NO EXISTEN SOLICITUDES PARA ESTA SEDE</h1>
+                    @else
 
-                        <div class="well center" style="background: white">
-                            @if($id == 1)
-                            <label>@lang('form.school')= "{{$careers[$i]->schools}}"</label>
-                            @else
-                                <label>@lang('form.carrer')= "{{$careers[$i]}}"</label>
-                            @endif
-                            <hr style="width:100%;">
-                            </br>
 
-                            <div class="table-responsive">
-                                <table class="table table-striped" >
-                                    <thead>
+                        @for($i = 0; $i < count($central); $i++)
+
+                            <div class="well center" style="background: white">
+                                @if($id == 1)
+                                    <label>@lang('form.school')= "{{$careers[$i]->schools}}"</label>
+                                @else
+                                    <label>@lang('form.carrer')= "{{$careers[$i]}}"</label>
+                                @endif
+                                <hr style="width:100%;">
+                                </br>
+
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
                                         <tr style="font-weight: bold">
                                             <td>@lang('form.carne')</td>
                                             <td>@lang('form.name')</td>
@@ -28,8 +33,8 @@
                                             <td>@lang('form.course')</td>
                                             <td>@lang('form.group')</td>
                                         </tr>
-                                    </thead>
-                                    <tbody>
+                                        </thead>
+                                        <tbody>
                                         @foreach($central[$i] as $item )
                                             <tr>
                                                 <td>{{$item->carne}}</td>
@@ -40,19 +45,22 @@
                                                 <td>{{$item->times}}</td>
                                             </tr>
                                         @endforeach
-                                    </tbody>
-                                </table>
+                                        </tbody>
+                                    </table>
+                                </div>
+
                             </div>
 
+                            </br>
+
+                        @endfor
+
+                        <div class="center">
+                            <a class="btn btn-success col-md-6 col-md-offset-3" href="{{url('/pdf/sedes/'.$id)}}">
+                                Exportar
+                                PDF</a>
                         </div>
-
-                        </br>
-
-                    @endfor
-
-                    <div class="center">
-                        <a class="btn btn-success col-md-6 col-md-offset-3" href="{{url('/pdf/sedes/'.$id)}}"> Exportar PDF</a>
-                    </div>
+                    @endif
                 </div>
             </div>
         </div>
