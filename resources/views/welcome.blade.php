@@ -57,7 +57,6 @@
 						<p>secretariacienciasnaturales.so@ucr.ac.cr</p>
 					</div>
 				</div>
-				<img src="{{ asset('img/logoCiencias.jpg') }}" class="img-responsive" alt="Responsive image">
 			</div>
         </div>
         <hr>

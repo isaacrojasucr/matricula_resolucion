@@ -27,6 +27,12 @@
 	height: 100%;
 }
 
+#logo-ciencias {
+	padding-left: 0;
+	padding-top: 12px;
+	padding-bottom: 3px;
+}
+
 #navbar {
 	background-color: #005da4;
 }

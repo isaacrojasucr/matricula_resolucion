@@ -25,8 +25,11 @@
     <div class="container-fluid" id="topNav">
         <div class="row">
             <div class="col-md-12">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a id="logo-ucr" class="navbar-brand" href="{{ url('https://www.ucr.ac.cr/') }}">
                     <img class="img-responsive" alt="Responsive image" src="{{ asset('media/firma-ucr.svg') }}">
+                </a>
+                <a id="logo-ciencias" class="navbar-brand" href="{{ url('/') }}">
+                    <img class="img-responsive" alt="Responsive image" src="{{ asset('media/logo-ciencias.png') }}">
                 </a>
             </div>
         </div>
@@ -237,7 +240,7 @@
     <div class="container-fluid" id="footer">
         <div class="row">
             <div class="col-md-12" id="legalRights">
-                <p>© 2017 Universidad de Costa Rica. Última actualización: junio de 2017.</p>
+                <p>© 2017 Universidad de Costa Rica. Última actualización: Noviembre de 2017.</p>
             </div>
         </div>
     </div>
